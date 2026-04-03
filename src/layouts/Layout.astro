@@ -1,0 +1,17 @@
+---
+import '../styles/index.css'
+import Navbar from '../components/Navbar.astro'
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>My Personal Site</title>
+    </head>
+    <body class="bg-base text-ink">
+        <Navbar />
+        <main class="max-w-5xl mx-auto px-6 py-12">
+            <slot /> </main>
+    </body>
+</html>
