@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-    <section class="flex-col p-10 mb-200">
+    <section class="flex-col p-10">
         <div class="flex items-center justify-between w-full">
             <div>
                 <h1 class="text-5xl font-bold text-primary">
@@ -16,12 +16,18 @@ import Layout from '../layouts/Layout.astro';
                     View Projects
                 </a>
             </div>
-            <div>
+            <div class="ml-16 md:ml-32 lg:ml-48">
                 <h3>will be image maybe</h3>
             </div>
         </div>
-        <h3 class="flex justify-center text-3xl pt-30 pb-60">
-            ⚠️ Under Construction ⚠️
-        </h3>
     </section>
+    <section id="projects" class="py-20 px-10 mx-auto scroll-mt-20">
+        <div class="mb-16">
+            <h2 class="text-4xl font-bold text-primary-dark">Projects</h2>
+        </div>
+        <div class="space-y-24" />
+    </section>
+    <h3 class="flex justify-center text-3xl pt-30 pb-60">
+        ⚠️ Under Construction ⚠️
+    </h3>
 </Layout>
