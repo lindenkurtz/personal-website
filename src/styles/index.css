@@ -1,17 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bpmf+Zihi+Kai+Std&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
 @theme {
+    /* Color Palette */
     /* Primary */
     --color-primary: #00B8A9; /* Bright Teal */
     --color-primary-dark: #006D77;       /* Deep Teal */
     --color-ink: #122628;           /* Ink */
-
     /* Accent */
     --color-accent: #FF8A5B;        /* Coral Orange */
     --color-accent-light: #FFD0A8;  /* Peach */
-
     /* Neutrals */
     --color-base: #FEF6E4;          /* Off-white */
     --color-base-dark: #E9DFCE;     /* Sand */
     --color-white: #FFFFFF;         /* Pure White */
+
+    /* Font */
+    --font-heading: "Space Grotesk", ui-sans-serif, system-ui;
+    --font-body: "Outfit", ui-sans-serif, system-ui;
+}
+
+@layer base {
+  body {
+    @apply font-body text-ink bg-base;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
 }
