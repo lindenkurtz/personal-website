@@ -7,7 +7,7 @@ export async function GET() {
             throw new Error("WAKATIME_API_KEY is not defined in .env");
         }
 
-        const token = Buffer.from(`${apiKey}:`).toString('base64');
+        const token = btoa(`${apiKey}:`);
 
         const res = await fetch('https://wakatime.com/api/v1/users/current/stats/last_7_days?is_including_today=true', {
             headers: {
