@@ -1,0 +1,91 @@
+<div class="max-w-md mx-auto p-6 bg-base-dark rounded-xl border border-primary-dark/20 min-h-[300px]">
+    <h3 class="text-xl font-bold text-primary mb-4 text-center">
+        My top languages in the last week 
+    </h3>
+    <div class="flex justify-center relative h-64 w-full"> <canvas id="wakaChart"></canvas>
+    </div>
+</div>
+
+<script>
+  import Chart from 'chart.js/auto';
+
+  async function initChart() {
+    const canvas = document.getElementById('wakaChart') as HTMLCanvasElement | null;
+    if (!canvas) return; // Exit if element isn't found yet
+
+    const style = getComputedStyle(document.documentElement);
+    const ink = style.getPropertyValue('--color-ink').trim() || '#ffffff';
+
+    try {
+        const response = await fetch('/api/wakatime');
+        const result = await response.json();
+        
+        // Safety check: Make sure result.data.languages exists
+        if (!result.data || !result.data.languages) {
+            console.error("No data returned from WakaTime", result);
+            return;
+        }
+        console.log("Retrieved data returned from WakaTime", result);
+
+        if (result.data.languages.length === 0) {
+            const chartContainer = document.getElementById('wakaChart')?.parentElement;
+            if (chartContainer) {
+                // We replace the HTML of the h-64 div with a centered message
+                chartContainer.innerHTML = `
+                    <div class="flex items-center justify-center h-full w-full">
+                        <p class="text-center text-sm text-ink/60 italic">
+                            No coding activity recorded in the last 7 days.
+                        </p>
+                    </div>
+                `;
+            }
+            return;
+        }
+
+        const stats = result.data.languages.slice(0, 5); 
+        //temp, replace with above
+        /*
+        const stats = [
+            { name: 'TypeScript', percent: 45 },
+            { name: 'Astro', percent: 30 },
+            { name: 'CSS', percent: 25 }
+        ];
+        */
+
+        const labels = stats.map((l: { name: string }) => l.name);
+        const percentages = stats.map((l: { percent: number }) => l.percent);
+
+        new Chart(canvas, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: percentages,
+                    backgroundColor: ['#6366f1', '#a855f7', '#ec4899', '#f43f5e', '#f97316'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { 
+                            color: ink,
+                            font: { family: 'Outfit', size: 12 }
+                        }
+                    }
+                }
+            }
+        });
+    } catch (e) {
+        console.error("Chart failed to load", e);
+    }
+  }
+
+  // Runs on initial load
+  initChart();
+  
+  // Runs if you are using Astro View Transitions
+  document.addEventListener('astro:page-load', initChart);
+</script>
