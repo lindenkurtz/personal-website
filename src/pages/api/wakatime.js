@@ -19,10 +19,15 @@ export async function GET() {
 
         return new Response(JSON.stringify(data), {
             status: 200,
-            headers: { "Content-Type": "application/json" }
+            headers: { 
+                "Content-Type": "application/json",
+                // This tells Cloudflare/Browsers NOT to cache this specific data
+                "Cache-Control": "no-cache, no-store, must-revalidate",
+                "Pragma": "no-cache",
+                "Expires": "0"
+            }
         });
     } catch (error) {
-        // Removed the ': any' here for pure JS compatibility
         return new Response(JSON.stringify({ error: error.message }), { status: 500 });
     }
 }
