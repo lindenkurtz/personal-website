@@ -1,3 +1,5 @@
+export const prerender = false;
+
 export async function GET() {
     try {
         const apiKey = import.meta.env.WAKATIME_API_KEY;
@@ -11,7 +13,8 @@ export async function GET() {
 
         const res = await fetch('https://wakatime.com/api/v1/users/current/stats/last_7_days?is_including_today=true', {
             headers: {
-                'Authorization': `Basic ${token}`
+                'Authorization': `Basic ${token}`,
+                'Cache-Control': 'no-cache'
             }
         });
 
@@ -22,9 +25,9 @@ export async function GET() {
             headers: { 
                 "Content-Type": "application/json",
                 // This tells Cloudflare/Browsers NOT to cache this specific data
-                "Cache-Control": "no-cache, no-store, must-revalidate",
-                "Pragma": "no-cache",
-                "Expires": "0"
+                "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+                "CDN-Cache-Control": "no-store", 
+                "Vercel-CDN-Cache-Control": "no-store", // Cover all bases
             }
         });
     } catch (error) {
