@@ -10,11 +10,16 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindcss({
-        // Ensure this is exactly how it's structured
         config: {
           plugins: [typography],
         },
       }),
     ],
+    ssr: {
+      external: ['mongodb'],  // ← add this
+    },
+    optimizeDeps: {
+      exclude: ['mongodb'],   // ← and this
+    }
   },
 });
