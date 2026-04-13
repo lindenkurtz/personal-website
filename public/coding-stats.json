@@ -2,50 +2,50 @@
   "week": [
     {
       "name": "javascript",
-      "percent": 61.5
+      "percent": 59.5
     },
     {
       "name": "python",
-      "percent": 14.8
+      "percent": 14.4
     },
     {
       "name": "astro",
-      "percent": 9.5
+      "percent": 10
     },
     {
-      "name": "css",
-      "percent": 2.2
-    },
-    {
-      "name": "other",
-      "percent": 2.2
+      "name": "wolframlanguage",
+      "percent": 3
     },
     {
       "name": "c++",
-      "percent": 1.9
+      "percent": 2.3
+    },
+    {
+      "name": "css",
+      "percent": 2.1
+    },
+    {
+      "name": "other",
+      "percent": 2.1
     },
     {
       "name": "json",
-      "percent": 1.6
+      "percent": 1.5
     },
     {
       "name": "mdx",
       "percent": 1.4
     },
     {
-      "name": "wolframlanguage",
-      "percent": 1.1
-    },
-    {
       "name": "plaintext",
       "percent": 0.9
     },
     {
-      "name": "dotenv",
+      "name": "typescript",
       "percent": 0.6
     },
     {
-      "name": "typescript",
+      "name": "dotenv",
       "percent": 0.6
     },
     {
@@ -53,11 +53,11 @@
       "percent": 0.5
     },
     {
-      "name": "jsonc",
+      "name": "github-actions-workflow",
       "percent": 0.3
     },
     {
-      "name": "github-actions-workflow",
+      "name": "jsonc",
       "percent": 0.3
     },
     {
@@ -65,7 +65,7 @@
       "percent": 0.2
     },
     {
-      "name": "markdown",
+      "name": "git config",
       "percent": 0.2
     },
     {
@@ -73,26 +73,30 @@
       "percent": 0.2
     },
     {
-      "name": "git config",
+      "name": "markdown",
       "percent": 0.2
     }
   ],
   "alltime": [
     {
       "name": "javascript",
-      "percent": 45.2
+      "percent": 44.5
     },
     {
       "name": "astro",
-      "percent": 20.6
+      "percent": 20.8
     },
     {
       "name": "python",
-      "percent": 11.7
+      "percent": 11.5
     },
     {
       "name": "c++",
-      "percent": 9.9
+      "percent": 10
+    },
+    {
+      "name": "wolframlanguage",
+      "percent": 2.1
     },
     {
       "name": "json",
@@ -112,23 +116,15 @@
     },
     {
       "name": "mdx",
-      "percent": 1
-    },
-    {
-      "name": "text",
       "percent": 0.9
     },
     {
-      "name": "wolframlanguage",
-      "percent": 0.7
+      "name": "text",
+      "percent": 0.8
     },
     {
       "name": "plaintext",
       "percent": 0.6
-    },
-    {
-      "name": "bash",
-      "percent": 0.5
     },
     {
       "name": "dotenv",
@@ -143,16 +139,12 @@
       "percent": 0.3
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.2
-    },
-    {
       "name": "jsonc",
       "percent": 0.2
     },
     {
-      "name": "html",
-      "percent": 0.1
+      "name": "github-actions-workflow",
+      "percent": 0.2
     },
     {
       "name": "tsconfig",
@@ -160,6 +152,10 @@
     },
     {
       "name": "git config",
+      "percent": 0.1
+    },
+    {
+      "name": "html",
       "percent": 0.1
     }
   ]
