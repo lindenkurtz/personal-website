@@ -1,2 +1,5 @@
 /*
   Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com;
+
+/coding-stats.json
+  Cache-Control: no-store
