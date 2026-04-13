@@ -80,15 +80,16 @@
 
     try {
         const [weekRes, allTimeRes] = await Promise.all([
-            fetch('/api/takatime?range=week'),
-            fetch('/api/takatime?range=alltime')
+            fetch('/coding-stats.json'),
+            fetch('/coding-stats.json')
         ]);
 
-        const weekData = await weekRes.json();
-        const allTimeData = await allTimeRes.json();
+        const weekJson = await weekRes.json();
+        const allTimeJson = await allTimeRes.json();
 
-        renderChart('wakaChartWeek', weekData, ink);
-        renderChart('wakaChartAllTime', allTimeData, ink);
+        // Then adjust the renderChart calls:
+        renderChart('wakaChartWeek', { data: { languages: weekJson.week } }, ink);
+        renderChart('wakaChartAllTime', { data: { languages: weekJson.alltime } }, ink);
 
     } catch (e) {
         console.error("Charts failed to load", e);
