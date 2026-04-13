@@ -19,11 +19,13 @@
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.5",
     "chart.js": "^4.5.1",
+    "d3": "^7.9.0",
     "mongodb": "^7.1.1",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "@types/d3": "^7.4.3",
     "wrangler": "^4.80.0"
   },
   "overrides": {

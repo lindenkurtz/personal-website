@@ -1,148 +1,388 @@
-<div class="max-w-2xl mx-auto p-6 bg-base-dark rounded-xl border border-primary-dark/20 min-h-[300px]">
-    <div class="flex flex-col sm:flex-row gap-8">
-        <div class="flex-1">
-            <h3 class="text-xl font-bold text-primary mb-4 text-center">Last 7 days</h3>
-            <div class="flex justify-center relative h-64 w-full">
-                <canvas id="wakaChartWeek"></canvas>
-            </div>
+{/* WakaChart.astro */}
+
+<div class="max-w-3xl mx-auto p-6 bg-base-dark rounded-xl border border-primary-dark/20">
+    <div class="flex flex-col sm:flex-row gap-10">
+
+        <div class="flex-1 flex flex-col gap-4">
+            <h3 class="text-xl font-bold text-primary text-center">Last 7 days</h3>
+            <div id="wakaChartWeek"  class="relative flex justify-center items-center h-64 w-full"></div>
+            <div id="wakaLegendWeek" class="flex flex-col gap-1.5"></div>
         </div>
-        <div class="flex-1">
-            <h3 class="text-xl font-bold text-primary mb-4 text-center">All time</h3>
-            <div class="flex justify-center relative h-64 w-full">
-                <canvas id="wakaChartAllTime"></canvas>
-            </div>
+
+        <div class="flex-1 flex flex-col gap-4">
+            <h3 class="text-xl font-bold text-primary text-center">All time</h3>
+            <div id="wakaChartAllTime"  class="relative flex justify-center items-center h-64 w-full"></div>
+            <div id="wakaLegendAllTime" class="flex flex-col gap-1.5"></div>
         </div>
+
     </div>
 </div>
 
 <script>
-  import Chart from 'chart.js/auto';
+import * as d3 from 'd3';
 
-  const LANGUAGE_COLORS: Record<string, string> = {
-    // Web
-    'javascript':       '#F7DF1E',  // JS yellow (too iconic to change)
-    'typescript':       '#006D77',  // deep teal
-    'javascriptreact':  '#00B8A9',  // bright teal
-    'typescriptreact':  '#4DB8B0',  // mid teal
-    'html':             '#FF8A5B',  // coral orange
-    'css':              '#7B61FF',  // purple (complements teal)
-    'scss':             '#A48BE0',  // lighter purple
+// ─────────────────────────────────────────────────────────────────────────────
+// LANGUAGE FAMILIES
+// ─────────────────────────────────────────────────────────────────────────────
 
-    // Systems / General
-    'python':           '#FFD0A8',  // peach
-    'go':               '#00ADD8',  // go's own blue (works with teal)
-    'rust':             '#E07040',  // darker coral
-    'c':                '#A9B8C0',  // muted blue-grey
-    'c++':              '#6E9DB5',  // steel blue
-    'java':             '#E8735A',  // burnt coral
-    'kotlin':           '#C45FAE',  // purple-pink
+type Family = { label: string; hue: number; sat: number; languages: string[] };
 
-    // Scripting / Config
-    'lua':              '#5B8DD9',  // calm blue
-    'bash':             '#2D6A4F',  // forest green
-    'shell':            '#2D6A4F',
-    'json':             '#B5C4C1',  // muted teal-grey
-    'yaml':             '#C9B99A',  // warm sand
-    'dotenv':           '#C9B99A',  // same as yaml, config-file family
-    'toml':             '#D4A96A',  // golden sand
-    'markdown':         '#8FA89E',  // grey-teal
-    'mdx':              '#6B9E8F',  // muted teal-green
+const FAMILIES: Record<string, Family> = {
 
-    // Other
-    'astro':            '#FF5D01',  // astro's own orange
-    'svelte':           '#FF6B35',  // svelte orange (close to accent)
-    'vue':              '#42B883',  // vue green
-    'sql':              '#006D77',  
-    'other':            '#A0A0A0',
-  };
+  systems: {
+    label: 'Systems',
+    hue: 210, sat: 55,
+    languages: ['c', 'c++', 'rust', 'go', 'zig', 'assembly', 'nasm', 'odin'],
+  },
 
-  const FALLBACK_COLORS = [
-    '#9B8EA8', '#7A9E9F', '#B5927A', '#6B8F71', '#A67C9B',
-    '#8BA3A8', '#C4956A', '#7A8FA6', '#A89B7A', '#6B9E8F'
-  ];
+  scientific: {
+    label: 'Scientific',
+    hue: 10, sat: 65,
+    languages: ['python', 'r', 'wolframlanguage', 'julia', 'matlab', 'fortran', 'sas'],
+  },
 
-  function getLanguageColor(name: string, usedFallbacks: Map<string, string>): string {
-    const key = name.toLowerCase();
-    if (LANGUAGE_COLORS[key]) return LANGUAGE_COLORS[key];
-    
-    // Return the same fallback color if we've seen this language before
-    if (usedFallbacks.has(key)) return usedFallbacks.get(key)!;
-    
-    // Assign the next unused fallback
-    const color = FALLBACK_COLORS[usedFallbacks.size % FALLBACK_COLORS.length];
-    usedFallbacks.set(key, color);
-    return color;
+  web: {
+    label: 'Web',
+    hue: 175, sat: 60,
+    languages: [
+      'javascript', 'typescript',
+      'javascriptreact', 'typescriptreact', 'jsx', 'tsx',
+      'html', 'css', 'scss', 'sass', 'less', 'stylus',
+    ],
+  },
+
+  scripting: {
+    label: 'Scripting',
+    hue: 40, sat: 60,
+    languages: ['bash', 'shell', 'sh', 'zsh', 'fish', 'lua', 'ruby', 'perl', 'powershell'],
+  },
+
+  config: {
+    label: 'Config',
+    hue: 270, sat: 40,
+    languages: ['json', 'json5', 'yaml', 'toml', 'dotenv', 'ini', 'xml', 'sql', 'graphql', 'prisma', 'hcl', 'terraform'],
+  },
+
+  markup: {
+    label: 'Markup',
+    hue: 30, sat: 22,
+    languages: ['markdown', 'mdx', 'latex', 'tex', 'restructuredtext', 'plaintext', 'text', 'asciidoc', 'org'],
+  },
+
+  jvm_mobile: {
+    label: 'JVM & Mobile',
+    hue: 340, sat: 55,
+    languages: ['java', 'kotlin', 'swift', 'dart', 'scala', 'groovy', 'clojure', 'flutter'],
+  },
+
+  meta: {
+    label: 'Frameworks',
+    hue: 20, sat: 78,
+    languages: ['astro', 'svelte', 'vue'],
+  },
+
+  // ── Add more families below ───────────────────────────────────────────────
+  // functional: { label: 'Functional', hue: 155, sat: 50, languages: ['haskell', 'elixir', 'erlang', 'ocaml', 'fsharp'] },
+  // dotnet:     { label: '.NET',       hue: 258, sat: 60, languages: ['csharp', 'fsharp', 'visualbasic'] },
+
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// COLOR HELPERS
+// ─────────────────────────────────────────────────────────────────────────────
+
+const FAMILY_L  = 42;
+const LANG_L_MIN = 36;
+const LANG_L_MAX = 66;
+const OTHER_FAMILY: Family = { label: 'Other', hue: 0, sat: 0, languages: [] };
+
+function familyColor(f: Family): string {
+  return `hsl(${f.hue}, ${f.sat}%, ${FAMILY_L}%)`;
+}
+
+function languageColor(f: Family, idx: number, count: number): string {
+  const t = count > 1 ? idx / (count - 1) : 0.5;
+  const l = LANG_L_MIN + t * (LANG_L_MAX - LANG_L_MIN);
+  const s = f.sat * (0.75 + 0.25 * Math.sin(Math.PI * t));
+  return `hsl(${f.hue}, ${s.toFixed(0)}%, ${l.toFixed(0)}%)`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DATA TRANSFORM
+// ─────────────────────────────────────────────────────────────────────────────
+
+type LangStat = { name: string; percent: number };
+type HierarchyNode = { name: string; famKey?: string; value?: number; children?: HierarchyNode[] };
+
+function buildHierarchy(languages: LangStat[]): HierarchyNode {
+  const langToFamily: Record<string, string> = {};
+  for (const [key, fam] of Object.entries(FAMILIES)) {
+    for (const lang of fam.languages) langToFamily[lang.toLowerCase()] = key;
   }
 
-  async function initCharts() {
-    const style = getComputedStyle(document.documentElement);
-    const ink = style.getPropertyValue('--color-ink').trim() || '#ffffff';
-
-    try {
-        const [weekRes, allTimeRes] = await Promise.all([
-            fetch('/coding-stats.json'),
-            fetch('/coding-stats.json')
-        ]);
-
-        const weekJson = await weekRes.json();
-        const allTimeJson = await allTimeRes.json();
-
-        // Then adjust the renderChart calls:
-        renderChart('wakaChartWeek', { data: { languages: weekJson.week } }, ink);
-        renderChart('wakaChartAllTime', { data: { languages: weekJson.alltime } }, ink);
-
-    } catch (e) {
-        console.error("Charts failed to load", e);
-    }
+  const buckets = new Map<string, LangStat[]>();
+  for (const lang of languages) {
+    const famKey = langToFamily[lang.name.toLowerCase()] ?? 'other';
+    if (!buckets.has(famKey)) buckets.set(famKey, []);
+    buckets.get(famKey)!.push(lang);
   }
 
-  function renderChart(canvasId: string, result: any, ink: string) {
-    const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
-    if (!canvas) return;
-
-    if (!result.data?.languages || result.data.languages.length === 0) {
-        const container = canvas.parentElement;
-        if (container) {
-            container.innerHTML = `
-                <div class="flex items-center justify-center h-full w-full">
-                    <p class="text-center text-sm text-ink/60 italic">No activity recorded.</p>
-                </div>`;
-        }
-        return;
-    }
-
-    const stats = result.data.languages.slice(0, 10);
-    const labels = stats.map((l: { name: string }) => l.name);
-    const percentages = stats.map((l: { percent: number }) => l.percent);
-
-    const usedFallbacks = new Map<string, string>();
-    const colors = stats.map((l: { name: string }) => getLanguageColor(l.name, usedFallbacks));
-
-    new Chart(canvas, {
-        type: 'pie',
-        data: {
-            labels,
-            datasets: [{
-                data: percentages,
-                backgroundColor: colors,  // ← swap this
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        color: ink,
-                        font: { family: 'Outfit', size: 12 }
-                    }
-                }
-            }
-        }
+  const children: HierarchyNode[] = [];
+  for (const [famKey, langs] of buckets) {
+    const fam = FAMILIES[famKey] ?? OTHER_FAMILY;
+    children.push({
+      name: fam.label,
+      famKey,
+      children: langs.map(l => ({ name: l.name, value: l.percent })),
     });
   }
 
-  initCharts();
-  document.addEventListener('astro:page-load', initCharts);
+  return { name: 'root', children };
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LEGEND
+// ─────────────────────────────────────────────────────────────────────────────
+
+const LEGEND_TOP_N = 5;
+
+function renderLegend(
+  legendId: string,
+  languages: LangStat[],
+  colorLookup: Map<string, string>,
+  ink: string,
+) {
+  const container = document.getElementById(legendId);
+  if (!container) return;
+  container.innerHTML = '';
+
+  const top = [...languages]
+    .sort((a, b) => b.percent - a.percent)
+    .slice(0, LEGEND_TOP_N);
+
+  const maxPct = top[0]?.percent ?? 1;
+
+  for (const lang of top) {
+    const color = colorLookup.get(lang.name.toLowerCase()) ?? '#888';
+    const barW  = (lang.percent / maxPct * 100).toFixed(1);
+
+    const row = document.createElement('div');
+    row.style.cssText = `
+      display: flex; align-items: center; gap: 8px;
+      font-family: Outfit, sans-serif; font-size: 12px;
+      color: ${ink};
+    `;
+
+    // Color swatch
+    const swatch = document.createElement('span');
+    swatch.style.cssText = `
+      flex-shrink: 0;
+      width: 10px; height: 10px;
+      border-radius: 2px;
+      background: ${color};
+    `;
+
+    // Language name
+    const name = document.createElement('span');
+    name.style.cssText = `flex-shrink: 0; width: 108px; opacity: 0.9;`;
+    name.textContent = lang.name;
+
+    // Bar track
+    const track = document.createElement('div');
+    track.style.cssText = `
+      flex: 1; height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.07);
+      overflow: hidden;
+    `;
+
+    const fill = document.createElement('div');
+    fill.style.cssText = `
+      height: 100%; width: ${barW}%;
+      border-radius: 2px;
+      background: ${color};
+      opacity: 0.75;
+    `;
+    track.appendChild(fill);
+
+    // Percentage
+    const pct = document.createElement('span');
+    pct.style.cssText = `flex-shrink: 0; opacity: 0.55; width: 36px; text-align: right;`;
+    pct.textContent = `${lang.percent.toFixed(1)}%`;
+
+    row.appendChild(swatch);
+    row.appendChild(name);
+    row.appendChild(track);
+    row.appendChild(pct);
+    container.appendChild(row);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SUNBURST RENDERER
+// ─────────────────────────────────────────────────────────────────────────────
+
+function renderSunburst(
+  chartId: string,
+  legendId: string,
+  languages: LangStat[],
+  ink: string,
+) {
+  const container = document.getElementById(chartId) as HTMLElement | null;
+  if (!container) return;
+  container.innerHTML = '';
+
+  if (!languages?.length) {
+    container.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:center;height:100%;width:100%">
+        <p style="text-align:center;font-size:13px;opacity:0.5;font-style:italic;">No activity recorded.</p>
+      </div>`;
+    return;
+  }
+
+  const size   = Math.min(container.clientWidth, container.clientHeight, 256);
+  const radius = size / 2;
+
+  const svg = d3.select(container)
+    .append('svg')
+    .attr('viewBox', `${-radius} ${-radius} ${size} ${size}`)
+    .attr('width', size)
+    .attr('height', size)
+    .style('overflow', 'visible');
+
+  const root = d3.hierarchy(buildHierarchy(languages))
+    .sum(d => d.value ?? 0)
+    .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
+
+  d3.partition<HierarchyNode>().size([2 * Math.PI, radius])(root);
+
+  // ── Build color maps ──────────────────────────────────────────────────────
+  // nodeColorMap: used for rendering arcs
+  // nameColorMap: lowercased lang name → color, shared with legend
+  type ArcNode = d3.HierarchyRectangularNode<HierarchyNode>;
+  const nodeColorMap = new Map<ArcNode, string>();
+  const nameColorMap = new Map<string, string>(); // for legend
+
+  for (const node of root.descendants() as ArcNode[]) {
+    if (node.depth === 0) continue;
+    const famKey = node.depth === 1
+      ? node.data.famKey!
+      : (node.parent!.data as any).famKey!;
+    const fam = FAMILIES[famKey] ?? OTHER_FAMILY;
+
+    let color: string;
+    if (node.depth === 1) {
+      color = familyColor(fam);
+    } else {
+      const siblings = node.parent!.children! as ArcNode[];
+      color = languageColor(fam, siblings.indexOf(node), siblings.length);
+      nameColorMap.set(node.data.name.toLowerCase(), color);
+    }
+    nodeColorMap.set(node, color);
+  }
+
+  // ── Arc generator ─────────────────────────────────────────────────────────
+  const arc = d3.arc<ArcNode>()
+    .startAngle(d => d.x0)
+    .endAngle(d => d.x1)
+    .innerRadius(d => d.y0 + 2)
+    .outerRadius(d => d.y1 - 2)
+    .padAngle(0.018)
+    .padRadius(radius * 0.6)
+    .cornerRadius(3);
+
+  // ── Tooltip ───────────────────────────────────────────────────────────────
+  const tooltip = d3.select(container)
+    .append('div')
+    .style('position', 'absolute')
+    .style('pointer-events', 'none')
+    .style('background', 'rgba(18, 21, 32, 0.97)')
+    .style('border', '1px solid rgba(255,255,255,0.18)')
+    .style('border-radius', '7px')
+    .style('padding', '7px 12px 8px')
+    .style('font-family', 'Outfit, sans-serif')
+    .style('font-size', '13px')
+    .style('line-height', '1.6')
+    .style('color', '#FEF6E4')
+    .style('box-shadow', '0 8px 32px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05) inset')
+    .style('opacity', '0')
+    .style('transition', 'opacity 0.12s ease')
+    .style('white-space', 'nowrap')
+    .style('z-index', '10');
+
+  // ── Arcs ──────────────────────────────────────────────────────────────────
+  svg.selectAll<SVGPathElement, ArcNode>('path')
+    .data((root.descendants() as ArcNode[]).filter(d => d.depth > 0))
+    .join('path')
+    .attr('d', arc)
+    .attr('fill', d => nodeColorMap.get(d) ?? '#888')
+    .attr('opacity', 0.88)
+    .on('mouseover', function(_, d) {
+      d3.select(this).attr('opacity', 1).style('filter', 'brightness(1.2)');
+
+      const color = nodeColorMap.get(d) ?? '#888';
+      const pct   = (d.value ?? 0).toFixed(1);
+
+      // Family arc
+      if (d.depth === 1) {
+        tooltip
+          .style('border-left', `3px solid ${color}`)
+          .html(`
+            <span style="font-size:10px;opacity:0.5;letter-spacing:0.06em;text-transform:uppercase;">family</span><br/>
+            <strong>${d.data.name}</strong>
+            <span style="opacity:0.6;margin-left:6px;">${pct}%</span>
+          `)
+          .style('opacity', '1');
+      } else {
+        // Language arc — show family label as subtitle
+        const famKey  = (d.parent!.data as any).famKey as string;
+        const famLabel = FAMILIES[famKey]?.label ?? 'Other';
+        tooltip
+          .style('border-left', `3px solid ${color}`)
+          .html(`
+            <strong>${d.data.name}</strong>
+            <span style="opacity:0.6;margin-left:6px;">${pct}%</span><br/>
+            <span style="font-size:11px;opacity:0.45;">${famLabel}</span>
+          `)
+          .style('opacity', '1');
+      }
+    })
+    .on('mousemove', function(event: MouseEvent) {
+      const rect = container.getBoundingClientRect();
+      // Keep tooltip inside the container horizontally
+      const tx = Math.min(event.clientX - rect.left + 14, rect.width - 160);
+      tooltip
+        .style('left', `${tx}px`)
+        .style('top',  `${event.clientY - rect.top - 44}px`);
+    })
+    .on('mouseout', function() {
+      d3.select(this).attr('opacity', 0.88).style('filter', null);
+      tooltip.style('opacity', '0');
+    });
+
+  // ── Legend ────────────────────────────────────────────────────────────────
+  renderLegend(legendId, languages, nameColorMap, ink);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────────────────────
+
+async function initCharts() {
+  const style = getComputedStyle(document.documentElement);
+  const ink   = style.getPropertyValue('--color-ink').trim() || '#e8e8e8';
+
+  try {
+    const res  = await fetch('/coding-stats.json');
+    const json = await res.json();
+
+    renderSunburst('wakaChartWeek',    'wakaLegendWeek',    json.week,    ink);
+    renderSunburst('wakaChartAllTime', 'wakaLegendAllTime', json.alltime, ink);
+  } catch (e) {
+    console.error('WakaChart: failed to load stats', e);
+  }
+}
+
+initCharts();
+document.addEventListener('astro:page-load', initCharts);
 </script>
