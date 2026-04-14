@@ -21,11 +21,11 @@
       "percent": 3
     },
     {
-      "name": "other",
+      "name": "css",
       "percent": 2.1
     },
     {
-      "name": "css",
+      "name": "other",
       "percent": 2.1
     },
     {
@@ -45,11 +45,11 @@
       "percent": 0.9
     },
     {
-      "name": "typescript",
+      "name": "dotenv",
       "percent": 0.6
     },
     {
-      "name": "dotenv",
+      "name": "typescript",
       "percent": 0.6
     },
     {
@@ -135,11 +135,11 @@
       "percent": 0.4
     },
     {
-      "name": "jsonc",
+      "name": "github-actions-workflow",
       "percent": 0.2
     },
     {
-      "name": "github-actions-workflow",
+      "name": "jsonc",
       "percent": 0.2
     },
     {
