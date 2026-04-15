@@ -21,11 +21,11 @@
       "percent": 3.1
     },
     {
-      "name": "css",
+      "name": "other",
       "percent": 2.2
     },
     {
-      "name": "other",
+      "name": "css",
       "percent": 2.2
     },
     {
@@ -45,27 +45,27 @@
       "percent": 0.9
     },
     {
-      "name": "typescript",
-      "percent": 0.6
-    },
-    {
       "name": "dotenv",
       "percent": 0.6
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.3
+      "name": "typescript",
+      "percent": 0.6
     },
     {
       "name": "jsonc",
       "percent": 0.3
     },
     {
-      "name": "html",
-      "percent": 0.2
+      "name": "github-actions-workflow",
+      "percent": 0.3
     },
     {
       "name": "markdown",
+      "percent": 0.2
+    },
+    {
+      "name": "html",
       "percent": 0.2
     }
   ],
@@ -95,11 +95,11 @@
       "percent": 1.9
     },
     {
-      "name": "css",
+      "name": "json",
       "percent": 1.7
     },
     {
-      "name": "json",
+      "name": "css",
       "percent": 1.7
     },
     {
@@ -123,20 +123,24 @@
       "percent": 0.6
     },
     {
+      "name": "dotenv",
+      "percent": 0.4
+    },
+    {
       "name": "typescript",
       "percent": 0.4
     },
     {
-      "name": "dotenv",
-      "percent": 0.4
+      "name": "jsonc",
+      "percent": 0.2
     },
     {
       "name": "github-actions-workflow",
       "percent": 0.2
     },
     {
-      "name": "jsonc",
-      "percent": 0.2
+      "name": "git config",
+      "percent": 0.1
     },
     {
       "name": "html",
@@ -144,10 +148,6 @@
     },
     {
       "name": "tsconfig",
-      "percent": 0.1
-    },
-    {
-      "name": "git config",
       "percent": 0.1
     }
   ]
