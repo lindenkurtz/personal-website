@@ -2,63 +2,55 @@
   "week": [
     {
       "name": "javascript",
-      "percent": 51
+      "percent": 55.2
     },
     {
       "name": "python",
-      "percent": 16
+      "percent": 19.1
     },
     {
       "name": "jsx",
-      "percent": 10.4
-    },
-    {
-      "name": "astro",
-      "percent": 7.8
+      "percent": 12.5
     },
     {
       "name": "wolframlanguage",
-      "percent": 3.1
+      "percent": 3.7
     },
     {
-      "name": "css",
+      "name": "c++",
+      "percent": 2.2
+    },
+    {
+      "name": "astro",
       "percent": 2.2
     },
     {
       "name": "other",
-      "percent": 2.2
-    },
-    {
-      "name": "c++",
-      "percent": 1.8
-    },
-    {
-      "name": "mdx",
-      "percent": 1.4
-    },
-    {
-      "name": "json",
-      "percent": 1.1
+      "percent": 1.5
     },
     {
       "name": "plaintext",
-      "percent": 0.9
-    },
-    {
-      "name": "typescript",
-      "percent": 0.6
+      "percent": 1.1
     },
     {
       "name": "dotenv",
-      "percent": 0.6
-    },
-    {
-      "name": "github-actions-workflow",
-      "percent": 0.3
+      "percent": 0.7
     },
     {
       "name": "jsonc",
-      "percent": 0.3
+      "percent": 0.4
+    },
+    {
+      "name": "github-actions-workflow",
+      "percent": 0.4
+    },
+    {
+      "name": "json",
+      "percent": 0.4
+    },
+    {
+      "name": "css",
+      "percent": 0.4
     },
     {
       "name": "html",
@@ -123,19 +115,19 @@
       "percent": 0.6
     },
     {
-      "name": "typescript",
-      "percent": 0.4
-    },
-    {
       "name": "dotenv",
       "percent": 0.4
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.2
+      "name": "typescript",
+      "percent": 0.4
     },
     {
       "name": "jsonc",
+      "percent": 0.2
+    },
+    {
+      "name": "github-actions-workflow",
       "percent": 0.2
     },
     {
