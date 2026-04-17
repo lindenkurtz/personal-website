@@ -2,15 +2,15 @@
   "week": [
     {
       "name": "javascript",
-      "percent": 52.4
+      "percent": 52.1
     },
     {
       "name": "python",
-      "percent": 18.3
+      "percent": 18.4
     },
     {
       "name": "jsx",
-      "percent": 11.8
+      "percent": 11.7
     },
     {
       "name": "wolframlanguage",
@@ -37,7 +37,7 @@
       "percent": 0.7
     },
     {
-      "name": "github-actions-workflow",
+      "name": "json",
       "percent": 0.3
     },
     {
@@ -45,11 +45,15 @@
       "percent": 0.3
     },
     {
-      "name": "jsonc",
+      "name": "github-actions-workflow",
       "percent": 0.3
     },
     {
-      "name": "json",
+      "name": "go",
+      "percent": 0.3
+    },
+    {
+      "name": "jsonc",
       "percent": 0.3
     },
     {
@@ -64,15 +68,15 @@
   "alltime": [
     {
       "name": "javascript",
-      "percent": 40.7
+      "percent": 40.6
     },
     {
       "name": "astro",
-      "percent": 18.5
+      "percent": 18.4
     },
     {
       "name": "python",
-      "percent": 11.4
+      "percent": 11.6
     },
     {
       "name": "c++",
@@ -87,11 +91,11 @@
       "percent": 4.5
     },
     {
-      "name": "json",
+      "name": "css",
       "percent": 1.7
     },
     {
-      "name": "css",
+      "name": "json",
       "percent": 1.7
     },
     {
@@ -115,19 +119,23 @@
       "percent": 0.6
     },
     {
-      "name": "dotenv",
-      "percent": 0.4
-    },
-    {
       "name": "typescript",
       "percent": 0.4
     },
     {
-      "name": "jsonc",
-      "percent": 0.2
+      "name": "dotenv",
+      "percent": 0.4
     },
     {
       "name": "github-actions-workflow",
+      "percent": 0.2
+    },
+    {
+      "name": "go",
+      "percent": 0.2
+    },
+    {
+      "name": "jsonc",
       "percent": 0.2
     },
     {
@@ -135,11 +143,11 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0.1
     }
   ]
