@@ -371,13 +371,15 @@ function renderSunburst(
 async function initCharts() {
   const style = getComputedStyle(document.documentElement);
   const ink   = style.getPropertyValue('--color-ink').trim() || '#e8e8e8';
+  const filterLangs = (langs: LangStat[]) => langs?.filter(l => l.percent > 0.3);
+
 
   try {
     const res  = await fetch('/coding-stats.json');
     const json = await res.json();
 
-    renderSunburst('wakaChartWeek',    'wakaLegendWeek',    json.week,    ink);
-    renderSunburst('wakaChartAllTime', 'wakaLegendAllTime', json.alltime, ink);
+    renderSunburst('wakaChartWeek',    'wakaLegendWeek',    filterLangs(json.week),    ink);
+    renderSunburst('wakaChartAllTime', 'wakaLegendAllTime', filterLangs(json.alltime), ink);
   } catch (e) {
     console.error('WakaChart: failed to load stats', e);
   }
