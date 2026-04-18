@@ -252,7 +252,11 @@ function renderSunburst(
 
   const root = d3.hierarchy(buildHierarchy(languages))
     .sum(d => d.value ?? 0)
-    .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
+    .sort((a, b) => {
+      if (a.data.famKey === 'other') return 1;
+      if (b.data.famKey === 'other') return -1;
+      return (b.value ?? 0) - (a.value ?? 0);
+    });
 
   d3.partition<HierarchyNode>().size([2 * Math.PI, radius])(root);
 
