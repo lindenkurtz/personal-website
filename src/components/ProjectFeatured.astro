@@ -1,0 +1,97 @@
+---
+import type { CollectionEntry } from "astro:content"
+interface Props {
+  projects: CollectionEntry<'projects'>[]
+  maxSupporting?: number
+}
+const { projects, maxSupporting = 2 } = Astro.props
+
+const [featured, ...rest] = projects
+const supporting = rest.slice(0, maxSupporting)
+const hasMore = projects.length > maxSupporting + 1
+---
+
+<div class="flex flex-col gap-6">
+
+  <!-- Featured project -->
+  <a
+    href={`/projects/${featured.id}`}
+    class="group relative block rounded-xl overflow-hidden border border-black/[0.07] bg-white hover:shadow-xl transition-shadow duration-300"
+  >
+    <div class="flex flex-col md:flex-row">
+      <div class="md:w-3/5 aspect-video overflow-hidden bg-base-dark">
+        <img
+          src={featured.data.thumbnail}
+          alt={featured.data.title}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+      <div class="md:w-2/5 p-8 flex flex-col justify-center gap-4">
+        <span class="text-[11px] font-semibold text-accent uppercase tracking-widest">
+          Featured Project
+        </span>
+        <h3 class="text-2xl font-bold text-primary-dark leading-snug">
+          {featured.data.title}
+        </h3>
+        <p class="text-[14px] text-ink leading-relaxed">
+          {featured.data.description}
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {featured.data.tags.map((tag) => (
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-base text-primary border border-primary">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <span class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-accent border border-accent px-5 py-2 rounded-full group-hover:bg-accent group-hover:text-white transition-all duration-200 mt-2 self-start">
+          View Project →
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Supporting grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    {supporting.map((project) => (
+      <a
+        href={`/projects/${project.id}`}
+        class="group block bg-white rounded-xl overflow-hidden border border-black/[0.07] hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+      >
+        <div class="w-full aspect-video overflow-hidden bg-base-dark">
+          <img
+            src={project.data.thumbnail}
+            alt={project.data.title}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-5 flex flex-col gap-2">
+          <h3 class="text-[14px] font-semibold text-primary-dark">{project.data.title}</h3>
+          <p class="text-[12px] text-ink leading-relaxed line-clamp-2">{project.data.description}</p>
+          <div class="flex flex-wrap gap-1.5 mt-1">
+            {project.data.tags.map((tag) => (
+              <span class="text-[10px] font-medium px-2 py-0.5 rounded-full bg-base text-primary border border-primary">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-accent mt-1 group-hover:underline">
+            View Project →
+          </span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <!-- See all — only renders when you have > 3 projects -->
+  {hasMore && (
+    <div class="flex justify-center pt-2">
+      <a href="/projects" class="group inline-flex items-center gap-2 text-[13px] font-semibold text-accent border border-accent px-6 py-2.5 rounded-full hover:bg-accent hover:text-white transition-all duration-200">
+        See all projects
+        <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+      </a>
+    </div>
+  )}
+
+</div>
