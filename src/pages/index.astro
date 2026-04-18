@@ -1,14 +1,17 @@
 ---
+// Home page fetches project metadata and renders featured projects plus current activity.
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import WakaChart from '../components/WakaChart.astro'
 import ProjectFeatured from '../components/ProjectFeatured.astro'
 
+// Load the projects collection from Astro content and sort them by explicit order.
 const projects = await getCollection('projects')
 const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99))
 ---
 
 <Layout>
+    <!-- Primary hero section with intro copy and resume CTA. -->
     <section id="home" class="flex-col p-10 scroll-mt-36">
         <div class="flex items-center justify-between w-full">
             <div>
@@ -27,12 +30,16 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
             </div>
         </div>
     </section>
+
+    <!-- Featured projects section passes sorted project entries into the ProjectFeatured component. -->
     <section id="projects" class="pt-16 mb-4 px-10 mx-auto scroll-mt-16">
         <div class="mb-12">
             <h2 class="text-4xl font-bold text-primary-dark">Projects</h2>
         </div>
         <ProjectFeatured projects={sorted} />
     </section>
+
+    <!-- Live activity section rendered by the WakaChart component. -->
     <section id="now" class="pt-16 mb-4 px-10 mx-auto scroll-mt-16">
         <div class="mb-12">
             <h2 class="text-4xl font-bold text-primary-dark">Now</h2>
@@ -40,6 +47,8 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
         <WakaChart />
         <div class="space-y-24" />
     </section>
+
+    <!-- Temporary notification for current site status. -->
     <h3 class="flex justify-center text-3xl pt-30 pb-60">
         ⚠️ Under Construction ⚠️
     </h3>

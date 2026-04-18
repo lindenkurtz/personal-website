@@ -1,4 +1,5 @@
 ---
+// Shared layout for all pages in the site. Imports the global CSS and common page chrome.
 import '../styles/index.css'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
@@ -12,9 +13,12 @@ import Footer from '../components/Footer.astro'
         <title>Linden Kurtz</title>
     </head>
     <body class="bg-base text-ink">
+        <!-- Render the shared site navigation on every page. -->
         <Navbar />
         <main class="max-w-5xl mx-auto px-6 py-12">
+            <!-- Page-specific content is injected here by consuming page components. -->
             <slot /> </main>
+        <!-- Render the shared footer at the bottom of every page. -->
         <Footer />
     </body>
 </html>

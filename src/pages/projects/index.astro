@@ -1,7 +1,9 @@
 ---
+// Project index page loads all project entries and displays them in a card grid.
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 
+// Fetch the entire projects collection from Astro content and sort using metadata order.
 const projects = await getCollection('projects')
 const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99))
 ---
@@ -14,6 +16,7 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
         ← Back home
       </a>
       <h1 class="text-4xl font-bold text-primary-dark mt-4">All Projects</h1>
+      <!-- Display the total number of project entries loaded from content. -->
       <p class="text-ink mt-2 text-[14px]">{sorted.length} projects</p>
     </div>
 
@@ -23,6 +26,7 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
           href={`/projects/${project.id}`}
           class="group block bg-white rounded-xl overflow-hidden border border-black/[0.07] hover:-translate-y-1 hover:shadow-md transition-all duration-200"
         >
+          <!-- Each project card links to the project detail page using the project slug. -->
           <div class="w-full aspect-video overflow-hidden bg-base-dark">
             <img
               src={project.data.thumbnail}

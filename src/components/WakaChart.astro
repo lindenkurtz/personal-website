@@ -371,7 +371,7 @@ function renderSunburst(
 async function initCharts() {
   const style = getComputedStyle(document.documentElement);
   const ink   = style.getPropertyValue('--color-ink').trim() || '#e8e8e8';
-  const filterLangs = (langs: LangStat[]) => langs?.filter(l => l.percent > 0.3);
+  const filterLangs = (langs: LangStat[]) => langs?.filter(l => l.percent > 0.4);
 
 
   try {
