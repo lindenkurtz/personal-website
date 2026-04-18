@@ -27,14 +27,14 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
             </div>
         </div>
     </section>
-    <section id="projects" class="py-20 px-10 mx-auto scroll-mt-16">
-        <div class="mb-16">
+    <section id="projects" class="pt-16 mb-4 px-10 mx-auto scroll-mt-16">
+        <div class="mb-12">
             <h2 class="text-4xl font-bold text-primary-dark">Projects</h2>
         </div>
         <ProjectFeatured projects={sorted} />
     </section>
-    <section id="now" class="py-8 px-10 mx-auto scroll-mt-16">
-        <div class="mb-16">
+    <section id="now" class="pt-16 mb-4 px-10 mx-auto scroll-mt-16">
+        <div class="mb-12">
             <h2 class="text-4xl font-bold text-primary-dark">Now</h2>
         </div>
         <WakaChart />

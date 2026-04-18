@@ -1,5 +1,9 @@
 ---
-// Can add checking which page is active logic
+const navLinks = [
+  { href: "home", label: "Home" },
+  { href: "projects", label: "Projects" },
+  { href: "now", label: "Now" },
+]
 ---
 
 <nav class="sticky top-0 z-50 flex items-center justify-between p-6 bg-base/80 backdrop-blur-md border-b border-base-dark">
@@ -8,9 +12,15 @@
     </a>
 
     <div class="space-x-8 hidden md:flex text-ink">
-        <a href="#home" class="hover:text-primary transition-colors">Home</a>
-        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-        <a href="#now" class="hover:text-primary transition-colors">Now</a>
+        {navLinks.map(({ href, label }) => (
+            <a
+                href={`/#${href}`}
+                data-section={href}
+                class="nav-section-link hover:text-primary transition-colors"
+            >
+                {label}
+            </a>
+        ))}
     </div>
 
     <a href="/contact" class="bg-accent text-white px-5 py-2 rounded font-medium hover:bg-opacity-90 transition-all">
