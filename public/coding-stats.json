@@ -25,11 +25,11 @@
       "percent": 5.6
     },
     {
-      "name": "jupyter-notebook",
+      "name": "c++",
       "percent": 3.2
     },
     {
-      "name": "c++",
+      "name": "jupyter-notebook",
       "percent": 3.2
     },
     {
@@ -37,11 +37,11 @@
       "percent": 2.4
     },
     {
-      "name": "typescript",
+      "name": "plaintext",
       "percent": 1.6
     },
     {
-      "name": "plaintext",
+      "name": "typescript",
       "percent": 1.6
     },
     {
@@ -49,11 +49,11 @@
       "percent": 1.1
     },
     {
-      "name": "json",
+      "name": "markdown",
       "percent": 1.1
     },
     {
-      "name": "markdown",
+      "name": "json",
       "percent": 1.1
     },
     {
@@ -103,11 +103,11 @@
       "percent": 1.6
     },
     {
-      "name": "css",
+      "name": "markdown",
       "percent": 1.4
     },
     {
-      "name": "markdown",
+      "name": "css",
       "percent": 1.4
     },
     {
@@ -139,7 +139,7 @@
       "percent": 0.3
     },
     {
-      "name": "jsonc",
+      "name": "github-actions-workflow",
       "percent": 0.2
     },
     {
@@ -147,8 +147,12 @@
       "percent": 0.2
     },
     {
-      "name": "github-actions-workflow",
+      "name": "jsonc",
       "percent": 0.2
+    },
+    {
+      "name": "tsconfig",
+      "percent": 0.1
     },
     {
       "name": "html",
@@ -156,10 +160,6 @@
     },
     {
       "name": "git config",
-      "percent": 0.1
-    },
-    {
-      "name": "tsconfig",
       "percent": 0.1
     }
   ]
