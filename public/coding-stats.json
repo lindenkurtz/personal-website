@@ -53,11 +53,11 @@
       "percent": 0.6
     },
     {
-      "name": "jsonc",
+      "name": "plaintext",
       "percent": 0.3
     },
     {
-      "name": "plaintext",
+      "name": "jsonc",
       "percent": 0.3
     }
   ],
@@ -123,6 +123,10 @@
       "percent": 0.3
     },
     {
+      "name": "jsonc",
+      "percent": 0.2
+    },
+    {
       "name": "github-actions-workflow",
       "percent": 0.2
     },
@@ -131,8 +135,8 @@
       "percent": 0.2
     },
     {
-      "name": "jsonc",
-      "percent": 0.2
+      "name": "git config",
+      "percent": 0.1
     },
     {
       "name": "html",
@@ -140,10 +144,6 @@
     },
     {
       "name": "tsconfig",
-      "percent": 0.1
-    },
-    {
-      "name": "git config",
       "percent": 0.1
     }
   ]
