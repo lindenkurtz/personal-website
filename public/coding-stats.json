@@ -119,7 +119,7 @@
       "percent": 0.5
     },
     {
-      "name": "github-actions-workflow",
+      "name": "jsonc",
       "percent": 0.2
     },
     {
@@ -127,11 +127,11 @@
       "percent": 0.2
     },
     {
-      "name": "jsonc",
+      "name": "github-actions-workflow",
       "percent": 0.2
     },
     {
-      "name": "html",
+      "name": "tsconfig",
       "percent": 0.1
     },
     {
@@ -139,7 +139,7 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "html",
       "percent": 0.1
     }
   ]
