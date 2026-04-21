@@ -2,109 +2,101 @@
   "week": [
     {
       "name": "astro",
-      "percent": 21.2
+      "percent": 24.7
     },
     {
       "name": "jsx",
-      "percent": 19.8
-    },
-    {
-      "name": "wolframlanguage",
-      "percent": 13.1
-    },
-    {
-      "name": "javascript",
-      "percent": 13.1
-    },
-    {
-      "name": "python",
-      "percent": 8.6
+      "percent": 14.7
     },
     {
       "name": "zsh",
-      "percent": 6.4
+      "percent": 13.7
+    },
+    {
+      "name": "javascript",
+      "percent": 12.7
+    },
+    {
+      "name": "wolframlanguage",
+      "percent": 9.7
     },
     {
       "name": "mdx",
-      "percent": 5.6
+      "percent": 7
     },
     {
-      "name": "c++",
-      "percent": 3.8
+      "name": "python",
+      "percent": 5.7
     },
     {
       "name": "jupyter-notebook",
-      "percent": 3.2
-    },
-    {
-      "name": "typescript",
-      "percent": 1.6
+      "percent": 4
     },
     {
       "name": "markdown",
-      "percent": 1.1
+      "percent": 2.7
+    },
+    {
+      "name": "typescript",
+      "percent": 2
+    },
+    {
+      "name": "c++",
+      "percent": 1
     },
     {
       "name": "dotenv",
-      "percent": 0.8
+      "percent": 1
     },
     {
       "name": "json",
-      "percent": 0.5
+      "percent": 0.7
     },
     {
       "name": "go",
-      "percent": 0.5
-    },
-    {
-      "name": "plaintext",
-      "percent": 0.3
-    },
-    {
-      "name": "jsonc",
-      "percent": 0.3
+      "percent": 0.7
     }
   ],
   "alltime": [
     {
       "name": "javascript",
-      "percent": 37.3
+      "percent": 36.2
     },
     {
       "name": "astro",
-      "percent": 21.5
+      "percent": 20.8
     },
     {
       "name": "python",
-      "percent": 10.8
+      "percent": 10.5
     },
     {
       "name": "c++",
-      "percent": 7.7
+      "percent": 7.6
     },
     {
       "name": "jsx",
-      "percent": 6.1
+      "percent": 7.1
     },
     {
       "name": "wolframlanguage",
-      "percent": 3.9
-    },
-    {
-      "name": "mdx",
-      "percent": 2.4
+      "percent": 3.7
     },
     {
       "name": "zsh",
-      "percent": 1.9
+      "percent": 3.1
     },
     {
-      "name": "json",
-      "percent": 1.6
+      "name": "mdx",
+      "percent": 2.3
     },
     {
       "name": "markdown",
-      "percent": 1.4
+      "percent": 1.8
+    },
+    {
+      "name": "json",
+      "percent": 1.5
     },
     {
       "name": "css",
@@ -124,18 +116,18 @@
     },
     {
       "name": "dotenv",
-      "percent": 0.6
+      "percent": 0.5
     },
     {
       "name": "jsonc",
       "percent": 0.2
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.2
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.2
     },
     {
