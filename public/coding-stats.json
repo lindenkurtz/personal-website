@@ -115,11 +115,11 @@
       "percent": 0.5
     },
     {
-      "name": "html",
+      "name": "jsonc",
       "percent": 0.2
     },
     {
-      "name": "jsonc",
+      "name": "go",
       "percent": 0.2
     },
     {
@@ -127,7 +127,7 @@
       "percent": 0.2
     },
     {
-      "name": "go",
+      "name": "html",
       "percent": 0.2
     },
     {
