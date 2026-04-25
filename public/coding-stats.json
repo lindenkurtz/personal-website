@@ -1,56 +1,44 @@
 {
   "week": [
     {
-      "name": "astro",
-      "percent": 26.8
-    },
-    {
-      "name": "javascript",
-      "percent": 16.9
-    },
-    {
-      "name": "wolframlanguage",
-      "percent": 10.3
-    },
-    {
       "name": "jsx",
-      "percent": 9.2
+      "percent": 20.4
     },
     {
       "name": "c++",
-      "percent": 8.4
+      "percent": 18.8
     },
     {
-      "name": "mdx",
-      "percent": 7.7
+      "name": "wolframlanguage",
+      "percent": 18
+    },
+    {
+      "name": "javascript",
+      "percent": 15.5
     },
     {
       "name": "python",
-      "percent": 6.4
-    },
-    {
-      "name": "jupyter-notebook",
-      "percent": 4.8
+      "percent": 11
     },
     {
       "name": "markdown",
-      "percent": 4
-    },
-    {
-      "name": "typescript",
-      "percent": 2.2
+      "percent": 6.5
     },
     {
       "name": "json",
-      "percent": 1.8
+      "percent": 4.1
     },
     {
       "name": "dotenv",
-      "percent": 1.1
+      "percent": 2.4
+    },
+    {
+      "name": "jupyter-notebook",
+      "percent": 2.4
     },
     {
       "name": "html",
-      "percent": 0.4
+      "percent": 0.8
     }
   ],
   "alltime": [
@@ -111,11 +99,7 @@
       "percent": 0.5
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
-      "name": "go",
+      "name": "jsonc",
       "percent": 0.1
     },
     {
@@ -123,15 +107,19 @@
       "percent": 0.1
     },
     {
-      "name": "jsonc",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0.1
+    },
+    {
+      "name": "tsconfig",
       "percent": 0.1
     }
   ]
