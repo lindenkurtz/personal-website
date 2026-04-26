@@ -1,70 +1,70 @@
 {
   "week": [
     {
+      "name": "wolframlanguage",
+      "percent": 39.4
+    },
+    {
       "name": "jsx",
-      "percent": 20.4
+      "percent": 14.7
     },
     {
       "name": "c++",
-      "percent": 18.8
-    },
-    {
-      "name": "wolframlanguage",
-      "percent": 18
+      "percent": 13.5
     },
     {
       "name": "javascript",
-      "percent": 15.5
+      "percent": 11.2
     },
     {
       "name": "python",
-      "percent": 11
+      "percent": 9.4
     },
     {
       "name": "markdown",
-      "percent": 6.5
+      "percent": 4.7
     },
     {
       "name": "json",
-      "percent": 4.1
-    },
-    {
-      "name": "dotenv",
-      "percent": 2.4
+      "percent": 2.9
     },
     {
       "name": "jupyter-notebook",
-      "percent": 2.4
+      "percent": 1.8
+    },
+    {
+      "name": "dotenv",
+      "percent": 1.8
     },
     {
       "name": "html",
-      "percent": 0.8
+      "percent": 0.6
     }
   ],
   "alltime": [
     {
       "name": "javascript",
-      "percent": 36.6
+      "percent": 35.3
     },
     {
       "name": "astro",
-      "percent": 20.3
+      "percent": 19.6
     },
     {
       "name": "python",
-      "percent": 10.6
+      "percent": 10.4
     },
     {
       "name": "c++",
-      "percent": 8.8
-    },
-    {
-      "name": "jsx",
-      "percent": 6.9
+      "percent": 8.5
     },
     {
       "name": "wolframlanguage",
-      "percent": 5.3
+      "percent": 8.3
+    },
+    {
+      "name": "jsx",
+      "percent": 6.7
     },
     {
       "name": "mdx",
@@ -76,7 +76,7 @@
     },
     {
       "name": "json",
-      "percent": 1.9
+      "percent": 1.8
     },
     {
       "name": "css",
@@ -99,10 +99,6 @@
       "percent": 0.5
     },
     {
-      "name": "html",
-      "percent": 0.1
-    },
-    {
       "name": "jsonc",
       "percent": 0.1
     },
@@ -112,6 +108,10 @@
     },
     {
       "name": "github-actions-workflow",
+      "percent": 0.1
+    },
+    {
+      "name": "html",
       "percent": 0.1
     },
     {
