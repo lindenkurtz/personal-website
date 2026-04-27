@@ -29,11 +29,11 @@
       "percent": 2.6
     },
     {
-      "name": "jupyter-notebook",
+      "name": "dotenv",
       "percent": 1.6
     },
     {
-      "name": "dotenv",
+      "name": "jupyter-notebook",
       "percent": 1.6
     },
     {
@@ -99,19 +99,19 @@
       "percent": 0.5
     },
     {
-      "name": "html",
-      "percent": 0.1
-    },
-    {
       "name": "jsonc",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "html",
       "percent": 0.1
     },
     {
       "name": "github-actions-workflow",
+      "percent": 0.1
+    },
+    {
+      "name": "go",
       "percent": 0.1
     },
     {
