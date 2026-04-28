@@ -21,11 +21,11 @@
       "percent": 2.9
     },
     {
-      "name": "markdown",
+      "name": "jupyter-notebook",
       "percent": 1.7
     },
     {
-      "name": "jupyter-notebook",
+      "name": "markdown",
       "percent": 1.7
     },
     {
@@ -99,11 +99,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
