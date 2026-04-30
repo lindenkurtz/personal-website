@@ -71,11 +71,11 @@
       "percent": 0.5
     },
     {
-      "name": "html",
+      "name": "jsonc",
       "percent": 0.1
     },
     {
-      "name": "jsonc",
+      "name": "html",
       "percent": 0.1
     },
     {
