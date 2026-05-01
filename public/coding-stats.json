@@ -2,15 +2,11 @@
   "week": [
     {
       "name": "wolframlanguage",
-      "percent": 79.2
+      "percent": 85.1
     },
     {
       "name": "python",
-      "percent": 13.8
-    },
-    {
-      "name": "javascript",
-      "percent": 6.9
+      "percent": 14.9
     }
   ],
   "alltime": [
@@ -71,10 +67,6 @@
       "percent": 0.5
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "jsonc",
       "percent": 0.1
     },
@@ -87,11 +79,15 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
+      "name": "go",
       "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0.1
+    },
+    {
+      "name": "git config",
       "percent": 0.1
     }
   ]
