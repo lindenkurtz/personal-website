@@ -227,9 +227,10 @@ function renderSunburst(
   legendId: string,
   languages: LangStat[],
   ink: string,
-) {
+  pinnedColors?: Map<string, string>,
+) : Map<string, string> {
   const container = document.getElementById(chartId) as HTMLElement | null;
-  if (!container) return;
+  if (!container) return new Map();
   container.innerHTML = '';
 
   if (!languages?.length) {
@@ -237,7 +238,7 @@ function renderSunburst(
       <div style="display:flex;align-items:center;justify-content:center;height:100%;width:100%">
         <p style="text-align:center;font-size:13px;opacity:0.5;font-style:italic;">No activity recorded.</p>
       </div>`;
-    return;
+    return new Map();
   }
 
   const size   = Math.min(container.clientWidth, container.clientHeight, 256);
@@ -279,7 +280,8 @@ function renderSunburst(
       color = familyColor(fam);
     } else {
       const siblings = node.parent!.children! as ArcNode[];
-      color = languageColor(fam, siblings.indexOf(node), siblings.length);
+      const pinned = pinnedColors?.get(node.data.name.toLowerCase());
+      color = pinned ?? languageColor(fam, siblings.indexOf(node), siblings.length);
       nameColorMap.set(node.data.name.toLowerCase(), color);
     }
     nodeColorMap.set(node, color);
@@ -366,6 +368,7 @@ function renderSunburst(
 
   // ── Legend ────────────────────────────────────────────────────────────────
   renderLegend(legendId, languages, nameColorMap, ink);
+  return nameColorMap;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -396,8 +399,8 @@ async function initCharts() {
     const res  = await fetch('/coding-stats.json');
     const json = await res.json();
 
-    renderSunburst('wakaChartWeek',    'wakaLegendWeek',    groupSmall(json.week),    ink);
-    renderSunburst('wakaChartAllTime', 'wakaLegendAllTime', groupSmall(json.alltime), ink);
+    const allTimeColors = renderSunburst('wakaChartAllTime', 'wakaLegendAllTime', groupSmall(json.alltime), ink);
+    renderSunburst('wakaChartWeek', 'wakaLegendWeek', groupSmall(json.week), ink, allTimeColors);
   } catch (e) {
     console.error('WakaChart: failed to load stats', e);
   }
