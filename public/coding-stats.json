@@ -67,6 +67,14 @@
       "percent": 0.5
     },
     {
+      "name": "go",
+      "percent": 0.1
+    },
+    {
+      "name": "html",
+      "percent": 0.1
+    },
+    {
       "name": "jsonc",
       "percent": 0.1
     },
@@ -75,19 +83,11 @@
       "percent": 0.1
     },
     {
-      "name": "html",
-      "percent": 0.1
-    },
-    {
-      "name": "go",
+      "name": "tsconfig",
       "percent": 0.1
     },
     {
       "name": "git config",
-      "percent": 0.1
-    },
-    {
-      "name": "tsconfig",
       "percent": 0.1
     }
   ]
