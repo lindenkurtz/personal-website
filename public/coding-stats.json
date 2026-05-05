@@ -9,11 +9,11 @@
       "percent": 5.3
     },
     {
-      "name": "markdown",
+      "name": "javascript",
       "percent": 1.8
     },
     {
-      "name": "javascript",
+      "name": "markdown",
       "percent": 1.8
     }
   ],
@@ -75,19 +75,19 @@
       "percent": 0.4
     },
     {
-      "name": "html",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "html",
       "percent": 0.1
     },
     {
       "name": "jsonc",
+      "percent": 0.1
+    },
+    {
+      "name": "go",
       "percent": 0.1
     },
     {
