@@ -75,15 +75,15 @@
       "percent": 0.4
     },
     {
+      "name": "jsonc",
+      "percent": 0.1
+    },
+    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
       "name": "html",
-      "percent": 0.1
-    },
-    {
-      "name": "jsonc",
       "percent": 0.1
     },
     {
