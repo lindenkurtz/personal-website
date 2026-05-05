@@ -2,23 +2,19 @@
   "week": [
     {
       "name": "python",
-      "percent": 83.9
-    },
-    {
-      "name": "wolframlanguage",
-      "percent": 8.1
+      "percent": 91.2
     },
     {
       "name": "astro",
-      "percent": 4.8
-    },
-    {
-      "name": "javascript",
-      "percent": 1.6
+      "percent": 5.3
     },
     {
       "name": "markdown",
-      "percent": 1.6
+      "percent": 1.8
+    },
+    {
+      "name": "javascript",
+      "percent": 1.8
     }
   ],
   "alltime": [
@@ -79,15 +75,15 @@
       "percent": 0.4
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "html",
       "percent": 0.1
     },
     {
       "name": "github-actions-workflow",
+      "percent": 0.1
+    },
+    {
+      "name": "go",
       "percent": 0.1
     },
     {
