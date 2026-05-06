@@ -2,57 +2,61 @@
   "week": [
     {
       "name": "python",
-      "percent": 91.2
+      "percent": 94
     },
     {
       "name": "astro",
-      "percent": 5.3
+      "percent": 3
+    },
+    {
+      "name": "ignore",
+      "percent": 1
     },
     {
       "name": "javascript",
-      "percent": 1.8
+      "percent": 1
     },
     {
       "name": "markdown",
-      "percent": 1.8
+      "percent": 1
     }
   ],
   "alltime": [
     {
       "name": "javascript",
-      "percent": 31.2
-    },
-    {
-      "name": "astro",
-      "percent": 17.7
+      "percent": 29.3
     },
     {
       "name": "python",
-      "percent": 17.4
+      "percent": 22.5
+    },
+    {
+      "name": "astro",
+      "percent": 16.6
     },
     {
       "name": "wolframlanguage",
-      "percent": 10.3
+      "percent": 9.7
     },
     {
       "name": "c++",
-      "percent": 7.5
+      "percent": 7
     },
     {
       "name": "jsx",
-      "percent": 5.9
+      "percent": 5.5
     },
     {
       "name": "mdx",
-      "percent": 1.9
-    },
-    {
-      "name": "markdown",
       "percent": 1.8
     },
     {
+      "name": "markdown",
+      "percent": 1.7
+    },
+    {
       "name": "json",
-      "percent": 1.6
+      "percent": 1.5
     },
     {
       "name": "css",
@@ -64,7 +68,7 @@
     },
     {
       "name": "plaintext",
-      "percent": 0.9
+      "percent": 0.8
     },
     {
       "name": "typescript",
@@ -75,15 +79,19 @@
       "percent": 0.4
     },
     {
+      "name": "ignore",
+      "percent": 0.1
+    },
+    {
+      "name": "html",
+      "percent": 0.1
+    },
+    {
       "name": "jsonc",
       "percent": 0.1
     },
     {
       "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
-      "name": "html",
       "percent": 0.1
     },
     {
