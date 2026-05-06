@@ -2,18 +2,22 @@
   "week": [
     {
       "name": "python",
-      "percent": 94
+      "percent": 93.1
     },
     {
       "name": "astro",
       "percent": 3
     },
     {
-      "name": "ignore",
+      "name": "javascript",
       "percent": 1
     },
     {
-      "name": "javascript",
+      "name": "json",
+      "percent": 1
+    },
+    {
+      "name": "ignore",
       "percent": 1
     },
     {
@@ -24,11 +28,11 @@
   "alltime": [
     {
       "name": "javascript",
-      "percent": 29.3
+      "percent": 29.2
     },
     {
       "name": "python",
-      "percent": 22.5
+      "percent": 22.4
     },
     {
       "name": "astro",
@@ -56,7 +60,7 @@
     },
     {
       "name": "json",
-      "percent": 1.5
+      "percent": 1.6
     },
     {
       "name": "css",
@@ -87,15 +91,15 @@
       "percent": 0.1
     },
     {
-      "name": "jsonc",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
       "name": "go",
+      "percent": 0.1
+    },
+    {
+      "name": "jsonc",
       "percent": 0.1
     },
     {
