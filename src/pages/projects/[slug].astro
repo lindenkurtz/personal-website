@@ -1,6 +1,7 @@
 ---
 // Project detail page renders a single project entry from the Astro content collection.
 import { getCollection, render } from "astro:content";
+import CodeFeature from '../../components/CodeFeature.astro';
 import Layout from '../../layouts/Layout.astro' 
 
 // Generate a static path for every project entry so Astro can pre-render each detail page.
@@ -22,7 +23,7 @@ const { Content } = await render(entry);
         <h1 class="text-4xl font-bold text-primary-dark mb-8">{entry.data.title}</h1>
         <!-- Render the project body that comes from the Markdown/MDX project content file. -->
         <div class="prose">
-            <Content />
+            <Content components= {{ CodeFeature }} />
         </div>
     </section>
 </Layout>

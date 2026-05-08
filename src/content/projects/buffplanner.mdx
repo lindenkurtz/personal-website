@@ -5,4 +5,78 @@ thumbnail: "/images/projects/buffplanner.png"
 tags: ["React", "FastAPI", "Python"]
 order: 2
 date: "2026-03-15"
+github: "https://github.com/lindenkurtz/BuffPlanner"
 ---
+
+## A Hackathon in 24 Hours
+ 
+A few weeks before [HackCU](https://hackcu.org/) this past March, I was trying to map out my class schedule for next semester. I had a Google Sheet with my four-year plan, and every time I moved a course I had no idea if I'd just broken a prerequisite chain or dropped something my major required. It was tedious enough that I kept thinking about what a better tool would look like. So when the hackathon came around, I built one.
+ 
+BuffPlanner is a drag-and-drop four-year course planner. You can arrange courses across semesters, see your progress toward graduation requirements at a glance, and get flagged when something's missing a prerequisite or corequisite.
+ 
+{/*
+  📸 PHOTO: Use the screenshots from the README — they're already on GitHub
+  GitHub asset URLs:
+    - Four-year plan with major requirements + prereq checking + search bar:
+      https://github.com/user-attachments/assets/7832dee3-bcaf-4706-ab43-368feedd7319
+    - Simple functionality preview:
+      https://github.com/user-attachments/assets/9bbaa3bf-3222-4e28-98e9-58f40b3e7756
+    - Empty four-year plan:
+      https://github.com/user-attachments/assets/fd2aeb55-fd29-4c56-9c89-f721312da86d
+ 
+  Suggested placement: right here, maybe just the first screenshot to show the full UI
+*/}
+ 
+## How It Works
+ 
+The frontend is React; the backend is a FastAPI service that handles data queries and logic against a JSON course database. Courses are draggable between semester slots on the frontend, and on each change the backend checks the current plan against prerequisite and corequisite rules and returns any conflicts.
+ 
+My role was primarily the backend — API design, data modeling, and the prerequisite checking logic. My partner [Michael Santillan](https://github.com/PLACEHOLDER) handled most of the frontend and UI.
+ 
+## Featured Code
+ 
+{/*
+  💻 CODE FEATURE
+  Strong candidate: the prerequisite AND/OR logic evaluator in the FastAPI backend.
+  This is the most interesting algorithmic piece and has a clear "here's the problem,
+  here's how I thought about it" story.
+ 
+  <CodeFeature
+    title="Prerequisite logic with AND/OR nesting"
+    description="Prerequisites aren't always a flat list — a course might require
+    'MATH 2400 AND (APPM 2360 OR MATH 2130)'. I built a recursive evaluator that
+    parses nested AND/OR trees from the course data and checks them against the
+    student's current plan."
+  >
+  ```python
+  // paste snippet here
+  ```
+  </CodeFeature>
+*/}
+The most interesting technical piece was prerequisite checking. Prerequisites aren't just "you need class A before class B" — they're often nested conditionals. A course might require all of one set and any one of another: `MATH 2400 AND (APPM 2360 OR MATH 2130)`. I built a small evaluator that parses these AND/OR trees from the course data and checks them against whatever's in the student's current plan. Getting the logic to handle arbitrary nesting correctly, rather than just flat lists, was the part that took the most thought.
+ 
+## 24 Hours
+ 
+We started at the hackathon kickoff and submitted 24 hours later. A lot of that time was figuring out how to scope the project — what was achievable vs. what we wanted to build. We ended up with a working MVP: the core drag-and-drop planner, requirement tracking, and prereq checking all functional. The UI is rough in places, and the data layer is a JSON file rather than a proper database, but everything works.
+ 
+## What's Next
+ 
+The MVP is real software, just unfinished. The most meaningful improvements would be:
+ 
+- Pull course data directly from CU's catalog instead of a static JSON file
+- Support any major, minor, or certificate program (right now it's hardcoded to a specific plan)
+- Persistent storage so your plan saves between sessions
+- Mobile-friendly layout
+- Advising tools for multi-user collaboration
+Whether I'll get back to it, I'm not sure — but I think the core idea is genuinely useful, and the infrastructure is there to build on.
+ 
+{/*
+  🔗 DEMO: Video demo is already on YouTube. Embed or link here.
+  The README links: https://youtu.be/cpfwkWeAfbQ
+  Example embed: <iframe src="https://www.youtube.com/embed/cpfwkWeAfbQ" ... />
+  Or a simple link component if you have one.
+*/}
+ 
+---
+ 
+[GitHub →](https://github.com/lindenkurtz/BuffPlanner) · [Demo Video →](https://youtu.be/cpfwkWeAfbQ)

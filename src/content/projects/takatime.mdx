@@ -1,0 +1,76 @@
+---
+title: "TakaTime"
+description: "A self-hosted coding time tracker with a live dashboard on my website."
+thumbnail: "/images/projects/takatime.png"
+tags: ["Astro", "JavaScript", "WolframLanguage"]
+order: 1
+date: "2026-04-17"
+github: "https://github.com/lindenkurtz/TakaTime"
+---
+
+## Tracking the Time I Spend Coding
+ 
+I wanted to show what languages I was actually spending time in, live on my website. WakaTime does this, but historical data is paywalled — I wanted full access to my own data and the ability to shape it however I liked. After some searching, I found [TakaTime](https://github.com/Rtarun3606k/TakaTime), an open-source VS Code extension by Rtarun3606k that sends heartbeats to a personal MongoDB database. Close to what I needed, but not quite there.
+ 
+## How It Works
+ 
+The VS Code extension runs in the background and sends a heartbeat to a MongoDB Atlas database whenever you're actively coding — on keystrokes, file switches, and saves. Each heartbeat records the file, language, project, and a timestamp. A Go binary handles the upload side, and a Node.js pipeline queries the database and computes duration-weighted statistics by language. Those stats feed a D3 sunburst chart on my website, updated regularly.
+ 
+I also use Mathematica for data science coursework, which doesn't go through VS Code. So I built a separate heartbeat tracker directly into my Mathematica environment — hooking into `$Pre`, which runs on every cell evaluation — that sends heartbeats in the same format as the extension. That data flows into the same database and shows up in the same dashboard.
+ 
+{/*
+  📸 PHOTO: Screenshot of the D3 sunburst chart on your website dashboard
+  Suggested placement: right here, after this paragraph
+*/}
+ 
+## Featured Code
+
+<CodeFeature
+    title="Mathematica heartbeat hook via $Pre"
+    description="Mathematica has no VS Code extension, so I hooked into $Pre — a global
+    function that runs before every cell evaluation — to capture the current notebook path
+    and fire a heartbeat to the same MongoDB endpoint the VS Code extension uses."
+  >
+  ```WolframLanguage
+  // paste snippet here
+  ```
+</CodeFeature>
+ 
+{/*
+  💻 CODE FEATURE
+  Suggested candidates:
+    - The $Pre hook in Mathematica that captures notebook paths and sends heartbeats
+    - The heartbeat upload logic in the VS Code extension (the boolean-return + timer reset gate)
+    - The Node.js pipeline that computes duration-weighted language stats from MongoDB
+ 
+  Format to use once you have your CodeFeature component:
+ 
+  <CodeFeature
+    title="Mathematica heartbeat hook via $Pre"
+    description="Mathematica has no VS Code extension, so I hooked into $Pre — a global
+    function that runs before every cell evaluation — to capture the current notebook path
+    and fire a heartbeat to the same MongoDB endpoint the VS Code extension uses."
+  >
+  ```mathematica
+  // paste snippet here
+  ```
+  </CodeFeature>
+*/}
+## What Was Hard
+ 
+Two things stand out. The first was getting Mathematica tracked at all. I had to figure out how Mathematica initializes, find the right hook (`$Pre`), and then reverse-engineer the heartbeat format that the VS Code extension uses so everything landed in the database consistently. There wasn't much documentation for this specific use case — I mostly figured it out by reading the extension source.
+ 
+The second was contributing back to the upstream repo. When I submitted a PR to make the extension work with Jupyter notebooks, Rtarun pointed out that my fix worked for my setup but broke edge cases in the existing system. I had to go back, think about the codebase as a whole, handle cases I hadn't considered, and document everything clearly. It was the first time I really felt the difference between "code that works for me" and "code that's ready for other people."
+ 
+## Status
+ 
+The core tracker is working — the dashboard on my website shows a live language breakdown. What I still want to build: a fuller dashboard with project-level breakdowns, time on assignments vs. personal work, and trend views over time. The data is all there; it's just a matter of building the interface for it.
+ 
+{/*
+  🔗 DEMO: If/when you expose a public dashboard page, link or embed it here.
+  Example: <LiveDemo href="https://yoursite.com/dashboard" label="View my coding stats" />
+*/}
+ 
+---
+ 
+[GitHub →](https://github.com/PLACEHOLDER) · [Upstream TakaTime →](https://github.com/Rtarun3606k/TakaTime)

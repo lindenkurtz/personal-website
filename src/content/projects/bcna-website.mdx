@@ -5,4 +5,74 @@ thumbnail: "/images/projects/bcna-website.png"
 tags: ["React", "Figma", "Flask"]
 order: 0
 date: "2026-04-17"
+github: "https://github.com/PLACEHOLDER"
 ---
+
+## A Butterfly Database for Boulder County
+ 
+[Blueprint](https://cuboulder.blueprint.org/) is a club at CU Boulder that builds software for nonprofits. During my freshman year, I joined the BCNA team and helped build a wildlife database for the [Boulder County Nature Association](https://bcna.akhilasher.com/) — a searchable, filterable catalog of butterflies, dragonflies, and wildflowers along the Colorado Front Range.
+ 
+First semester I was a frontend developer, learning React by translating UI designs into components. Second semester, my team lead stepped down and chose me to take over. I was excited and a little terrified — I'd barely found my footing yet, and suddenly I was responsible for everything: client communication, Figma mockups, frontend, backend, team meetings, and deciding what was actually achievable before the semester ended.
+ 
+## How It Works
+ 
+The frontend is React with Tailwind CSS, using FlexSearch for fast client-side search and React Router for navigation. The backend is a Flask API backed by SQLite — one database per wildlife type (butterflies, dragonflies, wildflowers), auto-discovered at startup so adding a new dataset only requires dropping a folder in the right place. Images are stored and served by the backend alongside the species metadata.
+ 
+The app supports full-text search by name, filtering by taxonomic family and genus, and a detail view for each species with photos and descriptions.
+ 
+{/*
+  📸 PHOTO: Screenshot of the main database search/filter view (desktop or mobile)
+  Suggested placement: right here, after the overview paragraph
+ 
+  📸 PHOTO: Screenshot of a wildlife detail page (e.g., a butterfly species page)
+  Suggested placement: after the admin section below
+*/}
+ 
+## Featured Code
+ 
+{/*
+  💻 CODE FEATURE
+  Suggested candidates:
+    - The admin context / state overlay logic (adminContext.jsx) — how admin mode
+      layers over existing pages rather than routing to a separate panel
+    - The backend db_helpers.py auto-discovery logic that scans backend/data/ for datasets
+    - The WildlifeDB base component that all three DB pages extend
+ 
+  Format to use once you have your CodeFeature component:
+ 
+  <CodeFeature
+    title="Admin mode as a page-level state overlay"
+    description="Instead of routing to a separate admin panel, admin mode is a piece of
+    global state that surfaces edit controls directly on the public-facing pages. This
+    means you can edit a species description while seeing exactly what a visitor would see."
+  >
+  ```jsx
+  // paste snippet here
+  ```
+  </CodeFeature>
+*/}
+## The Part I'm Proudest Of
+ 
+The admin interface. Rather than building a separate admin panel, I designed it as a state layer over the existing pages. When you're logged in as an admin, edit controls appear inline — you can update a species description or swap out a photo while looking at exactly what a visitor would see. The changes are reflected immediately. Admin-mode elements use a distinct pink color throughout, so it's always visually clear when you're in an elevated state.
+ 
+I also handled the security side: password hashing, protected API routes, and a login flow that keeps credentials out of local storage. It was my first time thinking seriously about auth beyond just "does the password match."
+ 
+## The Part That Was Actually Hard
+ 
+Honestly, not the code. Right when I became team lead, almost everyone had moved on from the project — I was down to one other returning member. I spent the first few weeks of the semester essentially recruiting, talking to people in my classes and through mutual connections until I had a team of four.
+ 
+From there, the real challenge was time. We had a full feature list and a hard deadline at the end of the semester. I put a lot of effort into setting realistic timelines — not optimistic ones — and adjusting scope when it was clear something wasn't going to fit. Learning to make those calls was probably more valuable than anything I wrote in code.
+ 
+## Status
+ 
+The site is deployed and live at [bcna.akhilasher.com](https://bcna.akhilasher.com) (permanent domain coming). The database is populated and the client is actively using it. I'm no longer actively developing it, but the codebase is structured to make adding new wildlife datasets straightforward.
+ 
+{/*
+  🔗 DEMO: Consider embedding a short screen recording or GIF of the search/filter
+  interaction here, especially showing the admin overlay in action.
+  Example: <video src="/demos/bcna-demo.mp4" autoplay loop muted />
+*/}
+ 
+---
+ 
+[GitHub →](https://github.com/PLACEHOLDER) · [Live Site →](https://bcna.akhilasher.com)
