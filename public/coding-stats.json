@@ -6,18 +6,22 @@
     },
     {
       "name": "jupyter-notebook",
-      "percent": 14.8
+      "percent": 14.5
     },
     {
       "name": "mdx",
-      "percent": 2
+      "percent": 1.9
     },
     {
       "name": "markdown",
-      "percent": 1.5
+      "percent": 1.4
     },
     {
-      "name": "astro",
+      "name": "log",
+      "percent": 1
+    },
+    {
+      "name": "javascript",
       "percent": 1
     },
     {
@@ -25,15 +29,11 @@
       "percent": 1
     },
     {
-      "name": "javascript",
+      "name": "astro",
       "percent": 1
     },
     {
-      "name": "log",
-      "percent": 0.5
-    },
-    {
-      "name": "jsonc",
+      "name": "json",
       "percent": 0.5
     },
     {
@@ -41,22 +41,22 @@
       "percent": 0.5
     },
     {
-      "name": "json",
+      "name": "jsonc",
       "percent": 0.5
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 31.8
+      "percent": 32
     },
     {
       "name": "javascript",
-      "percent": 23.9
+      "percent": 23.8
     },
     {
       "name": "astro",
-      "percent": 13.7
+      "percent": 13.6
     },
     {
       "name": "wolframlanguage",
@@ -99,12 +99,16 @@
       "percent": 0.5
     },
     {
+      "name": "dotenv",
+      "percent": 0.3
+    },
+    {
       "name": "html",
       "percent": 0.3
     },
     {
-      "name": "dotenv",
-      "percent": 0.3
+      "name": "log",
+      "percent": 0.2
     },
     {
       "name": "jsonc",
@@ -112,10 +116,6 @@
     },
     {
       "name": "ignore",
-      "percent": 0.1
-    },
-    {
-      "name": "log",
       "percent": 0.1
     },
     {
@@ -127,11 +127,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
