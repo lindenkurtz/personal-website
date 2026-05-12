@@ -9,11 +9,11 @@
       "percent": 12.8
     },
     {
-      "name": "markdown",
+      "name": "jsonc",
       "percent": 3
     },
     {
-      "name": "jsonc",
+      "name": "markdown",
       "percent": 3
     },
     {
@@ -29,7 +29,7 @@
       "percent": 1.3
     },
     {
-      "name": "javascript",
+      "name": "log",
       "percent": 0.9
     },
     {
@@ -37,7 +37,7 @@
       "percent": 0.9
     },
     {
-      "name": "log",
+      "name": "javascript",
       "percent": 0.9
     },
     {
