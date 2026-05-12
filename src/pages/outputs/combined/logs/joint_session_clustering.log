@@ -1,0 +1,12 @@
+[linden] Loaded 169,746 plays across 1584 days (7074 artists, 19304 tracks)
+[gus] Loaded 108,660 plays across 1340 days (5671 artists, 14724 tracks)
+Combined corpus: 9,529 sessions across both users
+Vocabulary: 4,624 artists
+Session embedding matrix: (9526, 64)
+UMAP done.
+HDBSCAN: 124 clusters, 2491 noise points
+Saved joint_sessions_by_user.html
+Saved joint_sessions_by_cluster.html
+Saved joint_sessions_cluster_ownership.html
+
+joint_session_clustering.py complete

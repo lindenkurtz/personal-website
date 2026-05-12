@@ -1,0 +1,26 @@
+C:\Users\Linud\Documents\Coding\personal-data\spotify-data\scripts\spotify_utils.py:77: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat(frames, ignore_index=True)
+C:\Users\Linud\Documents\Coding\personal-data\spotify-data\scripts\spotify_utils.py:103: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  df["year_week"]      = df["ts"].dt.to_period("W")
+C:\Users\Linud\Documents\Coding\personal-data\spotify-data\scripts\spotify_utils.py:104: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  df["month"]          = df["ts"].dt.to_period("M")
+C:\Users\Linud\Documents\Coding\personal-data\spotify-data\scripts\spotify_utils.py:77: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat(frames, ignore_index=True)
+C:\Users\Linud\Documents\Coding\personal-data\spotify-data\scripts\spotify_utils.py:103: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  df["year_week"]      = df["ts"].dt.to_period("W")
+C:\Users\Linud\Documents\Coding\personal-data\spotify-data\scripts\spotify_utils.py:104: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  df["month"]          = df["ts"].dt.to_period("M")
+
+- linden ------------------------------
+[linden] Loaded 169,746 plays across 1584 days (7074 artists, 19304 tracks)
+   plays=169,746  hours=4,327.2  skip=49.3%
+   top artists : Eminem, Epic Mountain, Kanye West
+   top tracks  : The Real Slim Shady — Eminem
+✅  -> outputs\linden\summary.json
+
+- gus ---------------------------------
+[gus] Loaded 108,660 plays across 1340 days (5671 artists, 14724 tracks)
+   plays=108,660  hours=2,142.6  skip=63.7%
+   top artists : Epic Mountain, Lifeformed, Oklou
+   top tracks  : Redwood Colonnade — Lifeformed
+✅  -> outputs\gus\summary.json

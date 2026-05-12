@@ -1,0 +1,71 @@
+[gus] Loaded 108,660 plays across 1340 days (5671 artists, 14724 tracks)
+Loaded 40,907 streams | 2021-12-27 → 2026-05-08
+Total sessions:  4,519
+Avg session len: 9.1 tracks
+
+============================================================
+  ENTITY: TRACK
+============================================================
+Unique tracks: 8,179
+Sessions used:   3,099 (avg len 12.6)
+Trained on 1559 tracks
+Reducing 1559 vectors to 2D with UMAP...
+Saved → C:\Users\Linud\Documents\Coding\personal-data\spotify-data\outputs\gus\session_embeddings_track.html
+
+--- Track similarity examples ---
+  Most similar to: 'Giant Virus — Epic Mountain'
+    0.895  Asteroid Mining — Epic Mountain
+    0.877  UBI — Epic Mountain
+    0.876  The Fermi Paradox II — Epic Mountain
+    0.862  Meat — Epic Mountain
+    0.859  Electro Smog — Epic Mountain
+    0.858  Geoengineering — Epic Mountain
+    0.854  Climate Fix — Epic Mountain
+    0.853  Neutron Star — Epic Mountain
+    0.852  Crispr — Epic Mountain
+    0.852  Optimistic Nihilism — Epic Mountain
+  Most similar to: 'All I Need — Forester'
+    0.882  Origine — Else
+    0.870  Sunrise (feat. Madeline Megery) — Forester
+    0.839  Zanara — Mister Mockwell
+    0.836  Symphony — Forester
+    0.814  Thinking About You — Forester
+    0.814  GEISTERHAUS — lityway
+    0.806  It's Been So Long — The Living Tombstone
+    0.804  Breathless — Jerro
+    0.793  Chemicals — Forester
+    0.792  The Desert, I Run — Forester
+
+============================================================
+  ENTITY: ARTIST
+============================================================
+Unique artists: 2,935
+Sessions used:   3,099 (avg len 12.6)
+Trained on 847 artists
+Reducing 847 vectors to 2D with UMAP...
+Saved → C:\Users\Linud\Documents\Coding\personal-data\spotify-data\outputs\gus\session_embeddings_artist.html
+
+--- Artist similarity examples ---
+  Most similar to: 'Epic Mountain'
+    0.921  Paradox Interactive
+    0.761  Showhawk Duo
+    0.752  Peter McPoland
+    0.743  Astrofreq
+    0.726  Laura Shigihara
+    0.724  Eminem
+    0.698  Death Grips
+    0.689  Xzibit
+    0.689  Rayklin
+    0.677  Jean Dawson
+  Most similar to: 'Magdalena Bay'
+    0.767  Pearling
+    0.733  Bby Eco
+    0.730  Holliday Howe
+    0.706  umru
+    0.677  Peterparker69
+    0.657  galen tipton
+    0.652  Lavern
+    0.629  ESP
+    0.619  plastic pet
+    0.613  FREE JIMI
+

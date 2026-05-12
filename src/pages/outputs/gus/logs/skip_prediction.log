@@ -1,0 +1,14 @@
+[gus] Loaded 108,660 plays across 1340 days (5671 artists, 14724 tracks)
+Training set: 108,660 plays
+Skip rate: 63.7%
+              precision    recall  f1-score   support
+
+    Listened       0.78      0.74      0.76      7892
+     Skipped       0.85      0.88      0.87     13840
+
+    accuracy                           0.83     21732
+   macro avg       0.82      0.81      0.81     21732
+weighted avg       0.83      0.83      0.83     21732
+
+ROC-AUC: 0.890
+Saved -> C:\Users\Linud\Documents\Coding\personal-data\spotify-data\outputs\gus

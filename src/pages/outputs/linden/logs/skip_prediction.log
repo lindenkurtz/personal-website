@@ -1,0 +1,14 @@
+[linden] Loaded 169,746 plays across 1584 days (7074 artists, 19304 tracks)
+Training set: 169,746 plays
+Skip rate: 49.3%
+              precision    recall  f1-score   support
+
+    Listened       0.85      0.82      0.83     17215
+     Skipped       0.82      0.85      0.83     16735
+
+    accuracy                           0.83     33950
+   macro avg       0.83      0.83      0.83     33950
+weighted avg       0.83      0.83      0.83     33950
+
+ROC-AUC: 0.913
+Saved -> C:\Users\Linud\Documents\Coding\personal-data\spotify-data\outputs\linden

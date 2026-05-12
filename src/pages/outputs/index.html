@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Data Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #0d0d0d;
+  --surface:    #161616;
+  --surface-2:  #1e1e1e;
+  --border:     #2a2a2a;
+  --green:      #1DB954;
+  --green-dim:  #158a3e;
+  --gus:        #E1306C;
+  --gus-dim:    #a01f4b;
+  --text:       #f0f0f0;
+  --muted:      #888;
+  --muted-2:    #555;
+  --radius:     12px;
+  --radius-sm:  7px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── HEADER ── */
+.site-header {
+  background: linear-gradient(180deg, #0a1a0f 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 40px 40px;
+  text-align: center;
+}
+
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.header-logo svg { width: 36px; height: 36px; }
+
+.site-header h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.site-header h1 span { color: var(--green); }
+
+.site-header .subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.header-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.header-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-stat .val {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.header-stat .lbl {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.stat-divider {
+  width: 1px;
+  background: var(--border);
+  height: 40px;
+  align-self: center;
+}
+
+/* ── MAIN LAYOUT ── */
+.main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ── USER CARDS ── */
+.user-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 52px;
+}
+
+@media (max-width: 640px) { .user-cards { grid-template-columns: 1fr; } }
+
+.user-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.user-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700;
+  flex-shrink: 0;
+}
+
+.user-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.kpi {
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.kpi .kpi-val {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.kpi .kpi-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.user-artists-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.artist-pill {
+  display: inline-block;
+  background: var(--surface-2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin: 3px 3px 0 0;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.top-tracks-label {
+  font-size: 11px;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+
+.top-tracks { font-size: 12px; color: var(--muted); }
+.top-tracks span { display: block; padding: 2px 0; }
+
+/* ── SECTION ── */
+.section { margin-bottom: 52px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-icon { font-size: 20px; line-height: 1; }
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-count {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--surface-2);
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+/* ── CARD GRID ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+/* ── ANALYSIS CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card:hover {
+  border-color: #3a3a3a;
+  transform: translateY(-1px);
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+/* ── USER BUTTONS ── */
+.user-btns {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.user-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s, background 0.15s;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.user-btn:hover { opacity: 0.85; }
+
+.user-btn.linden {
+  background: rgba(29,185,84,0.12);
+  color: var(--green);
+  border: 1px solid rgba(29,185,84,0.3);
+}
+
+.user-btn.gus {
+  background: rgba(225,48,108,0.12);
+  color: var(--gus);
+  border: 1px solid rgba(225,48,108,0.3);
+}
+
+.user-btn.combined {
+  background: rgba(124,106,247,0.12);
+  color: #9d8ff7;
+  border: 1px solid rgba(124,106,247,0.3);
+}
+
+/* ── SUB-LINKS ── */
+.sub-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sub-link-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.sub-link-label {
+  font-size: 11px;
+  color: var(--muted-2);
+  min-width: 80px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.sub-link-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(5,5,15,0.88); backdrop-filter: blur(10px);
+}
+.lightbox.hidden { display: none; }
+
+.lb-container {
+  width: 92vw; height: 88vh;
+  background: var(--surface);
+  border: 1px solid #3a3a3a;
+  border-radius: var(--radius);
+  display: flex; flex-direction: column; overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+}
+
+.lb-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+
+.lb-breadcrumb {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12.5px; flex: 1; min-width: 0; overflow: hidden;
+}
+
+.lb-cat { color: var(--muted); white-space: nowrap; }
+.lb-sep { color: var(--muted-2); font-size: 11px; }
+.lb-user-badge { font-weight: 600; white-space: nowrap; }
+.lb-file-name { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.lb-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+.lb-btn {
+  padding: 5px 12px; border-radius: var(--radius-sm);
+  font-size: 12px; cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface-2); color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background 0.12s, border-color 0.12s;
+}
+.lb-btn:hover { background: #2a2a2a; border-color: #444; }
+.lb-btn:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+.lb-btn.compare-active { border-color: var(--green); color: var(--green); }
+
+.lb-body { flex: 1; min-height: 0; display: flex; }
+.lb-frame { width: 100%; height: 100%; border: none; background: #fff; }
+
+.lb-split { display: flex; width: 100%; height: 100%; }
+.lb-pane { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.lb-pane:first-child { border-right: 1px solid var(--border); }
+
+.pane-label {
+  display: flex; align-items: center; gap: 7px;
+  padding: 6px 12px; flex-shrink: 0;
+  font-size: 11px; border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.pane-label select {
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: 4px;
+  font-size: 11px; padding: 2px 6px; cursor: pointer;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.lb-footer {
+  display: flex; align-items: flex-start;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border); flex-shrink: 0; gap: 0.75rem;
+}
+
+.lb-counter {
+  font-size: 11px; color: var(--muted);
+  min-width: 48px; padding-top: 2px; flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.lb-desc { flex: 1; font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+.pip { display: inline-block; width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-logo">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="12" fill="#1DB954"/>
+      <path d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6-.15-.5.15-1 .6-1.15 3.55-1.05 9.4-.85 13.1 1.35.45.25.6.85.35 1.3-.25.35-.85.5-1.3.25zm-.1 2.8c-.25.4-.75.5-1.15.25-2.65-1.6-6.65-2.05-9.75-1.15-.4.1-.85-.1-.95-.5-.1-.4.1-.85.5-.95 3.55-1.05 8-.55 11.1 1.35.3.15.45.65.25 1zm-1.3 2.7c-.2.3-.6.4-.9.2-2.3-1.4-5.2-1.7-8.6-.95-.3.1-.6-.15-.7-.45s.15-.6.45-.7c3.75-.85 6.95-.5 9.55 1.1.3.15.4.6.2.8z" fill="white"/>
+    </svg>
+    <span style="font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;">Data Analysis</span>
+  </div>
+  <h1><span>Spotify</span> · Linden &amp; Gus</h1>
+  <p class="subtitle">Personal listening data</p>
+  <div class="header-stats">
+    <div class="header-stat">
+      <span class="val">278,406</span>
+      <span class="lbl">Total plays</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="header-stat">
+      <span class="val">6,469</span>
+      <span class="lbl">Total hours</span>
+    </div>
+    <div class="stat-divider"></div><div class="header-stat"><span class="val">4.5 yrs</span><span class="lbl">Time span</span></div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="user-cards">
+    <div class="user-card" style="border-top: 3px solid #1DB954">
+      <div class="user-card-header">
+        <div class="user-avatar" style="background:rgba(29,185,84,0.15);color:#1DB954;border:1.5px solid var(--green-dim)">L</div>
+        <div>
+          <div style="font-size:20px;font-weight:700">Linden</div>
+          <div style="font-size:12px;color:var(--muted)">2021-11-08 – 2026-05-07</div>
+        </div>
+      </div>
+      <div class="user-kpis">
+        <div class="kpi">
+          <div class="kpi-val" style="color:#1DB954">169,746</div>
+          <div class="kpi-lbl">Plays</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val" style="color:#1DB954">4,327</div>
+          <div class="kpi-lbl">Hours</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val" style="color:#1DB954">49.3%</div>
+          <div class="kpi-lbl">Skip rate</div>
+        </div>
+      </div>
+      <div class="user-artists-label">Top artists</div>
+      <div><span class="artist-pill">Eminem</span><span class="artist-pill">Epic Mountain</span><span class="artist-pill">Kanye West</span></div>
+      <div class="top-tracks-label">Top tracks</div>
+      <div class="top-tracks"><span>The Real Slim Shady — Eminem</span><span>m.A.A.d city — Kendrick Lamar</span><span>My Name Is — Eminem</span></div>
+    </div>
+    <div class="user-card" style="border-top: 3px solid #E1306C">
+      <div class="user-card-header">
+        <div class="user-avatar" style="background:rgba(225,48,108,0.15);color:#E1306C;border:1.5px solid var(--gus-dim)">G</div>
+        <div>
+          <div style="font-size:20px;font-weight:700">Gus</div>
+          <div style="font-size:12px;color:var(--muted)">2021-12-27 – 2026-05-08</div>
+        </div>
+      </div>
+      <div class="user-kpis">
+        <div class="kpi">
+          <div class="kpi-val" style="color:#E1306C">108,660</div>
+          <div class="kpi-lbl">Plays</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val" style="color:#E1306C">2,142</div>
+          <div class="kpi-lbl">Hours</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val" style="color:#E1306C">63.7%</div>
+          <div class="kpi-lbl">Skip rate</div>
+        </div>
+      </div>
+      <div class="user-artists-label">Top artists</div>
+      <div><span class="artist-pill">Epic Mountain</span><span class="artist-pill">Lifeformed</span><span class="artist-pill">Oklou</span></div>
+      <div class="top-tracks-label">Top tracks</div>
+      <div class="top-tracks"><span>Redwood Colonnade — Lifeformed</span><span>Neon Shore — Lifeformed</span><span>Memories of Memories — Lifeformed</span></div>
+    </div>
+  </div>
+
+  
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">🔗</span>
+      <span class="section-title">Taste &amp; Artists</span>
+      <span class="section-count">5 analyses</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Artist Co-listening Network</div>
+          <div class="card-desc">Artists grouped by which ones you tend to listen to together — community clusters reveal hidden genre and mood buckets in your taste.</div>
+          <div class="user-btns"><button class="user-btn linden" onclick='openLightbox("Artist Co-listening Network","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Artist Co-listening Network","gus",0)'>● Gus</button></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Joint Artist Space</div>
+          <div class="card-desc">Both users&#x27; artists projected into a single 2D space via Word2Vec + UMAP. Color indicates whose listening each artist belongs to — and where tastes overlap.</div>
+          <div class="user-btns"><button class="user-btn combined" onclick='openLightbox("Joint Artist Space","combined",0)'>● Combined</button></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Taste Overlap</div>
+          <div class="card-desc">Shared and unique artists and tracks with Jaccard similarity scores; a Venn breakdown and a convergence timeline showing when mutual tastes emerged.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Artists</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Taste Overlap","combined",0)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Shared tracks</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Taste Overlap","combined",1)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Timeline</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Taste Overlap","combined",2)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Venn</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Taste Overlap","combined",3)'>● Combined</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Taste Convergence</div>
+          <div class="card-desc">Month-by-month Jaccard similarity of each person&#x27;s rolling top-50 artists — revealing when tastes converged, diverged, or moved in parallel.</div>
+          <div class="user-btns"><button class="user-btn combined" onclick='openLightbox("Taste Convergence","combined",0)'>● Combined</button></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Influence &amp; Adoption</div>
+          <div class="card-desc">Who introduced the most shared artists first, and a waterfall of the 40 largest discovery-gap artists — quantifying who leads and who follows in shared taste.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Artists</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Influence & Adoption","combined",0)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Leaders</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Influence & Adoption","combined",1)'>● Combined</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">📅</span>
+      <span class="section-title">Listening Patterns</span>
+      <span class="section-count">6 analyses</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Listening DNA Heatmaps</div>
+          <div class="card-desc">Hour-of-day vs. time heatmaps at four resolutions — see how listening rhythms shift across years, seasons, weekdays, and hours.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Annual</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Listening DNA Heatmaps","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Listening DNA Heatmaps","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Daily</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Listening DNA Heatmaps","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Listening DNA Heatmaps","gus",1)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Seasonal</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Listening DNA Heatmaps","linden",2)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Listening DNA Heatmaps","gus",2)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Weekly avg</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Listening DNA Heatmaps","linden",3)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Listening DNA Heatmaps","gus",3)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Device Rhythm</div>
+          <div class="card-desc">Which device (phone, desktop, web) you used at each hour of day, day of week, and how that mix shifted over time — reveals commute and work patterns.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Day of week</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Device Rhythm","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Device Rhythm","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Hourly</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Device Rhythm","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Device Rhythm","gus",1)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Monthly</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Device Rhythm","linden",2)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Device Rhythm","gus",2)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Shuffle Behavior</div>
+          <div class="card-desc">How shuffle vs. intentional listening differs across skip rate, session length, artist diversity, and track completion — surfacing autopilot vs. deliberate listening modes.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Hourly</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Shuffle Behavior","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Shuffle Behavior","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Overview</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Shuffle Behavior","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Shuffle Behavior","gus",1)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Offline Listening</div>
+          <div class="card-desc">When and how much listening happened while offline — the hour-by-day heatmap is a surprisingly clear map of travel, flights, and commute habits.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Heatmap</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Offline Listening","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Offline Listening","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Timeline</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Offline Listening","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Offline Listening","gus",1)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Listening Velocity</div>
+          <div class="card-desc">Weekly and daily listening intensity with z-score markers flagging binge periods and listening droughts — your personal activity pulse over four years.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Daily</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Listening Velocity","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Listening Velocity","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Weekly</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Listening Velocity","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Listening Velocity","gus",1)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Listening Habits Comparison</div>
+          <div class="card-desc">Side-by-side radar fingerprint and heatmaps for hour-of-day, day-of-week, session length, and monthly listening volume — the clearest head-to-head.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Day of week</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Listening Habits Comparison","combined",0)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Hourly</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Listening Habits Comparison","combined",1)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Monthly</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Listening Habits Comparison","combined",2)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Radar</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Listening Habits Comparison","combined",3)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Sessions</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Listening Habits Comparison","combined",4)'>● Combined</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">🔍</span>
+      <span class="section-title">Discovery &amp; Eras</span>
+      <span class="section-count">2 analyses</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Discovery vs. Comfort Ratio</div>
+          <div class="card-desc">Five-chart breakdown of how listening splits between new-artist discovery, deep exploration, and comfort-zone retreats — tracked over the full four-year span.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Overview</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Discovery vs. Comfort Ratio","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Discovery vs. Comfort Ratio","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Rolling</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Discovery vs. Comfort Ratio","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Discovery vs. Comfort Ratio","gus",1)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Discovery</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Discovery vs. Comfort Ratio","linden",2)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Discovery vs. Comfort Ratio","gus",2)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Comfort</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Discovery vs. Comfort Ratio","linden",3)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Discovery vs. Comfort Ratio","gus",3)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">New / Deep</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Discovery vs. Comfort Ratio","linden",4)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Discovery vs. Comfort Ratio","gus",4)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Era Detector</div>
+          <div class="card-desc">Change-point analysis on artist listening to auto-detect distinct &quot;eras&quot; — periods dominated by a particular sound, artist, or mood cluster.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Heatmap</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Era Detector","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Era Detector","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Timeline</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Era Detector","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Era Detector","gus",1)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">🎵</span>
+      <span class="section-title">Sessions &amp; Vibes</span>
+      <span class="section-count">4 analyses</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Session Vibe Clustering</div>
+          <div class="card-desc">Sessions embedded via Word2Vec, reduced by UMAP, and clustered with HDBSCAN into &quot;vibes&quot; — then checked against time of day to see if your moods are time-linked.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">By hour</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Session Vibe Clustering","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Session Vibe Clustering","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Time series</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Session Vibe Clustering","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Session Vibe Clustering","gus",1)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">UMAP</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Session Vibe Clustering","linden",2)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Session Vibe Clustering","gus",2)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Session Embeddings</div>
+          <div class="card-desc">Artists and tracks projected into 2D space by their co-occurrence within sessions — nearby nodes are stylistically related without any genre labels.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Artists</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Session Embeddings","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Session Embeddings","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Tracks</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Session Embeddings","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Session Embeddings","gus",1)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Session Acts</div>
+          <div class="card-desc">The tracks you most often use to open and close listening sessions — your personal curtain-raisers and sign-offs, ranked by session frequency.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Closers</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Session Acts","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Session Acts","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Openers</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Session Acts","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Session Acts","gus",1)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Joint Session Clustering</div>
+          <div class="card-desc">Both users&#x27; sessions embedded in the same UMAP space to reveal whether listening moods overlap — clusters are labeled and coloured by user ownership.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">By cluster</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Joint Session Clustering","combined",0)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">By user</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Joint Session Clustering","combined",1)'>● Combined</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Ownership</span>
+              <div class="sub-link-btns"><button class="user-btn combined" onclick='openLightbox("Joint Session Clustering","combined",2)'>● Combined</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">⏭️</span>
+      <span class="section-title">Tracks &amp; Skips</span>
+      <span class="section-count">3 analyses</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Track Transition Graph</div>
+          <div class="card-desc">Which tracks lead to which within sessions. PageRank scores identify your &quot;rabbit hole starter&quot; tracks — the songs that kick off long listening chains.</div>
+          <div class="user-btns"><button class="user-btn linden" onclick='openLightbox("Track Transition Graph","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Track Transition Graph","gus",0)'>● Gus</button></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Skip Prediction</div>
+          <div class="card-desc">XGBoost classifier trained on context features (hour, shuffle, reason, familiarity) to predict whether a track will be skipped — feature importance charts reveal the true drivers of your skipping behaviour.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">By hour</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Skip Prediction","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Skip Prediction","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Confusion</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Skip Prediction","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Skip Prediction","gus",1)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Familiarity</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Skip Prediction","linden",2)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Skip Prediction","gus",2)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Importance</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Skip Prediction","linden",3)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Skip Prediction","gus",3)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Reason</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Skip Prediction","linden",4)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Skip Prediction","gus",4)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Shuffle</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Skip Prediction","linden",5)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Skip Prediction","gus",5)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Repeat Compulsion</div>
+          <div class="card-desc">Tracks replayed most obsessively and the gap-time distribution for top repeats — quantifying that &quot;one more time&quot; impulse across your entire history.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Gap dist.</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Repeat Compulsion","linden",0)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Repeat Compulsion","gus",0)'>● Gus</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Top tracks</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Repeat Compulsion","linden",1)'>● Linden</button><button class="user-btn gus" onclick='openLightbox("Repeat Compulsion","gus",1)'>● Gus</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">📋</span>
+      <span class="section-title">Playlist Analysis</span>
+      <span class="section-count">1 analysis</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Playlist Analysis</div>
+          <div class="card-desc">Playlists embedded using the same Word2Vec model trained on listening sessions — closer playlists share a sonic vibe. Includes a cosine similarity matrix and vocabulary coverage chart.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Coverage</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Playlist Analysis","linden",0)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Similarity</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Playlist Analysis","linden",1)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Space</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Playlist Analysis","linden",2)'>● Linden</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">🔎</span>
+      <span class="section-title">Search Behavior</span>
+      <span class="section-count">1 analysis</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Search Behavior</div>
+          <div class="card-desc">A four-chart breakdown of search patterns: exploration ratio over time, a search volume heatmap, search-to-listen conversion rate by platform, and top queries colored by intent.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Conversion</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Search Behavior","linden",0)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Exploration</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Search Behavior","linden",1)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Heatmap</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Search Behavior","linden",2)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Top queries</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Search Behavior","linden",3)'>● Linden</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">📚</span>
+      <span class="section-title">Library Curation</span>
+      <span class="section-count">1 analysis</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Library Curation</div>
+          <div class="card-desc">What you saved vs. what you actually played — reveals how much of your library sits unheard, identifies sleeper tracks, and tracks how your library grew over time.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Funnel</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Library Curation","linden",0)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Growth</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Library Curation","linden",1)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Scatter</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Library Curation","linden",2)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Sleepers</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Library Curation","linden",3)'>● Linden</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">🧠</span>
+      <span class="section-title">Spotify Inferences</span>
+      <span class="section-count">1 analysis</span>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Spotify Inferences</div>
+          <div class="card-desc">Spotify&#x27;s market segment labels for your account, grouped and visualized as a treemap and table. See how Spotify has profiled you across age, genre, behavior, and device categories.</div>
+          <div class="sub-links">
+            <div class="sub-link-row">
+              <span class="sub-link-label">Table</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Spotify Inferences","linden",0)'>● Linden</button></div>
+            </div>
+            <div class="sub-link-row">
+              <span class="sub-link-label">Treemap</span>
+              <div class="sub-link-btns"><button class="user-btn linden" onclick='openLightbox("Spotify Inferences","linden",1)'>● Linden</button></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Generated from Spotify GDPR data &nbsp;·&nbsp; May 11, 2026
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox hidden">
+  <div class="lb-container">
+    <div class="lb-header">
+      <div class="lb-breadcrumb">
+        <span id="lb-cat" class="lb-cat"></span>
+        <span class="lb-sep">›</span>
+        <span id="lb-user-badge" class="lb-user-badge"></span>
+        <span class="lb-sep">›</span>
+        <span id="lb-file-name" class="lb-file-name"></span>
+      </div>
+      <div class="lb-actions">
+        <button id="lb-prev" class="lb-btn" onclick="navigate(-1)">← Prev</button>
+        <span id="lb-counter" class="lb-counter"></span>
+        <button id="lb-next" class="lb-btn" onclick="navigate(1)">Next →</button>
+        <button id="lb-compare-btn" class="lb-btn" onclick="toggleCompare()">&#8862; Compare</button>
+        <button class="lb-btn" onclick="closeLightbox()">✕</button>
+      </div>
+    </div>
+    <div id="lb-body" class="lb-body"></div>
+    <div class="lb-footer">
+      <span id="lb-counter" class="lb-counter"></span>
+      <span id="lb-desc" class="lb-desc"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+const CATALOG       = {"Era Detector": {"linden": [{"file": "linden/era_detector_heatmap.html", "name": "Era Heatmap", "label": "Heatmap", "desc": "Artist listening intensity displayed as a time × artist heatmap, with each row an artist and each column a time window. Bright horizontal bands mark eras of concentrated focus; fading rows show artists you phased out of rotation. Reading column by column reveals which artists were dominating at any given moment."}, {"file": "linden/era_detector_timeline.html", "name": "Era Timeline", "label": "Timeline", "desc": "Horizontal timeline of automatically detected listening eras, each representing a sustained period of focus on a dominant artist or cluster of artists. The detection algorithm uses velocity and temporal continuity to identify genuine phases rather than one-off listens or noise. Overlapping eras show periods of split attention; isolated eras mark the times one artist truly dominated."}], "gus": [{"file": "gus/era_detector_heatmap.html", "name": "Era Heatmap", "label": "Heatmap", "desc": "Artist listening intensity displayed as a time × artist heatmap, with each row an artist and each column a time window. Bright horizontal bands mark eras of concentrated focus; fading rows show artists you phased out of rotation. Reading column by column reveals which artists were dominating at any given moment."}, {"file": "gus/era_detector_timeline.html", "name": "Era Timeline", "label": "Timeline", "desc": "Horizontal timeline of automatically detected listening eras, each representing a sustained period of focus on a dominant artist or cluster of artists. The detection algorithm uses velocity and temporal continuity to identify genuine phases rather than one-off listens or noise. Overlapping eras show periods of split attention; isolated eras mark the times one artist truly dominated."}], "combined": []}, "Repeat Compulsion": {"linden": [{"file": "linden/repeat_compulsion_gap.html", "name": "Repeat Gaps", "label": "Gap dist.", "desc": "For your most compulsively repeated tracks, the full distribution of time gaps between consecutive listens. A tight, short-gap distribution confirms a true replay obsession — you kept coming back the same day or within hours. A wider distribution suggests a beloved track you return to often but not compulsively."}, {"file": "linden/repeat_compulsion_tracks.html", "name": "Most Repeated Tracks", "label": "Top tracks", "desc": "Tracks you return to most rapidly and repeatedly — ranked by a compulsion score combining replay frequency and the shortness of the gap between listens. These are the songs you couldn't stop playing: listened to, then played again within hours or even minutes. The ranking captures genuine obsessive replay, not just overall play count."}], "gus": [{"file": "gus/repeat_compulsion_gap.html", "name": "Repeat Gaps", "label": "Gap dist.", "desc": "For your most compulsively repeated tracks, the full distribution of time gaps between consecutive listens. A tight, short-gap distribution confirms a true replay obsession — you kept coming back the same day or within hours. A wider distribution suggests a beloved track you return to often but not compulsively."}, {"file": "gus/repeat_compulsion_tracks.html", "name": "Most Repeated Tracks", "label": "Top tracks", "desc": "Tracks you return to most rapidly and repeatedly — ranked by a compulsion score combining replay frequency and the shortness of the gap between listens. These are the songs you couldn't stop playing: listened to, then played again within hours or even minutes. The ranking captures genuine obsessive replay, not just overall play count."}], "combined": []}, "Session Acts": {"linden": [{"file": "linden/session_acts_closers.html", "name": "Session Closers", "label": "Closers", "desc": "Tracks that most often end a listening session, appearing as the last play before a long silence. Session-closing tracks may be natural wind-downs, favorite send-offs, or simply the song playing when you got distracted and stopped. A track that consistently closes sessions despite not being a frequent play is a reliable signal of a deliberate listening ritual."}, {"file": "linden/session_acts_openers.html", "name": "Session Openers", "label": "Openers", "desc": "Tracks that most frequently appear at the very start of a listening session, ranked by opener count. These tracks act as musical door-openers — they signal the beginning of an intentional listening block and set the tone for what follows. Consistent openers reveal whether you have habitual 'starting point' tracks you return to when you sit down to listen."}], "gus": [{"file": "gus/session_acts_closers.html", "name": "Session Closers", "label": "Closers", "desc": "Tracks that most often end a listening session, appearing as the last play before a long silence. Session-closing tracks may be natural wind-downs, favorite send-offs, or simply the song playing when you got distracted and stopped. A track that consistently closes sessions despite not being a frequent play is a reliable signal of a deliberate listening ritual."}, {"file": "gus/session_acts_openers.html", "name": "Session Openers", "label": "Openers", "desc": "Tracks that most frequently appear at the very start of a listening session, ranked by opener count. These tracks act as musical door-openers — they signal the beginning of an intentional listening block and set the tone for what follows. Consistent openers reveal whether you have habitual 'starting point' tracks you return to when you sit down to listen."}], "combined": []}, "Joint Artist Space": {"linden": [], "gus": [], "combined": [{"file": "combined/joint_artist_space.html", "name": "Shared Artist Space", "label": "Shared Artist Space", "desc": "Both listeners' full artist catalogs projected into a shared 2D embedding space using Word2Vec trained on session co-occurrence. Artists that appear together in sessions cluster nearby; color indicates which listener plays them more. Overlapping clusters are common ground; isolated pockets are one person's private musical territory."}]}, "Library Curation": {"linden": [{"file": "linden/account/library_curation_funnel.html", "name": "Curation Funnel", "label": "Funnel", "desc": "Funnel from total saved tracks down to active (≥5 plays), sleeper (1–4 plays), and unplayed (0 plays). A large unplayed section reveals aspirational saving — you collect tracks you never return to. A deep active tier means your library reflects your actual listening taste closely."}, {"file": "linden/account/library_curation_growth.html", "name": "Library Growth", "label": "Growth", "desc": "Cumulative count of saved tracks over time, showing how your library has grown since the first save date. Steep periods of accumulation often coincide with new musical phases or heavy discovery periods. Flat stretches show when you stopped saving actively — possibly listening from memory rather than building a collection."}, {"file": "linden/account/library_curation_scatter.html", "name": "Save Rate Scatter", "label": "Scatter", "desc": "One point per artist with 3+ saved tracks. X-axis is total play count; Y-axis is save rate (saved tracks / distinct tracks played). Artists in the top-left are heavily curated but rarely played — your musical wishlist. Bottom-right artists are played constantly but rarely saved — your guilty pleasures or background staples."}, {"file": "linden/account/library_curation_sleepers.html", "name": "Sleeper Tracks", "label": "Sleepers", "desc": "Saved tracks with 1–4 plays, sorted by days since they were saved. Long-sleeping tracks were added with intention but have sat untouched — candidates for rediscovery or a library cleanup. Short-sleeping tracks are recent saves you haven't had time to explore yet."}], "gus": [], "combined": []}, "Device Rhythm": {"linden": [{"file": "linden/device_rhythm_dow.html", "name": "Devices by Weekday", "label": "Day of week", "desc": "Device usage breakdown by day of the week, showing how your platform mix changes between weekdays and weekends. A shift toward home speakers or desktop on weekends, vs. phone dominance on weekdays, captures the difference in listening context and mobility."}, {"file": "linden/device_rhythm_hourly.html", "name": "Devices by Hour", "label": "Hourly", "desc": "Stacked chart showing which devices — phone, desktop, smart speaker, etc. — you use at each hour of the day. Platform shifts between hours reveal the context of listening: phone-dominant mornings suggest commutes, desktop-heavy afternoons suggest work, speaker-heavy evenings suggest home relaxation."}, {"file": "linden/device_rhythm_monthly.html", "name": "Platform Trends", "label": "Monthly", "desc": "How your mix of streaming platforms and devices has shifted month by month over time. A rising platform line may reflect a new device purchase, a subscription change, or a lifestyle shift. Sudden transitions are often the clearest signal — a new phone, a new job, a move."}], "gus": [{"file": "gus/device_rhythm_dow.html", "name": "Devices by Weekday", "label": "Day of week", "desc": "Device usage breakdown by day of the week, showing how your platform mix changes between weekdays and weekends. A shift toward home speakers or desktop on weekends, vs. phone dominance on weekdays, captures the difference in listening context and mobility."}, {"file": "gus/device_rhythm_hourly.html", "name": "Devices by Hour", "label": "Hourly", "desc": "Stacked chart showing which devices — phone, desktop, smart speaker, etc. — you use at each hour of the day. Platform shifts between hours reveal the context of listening: phone-dominant mornings suggest commutes, desktop-heavy afternoons suggest work, speaker-heavy evenings suggest home relaxation."}, {"file": "gus/device_rhythm_monthly.html", "name": "Platform Trends", "label": "Monthly", "desc": "How your mix of streaming platforms and devices has shifted month by month over time. A rising platform line may reflect a new device purchase, a subscription change, or a lifestyle shift. Sudden transitions are often the clearest signal — a new phone, a new job, a move."}], "combined": []}, "Listening DNA Heatmaps": {"linden": [{"file": "linden/listening_dna_annual.html", "name": "Annual Heatmap", "label": "Annual", "desc": "Full-year calendar heatmap where each cell is a single day and color intensity encodes total listening time. Streaks show periods of sustained daily engagement; white gaps are listening-free stretches. Side-by-side years reveal whether seasonal patterns — summer peaks, winter slumps — repeat consistently."}, {"file": "linden/listening_dna_daily.html", "name": "Daily Heatmap", "label": "Daily", "desc": "Hour-of-day vs. day-of-week heatmap aggregated across all recorded days, showing when listening most consistently occurs. The brightest cells are your habitual listening windows; dark cells are reliably quiet times. This is the most compressed summary of your listening schedule across the entire dataset."}, {"file": "linden/listening_dna_seasonal.html", "name": "Seasonal Heatmap", "label": "Seasonal", "desc": "Listening intensity averaged by season and plotted across multiple years, isolating recurring seasonal rhythms from one-off events. Seasons that consistently spike or dip reveal how life patterns — school terms, holidays, summer habits — shape listening. Year-over-year consistency confirms a true seasonal pattern vs. a coincidental one."}, {"file": "linden/listening_dna_weekly_avg.html", "name": "Weekly Average", "label": "Weekly avg", "desc": "Average listening intensity for each hour of each day of the week, computed across the full dataset. A reliable map of your habitual weekly listening schedule, with noise smoothed out across many weeks. The grid makes it easy to read off your peak listening windows at a glance."}], "gus": [{"file": "gus/listening_dna_annual.html", "name": "Annual Heatmap", "label": "Annual", "desc": "Full-year calendar heatmap where each cell is a single day and color intensity encodes total listening time. Streaks show periods of sustained daily engagement; white gaps are listening-free stretches. Side-by-side years reveal whether seasonal patterns — summer peaks, winter slumps — repeat consistently."}, {"file": "gus/listening_dna_daily.html", "name": "Daily Heatmap", "label": "Daily", "desc": "Hour-of-day vs. day-of-week heatmap aggregated across all recorded days, showing when listening most consistently occurs. The brightest cells are your habitual listening windows; dark cells are reliably quiet times. This is the most compressed summary of your listening schedule across the entire dataset."}, {"file": "gus/listening_dna_seasonal.html", "name": "Seasonal Heatmap", "label": "Seasonal", "desc": "Listening intensity averaged by season and plotted across multiple years, isolating recurring seasonal rhythms from one-off events. Seasons that consistently spike or dip reveal how life patterns — school terms, holidays, summer habits — shape listening. Year-over-year consistency confirms a true seasonal pattern vs. a coincidental one."}, {"file": "gus/listening_dna_weekly_avg.html", "name": "Weekly Average", "label": "Weekly avg", "desc": "Average listening intensity for each hour of each day of the week, computed across the full dataset. A reliable map of your habitual weekly listening schedule, with noise smoothed out across many weeks. The grid makes it easy to read off your peak listening windows at a glance."}], "combined": []}, "Track Transition Graph": {"linden": [{"file": "linden/track_transition_graph.html", "name": "Transition Graph", "label": "Transition Graph", "desc": "Directed graph where an edge from track A to track B means B frequently follows A within the same listening session. Edge weight reflects transition frequency; the layout clusters tracks that form natural listening sequences. Dense local clusters reveal the track chains you habitually listen through; isolated nodes are tracks you rarely combine with anything else."}], "gus": [{"file": "gus/track_transition_graph.html", "name": "Transition Graph", "label": "Transition Graph", "desc": "Directed graph where an edge from track A to track B means B frequently follows A within the same listening session. Edge weight reflects transition frequency; the layout clusters tracks that form natural listening sequences. Dense local clusters reveal the track chains you habitually listen through; isolated nodes are tracks you rarely combine with anything else."}], "combined": []}, "Taste Overlap": {"linden": [], "gus": [], "combined": [{"file": "combined/taste_overlap_artists.html", "name": "Shared Artists", "label": "Artists", "desc": "Bar chart of the top artists both listeners share, with each bar split by individual play count. Height reflects total shared engagement; the proportion within each bar shows who leans into the artist more. The top entries are the true anchors of your common musical ground."}, {"file": "combined/taste_overlap_shared_tracks.html", "name": "Shared Tracks", "label": "Shared tracks", "desc": "All tracks that both listeners have played at least once, ranked by combined play count. Each bar is split by listener to reveal individual engagement with shared material. Tracks near the top represent the most genuinely mutual listening experiences in the dataset."}, {"file": "combined/taste_overlap_timeline.html", "name": "Overlap Over Time", "label": "Timeline", "desc": "Rolling proportion of shared artists between both listeners, plotted over time. Peaks mark periods of convergent taste — when both people were gravitating toward the same music. Valleys reveal phases where each listener's catalog diverged into separate territory."}, {"file": "combined/taste_overlap_venn.html", "name": "Venn Diagram", "label": "Venn", "desc": "Venn diagram quantifying the split between artists and tracks exclusive to one listener vs. shared by both. The overlap area is your common musical foundation; the exclusive regions reveal each person's distinct taste identity. A large overlap relative to the exclusive regions signals strong taste alignment."}]}, "Session Embeddings": {"linden": [{"file": "linden/session_embeddings_artist.html", "name": "Colored by Artist", "label": "Artists", "desc": "Personal session embedding space projected to 2D via UMAP, with each point representing one session colored by its dominant artist. Nearby sessions share a musical character learned from Word2Vec co-occurrence; color clusters reveal which artists anchor distinct listening contexts. An artist whose sessions cluster tightly is listened to in a very consistent, predictable setting."}, {"file": "linden/session_embeddings_track.html", "name": "Colored by Track", "label": "Tracks", "desc": "Same UMAP projection of sessions as the artist view, now colored by the dominant track rather than artist. Track-level coloring reveals whether individual tracks define their own distinct listening contexts, or whether they appear interchangeably within artist-level clusters. Tight single-track clusters indicate songs you return to in very specific, habitual listening contexts."}], "gus": [{"file": "gus/session_embeddings_artist.html", "name": "Colored by Artist", "label": "Artists", "desc": "Personal session embedding space projected to 2D via UMAP, with each point representing one session colored by its dominant artist. Nearby sessions share a musical character learned from Word2Vec co-occurrence; color clusters reveal which artists anchor distinct listening contexts. An artist whose sessions cluster tightly is listened to in a very consistent, predictable setting."}, {"file": "gus/session_embeddings_track.html", "name": "Colored by Track", "label": "Tracks", "desc": "Same UMAP projection of sessions as the artist view, now colored by the dominant track rather than artist. Track-level coloring reveals whether individual tracks define their own distinct listening contexts, or whether they appear interchangeably within artist-level clusters. Tight single-track clusters indicate songs you return to in very specific, habitual listening contexts."}], "combined": []}, "Artist Co-listening Network": {"linden": [{"file": "linden/artist_colistening_network.html", "name": "Co-listening Network", "label": "Co-listening Network", "desc": "Force-directed graph where nodes are artists and edges connect artists that appeared in the same listening session. Edge weight reflects co-occurrence frequency — thicker, shorter edges mean tighter musical pairing. Clusters reveal your sonic neighborhoods: genre bubbles, crossover bridges, and the outlier artists that don't fit anywhere."}], "gus": [{"file": "gus/artist_colistening_network.html", "name": "Co-listening Network", "label": "Co-listening Network", "desc": "Force-directed graph where nodes are artists and edges connect artists that appeared in the same listening session. Edge weight reflects co-occurrence frequency — thicker, shorter edges mean tighter musical pairing. Clusters reveal your sonic neighborhoods: genre bubbles, crossover bridges, and the outlier artists that don't fit anywhere."}], "combined": []}, "Spotify Inferences": {"linden": [{"file": "linden/account/inferences_audit_summary.html", "name": "Inferences Table", "label": "Table", "desc": "Full sorted table of every inference Spotify has assigned to your account, with category labels. Scan the list to see how Spotify has profiled your listening, demographics, and device usage. Cross-reference with your actual listening data to see which labels are accurate and which may be surprising."}, {"file": "linden/account/inferences_audit_treemap.html", "name": "Inferences Treemap", "label": "Treemap", "desc": "Treemap of all Spotify market-segment inferences for your account, grouped into categories: age, genre, behavior, device, and other. Each leaf is one inference string; category blocks are color-coded. Larger category blocks contain more segment labels — they're the dimensions Spotify has most data on for your account."}], "gus": [], "combined": []}, "Listening Velocity": {"linden": [{"file": "linden/listening_velocity_daily.html", "name": "Daily Rolling Avg", "label": "Daily", "desc": "Daily play count with a 30-day rolling average smoothed overlay, combining raw daily detail with trend clarity. The rolling average strips out day-to-day noise to reveal sustained rises and falls in listening engagement. Large spikes above the rolling line are one-off binge sessions; consistent separation indicates a true habit change."}, {"file": "linden/listening_velocity_weekly.html", "name": "Weekly Pace", "label": "Weekly", "desc": "Weekly total listening hours plotted as a continuous line with a z-score overlay that flags statistically significant binge weeks and drought weeks. Binge markers (red) highlight weeks of unusually heavy listening; drought markers (blue) flag unusually low engagement. The pattern of anomalies reveals how stable vs. volatile your listening habit is over the full period."}], "gus": [{"file": "gus/listening_velocity_daily.html", "name": "Daily Rolling Avg", "label": "Daily", "desc": "Daily play count with a 30-day rolling average smoothed overlay, combining raw daily detail with trend clarity. The rolling average strips out day-to-day noise to reveal sustained rises and falls in listening engagement. Large spikes above the rolling line are one-off binge sessions; consistent separation indicates a true habit change."}, {"file": "gus/listening_velocity_weekly.html", "name": "Weekly Pace", "label": "Weekly", "desc": "Weekly total listening hours plotted as a continuous line with a z-score overlay that flags statistically significant binge weeks and drought weeks. Binge markers (red) highlight weeks of unusually heavy listening; drought markers (blue) flag unusually low engagement. The pattern of anomalies reveals how stable vs. volatile your listening habit is over the full period."}], "combined": []}, "Session Vibe Clustering": {"linden": [{"file": "linden/session_vibe_clustering_hour.html", "name": "Vibes by Hour", "label": "By hour", "desc": "Distribution of vibe clusters by hour of the day — a mood clock showing which listening vibes dominate mornings, afternoons, evenings, and nights. If certain clusters appear only at specific hours, those vibes are tied to particular daily contexts. A flat distribution across hours suggests that vibe is context-independent."}, {"file": "linden/session_vibe_clustering_timeseries.html", "name": "Vibes Over Time", "label": "Time series", "desc": "How the balance of vibe clusters shifts week by week and month by month over the full dataset. Rising cluster lines show vibes gaining dominance in your listening; falling lines show moods you've moved on from. Sharp cluster transitions often coincide with new album releases, life changes, or seasonal mood shifts."}, {"file": "linden/session_vibe_clustering_umap.html", "name": "UMAP Clusters", "label": "UMAP", "desc": "UMAP scatter plot of sessions with colors assigned by HDBSCAN density-based clustering. Each color is a recurring vibe cluster — a mood or genre combination the algorithm found self-consistent across many sessions. Grey points are noise sessions that didn't fit cleanly into any cluster."}], "gus": [{"file": "gus/session_vibe_clustering_hour.html", "name": "Vibes by Hour", "label": "By hour", "desc": "Distribution of vibe clusters by hour of the day — a mood clock showing which listening vibes dominate mornings, afternoons, evenings, and nights. If certain clusters appear only at specific hours, those vibes are tied to particular daily contexts. A flat distribution across hours suggests that vibe is context-independent."}, {"file": "gus/session_vibe_clustering_timeseries.html", "name": "Vibes Over Time", "label": "Time series", "desc": "How the balance of vibe clusters shifts week by week and month by month over the full dataset. Rising cluster lines show vibes gaining dominance in your listening; falling lines show moods you've moved on from. Sharp cluster transitions often coincide with new album releases, life changes, or seasonal mood shifts."}, {"file": "gus/session_vibe_clustering_umap.html", "name": "UMAP Clusters", "label": "UMAP", "desc": "UMAP scatter plot of sessions with colors assigned by HDBSCAN density-based clustering. Each color is a recurring vibe cluster — a mood or genre combination the algorithm found self-consistent across many sessions. Grey points are noise sessions that didn't fit cleanly into any cluster."}], "combined": []}, "Skip Prediction": {"linden": [{"file": "linden/skip_prediction_by_hour.html", "name": "Skip Rate by Hour", "label": "By hour", "desc": "Skip rate broken down by hour of the day, revealing when you're most and least patient with the music playing. Peak skip hours often correspond to distracted or transitional listening contexts — commute windows, work hours, or background listening. Low skip hours indicate focused, deliberate listening where you're more likely to follow through on each track."}, {"file": "linden/skip_prediction_confusion_matrix.html", "name": "Confusion Matrix", "label": "Confusion", "desc": "Confusion matrix showing the skip classifier's predicted outcomes vs. the actual ground truth across the test set. The diagonal cells (true positives and true negatives) show correct predictions; off-diagonal cells reveal where the model struggles. High false-negative rates mean skips the model missed; high false-positive rates mean plays it incorrectly predicted as skips."}, {"file": "linden/skip_prediction_familiarity.html", "name": "Familiarity Effect", "label": "Familiarity", "desc": "Skip likelihood plotted as a function of track familiarity, measured by the number of prior plays at listen time. First listens typically have high skip rates; the curve shows how quickly a track 'earns' the right to be kept. A steep drop early means you decide fast; a slow decline means new tracks take many listens to feel comfortable."}, {"file": "linden/skip_prediction_importance.html", "name": "Feature Importance", "label": "Importance", "desc": "Feature importance chart from a trained ML skip prediction classifier (XGBoost), showing which signals the model found most predictive of whether you'll skip a track. Top features typically include time of day, track familiarity, shuffle mode, and artist recency. The relative bar heights reveal what your skipping behavior is actually driven by."}, {"file": "linden/skip_prediction_reason.html", "name": "Skip Reasons", "label": "Reason", "desc": "Skip rates grouped by the playback end reason recorded by Spotify — played to end, skipped forward, stopped, etc. Reveals how different types of endings relate to intentional skipping behavior vs. passive completion. A high rate of 'skipped forward' vs. 'played to end' at certain hours reveals patterns of active vs. passive listening."}, {"file": "linden/skip_prediction_shuffle.html", "name": "Shuffle Effect", "label": "Shuffle", "desc": "How shuffle mode changes your skip behavior, comparing skip rate, track completion, and transition patterns between shuffle and intentional listening. Shuffle typically elevates skip rates because tracks arrive unexpectedly rather than being deliberately chosen. A large gap between shuffle and non-shuffle skip rates suggests you're selective; a small gap means you're equally likely to follow through regardless."}], "gus": [{"file": "gus/skip_prediction_by_hour.html", "name": "Skip Rate by Hour", "label": "By hour", "desc": "Skip rate broken down by hour of the day, revealing when you're most and least patient with the music playing. Peak skip hours often correspond to distracted or transitional listening contexts — commute windows, work hours, or background listening. Low skip hours indicate focused, deliberate listening where you're more likely to follow through on each track."}, {"file": "gus/skip_prediction_confusion_matrix.html", "name": "Confusion Matrix", "label": "Confusion", "desc": "Confusion matrix showing the skip classifier's predicted outcomes vs. the actual ground truth across the test set. The diagonal cells (true positives and true negatives) show correct predictions; off-diagonal cells reveal where the model struggles. High false-negative rates mean skips the model missed; high false-positive rates mean plays it incorrectly predicted as skips."}, {"file": "gus/skip_prediction_familiarity.html", "name": "Familiarity Effect", "label": "Familiarity", "desc": "Skip likelihood plotted as a function of track familiarity, measured by the number of prior plays at listen time. First listens typically have high skip rates; the curve shows how quickly a track 'earns' the right to be kept. A steep drop early means you decide fast; a slow decline means new tracks take many listens to feel comfortable."}, {"file": "gus/skip_prediction_importance.html", "name": "Feature Importance", "label": "Importance", "desc": "Feature importance chart from a trained ML skip prediction classifier (XGBoost), showing which signals the model found most predictive of whether you'll skip a track. Top features typically include time of day, track familiarity, shuffle mode, and artist recency. The relative bar heights reveal what your skipping behavior is actually driven by."}, {"file": "gus/skip_prediction_reason.html", "name": "Skip Reasons", "label": "Reason", "desc": "Skip rates grouped by the playback end reason recorded by Spotify — played to end, skipped forward, stopped, etc. Reveals how different types of endings relate to intentional skipping behavior vs. passive completion. A high rate of 'skipped forward' vs. 'played to end' at certain hours reveals patterns of active vs. passive listening."}, {"file": "gus/skip_prediction_shuffle.html", "name": "Shuffle Effect", "label": "Shuffle", "desc": "How shuffle mode changes your skip behavior, comparing skip rate, track completion, and transition patterns between shuffle and intentional listening. Shuffle typically elevates skip rates because tracks arrive unexpectedly rather than being deliberately chosen. A large gap between shuffle and non-shuffle skip rates suggests you're selective; a small gap means you're equally likely to follow through regardless."}], "combined": []}, "Search Behavior": {"linden": [{"file": "linden/account/search_behavior_conversion.html", "name": "Conversion Rate", "label": "Conversion", "desc": "Percentage of searches followed by a stream within 30 minutes, broken down by platform. High conversion rates mean your searches lead directly to listening; low rates suggest browsing without committing. Bar width reflects total search volume on that platform."}, {"file": "linden/account/search_behavior_exploration.html", "name": "Exploration Ratio", "label": "Exploration", "desc": "30-day rolling ratio of exploratory searches (artist not yet in your history at search time) vs. comfort searches (familiar artist). A rising ratio means you're actively seeking new music; a falling ratio shows you're retreating to known territory. The faint daily line shows the raw signal; the bold line is the smoothed trend."}, {"file": "linden/account/search_behavior_heatmap.html", "name": "Search Heatmap", "label": "Heatmap", "desc": "Search volume by hour of day and day of week — reveals when you're most likely to actively look for music. Peaks during commute hours suggest intentional discovery; late-night peaks suggest exploratory browsing. Compare with the Listening DNA heatmap to see if search and listening patterns align."}, {"file": "linden/account/search_behavior_top_queries.html", "name": "Top Queries", "label": "Top queries", "desc": "Your 30 most frequent search queries, colored by whether each query is predominantly exploratory (new artists) or comfort (familiar ones). Frequent comfort searches reveal your musical anchors — names you keep coming back to. Frequent exploratory queries show the artists you were actively hunting for before they entered your regular rotation."}], "gus": [], "combined": []}, "Playlist Analysis": {"linden": [{"file": "linden/account/playlist_vec_coverage.html", "name": "Vocabulary Coverage", "label": "Coverage", "desc": "Fraction of each playlist's tracks whose artist appeared in the Word2Vec vocabulary trained on your listening sessions. Low-coverage playlists contain artists you rarely streamed — they may be aspirational saves rather than active listening material. High coverage confirms the playlist reflects your actual listening habits."}, {"file": "linden/account/playlist_vec_similarity.html", "name": "Playlist Similarity", "label": "Similarity", "desc": "Cosine similarity matrix of all playlist embeddings, with playlists reordered by hierarchical clustering. Bright cells indicate playlists with overlapping artist profiles; dark cells show playlists with distinct sonic identities. The dendrogram ordering groups your most similar playlists together for easy comparison."}, {"file": "linden/account/playlist_vec_space.html", "name": "Playlist Space", "label": "Space", "desc": "UMAP scatter of playlist embeddings computed from the mean Word2Vec artist vector of each playlist. Playlists that cluster together share a similar sonic profile — they draw from the same sonic neighborhoods in your listening history. Color encodes track count; hover to see the playlist name, size, and last-modified date."}], "gus": [], "combined": []}, "Influence & Adoption": {"linden": [], "gus": [], "combined": [{"file": "combined/influence_adoption_artists.html", "name": "First Discovery Gap", "label": "Artists", "desc": "For every artist both listeners eventually played, this chart shows who found them first and the gap in days. Long bars indicate one listener was a true early adopter while the other caught up much later. Short bars near zero mean near-simultaneous discovery — possibly from shared exposure rather than one person influencing the other."}, {"file": "combined/influence_adoption_leaders.html", "name": "Discovery Leaders", "label": "Leaders", "desc": "Summary of who introduces more new shared artists to the other listener first, across the full history. The waterfall shows each person's net discovery advantage and which categories of artists they tend to bring first. A consistent leader suggests a real directional influence in the listening relationship."}]}, "Offline Listening": {"linden": [{"file": "linden/offline_listening_heatmap.html", "name": "Offline Heatmap", "label": "Heatmap", "desc": "Proportion of offline listening for each hour-of-day/day-of-week combination. Reveals the consistent recurring contexts — morning commutes, flights, underground travel — that reliably drive offline mode. High offline proportions at the same time each week indicate a habitual context, not a one-off event."}, {"file": "linden/offline_listening_timeline.html", "name": "Online vs. Offline", "label": "Timeline", "desc": "Weekly or monthly listening volume split between online streaming and offline (downloaded/cached) playback, plotted over time. Spikes in offline listening often correspond to travel, commutes without data, or times when connectivity was limited. A rising offline trend may reflect a deliberate behavior change — like pre-downloading for a trip."}], "gus": [{"file": "gus/offline_listening_heatmap.html", "name": "Offline Heatmap", "label": "Heatmap", "desc": "Proportion of offline listening for each hour-of-day/day-of-week combination. Reveals the consistent recurring contexts — morning commutes, flights, underground travel — that reliably drive offline mode. High offline proportions at the same time each week indicate a habitual context, not a one-off event."}, {"file": "gus/offline_listening_timeline.html", "name": "Online vs. Offline", "label": "Timeline", "desc": "Weekly or monthly listening volume split between online streaming and offline (downloaded/cached) playback, plotted over time. Spikes in offline listening often correspond to travel, commutes without data, or times when connectivity was limited. A rising offline trend may reflect a deliberate behavior change — like pre-downloading for a trip."}], "combined": []}, "Joint Session Clustering": {"linden": [], "gus": [], "combined": [{"file": "combined/joint_sessions_by_cluster.html", "name": "By Vibe Cluster", "label": "By cluster", "desc": "All listening sessions from both users projected into a shared 2D embedding space and colored by detected vibe cluster. Each cluster represents a recurring mood or genre combination; spatial proximity reflects musical similarity between session types. The map reveals which vibes are adjacent to each other and which are entirely distinct."}, {"file": "combined/joint_sessions_by_user.html", "name": "By Listener", "label": "By user", "desc": "The same shared session embedding space as the cluster view, now colored by which listener each session belongs to. Overlapping colored regions show where both listeners' vibe profiles converge; separated regions reveal distinct personal listening styles. A user who scatters widely across the map has a more eclectic listening range than one who concentrates in a tight region."}, {"file": "combined/joint_sessions_cluster_ownership.html", "name": "Cluster Ownership", "label": "Ownership", "desc": "For each detected vibe cluster, a breakdown of what proportion of sessions within it belong to each listener. Clusters dominated by one person represent that listener's signature moods or genres — the vibes they uniquely gravitate toward. Evenly split clusters are genuinely shared territory."}]}, "Taste Convergence": {"linden": [], "gus": [], "combined": [{"file": "combined/taste_convergence_monthly.html", "name": "Monthly Convergence", "label": "Monthly Convergence", "desc": "Month-by-month Jaccard similarity between each listener's rolling top-50 artists. A rising trend indicates converging tastes; a declining trend means listening is diverging into separate directions. Sudden spikes often correspond to shared playlists, concerts attended together, or albums both people picked up simultaneously."}]}, "Listening Habits Comparison": {"linden": [], "gus": [], "combined": [{"file": "combined/habits_dow.html", "name": "Day of Week", "label": "Day of week", "desc": "Average listening volume broken down by day of the week, aggregated across the full dataset. Reveals whether listening peaks on weekends, weekday evenings, or is spread evenly — and lets you compare the weekly rhythm between both listeners side by side."}, {"file": "combined/habits_hourly.html", "name": "Hour of Day", "label": "Hourly", "desc": "Average listening volume by hour of the day, exposing the daily listening rhythm. Morning commute spikes, lunchtime sessions, evening wind-downs, and late-night listening all appear as distinct peaks. Compare the two listeners to see how differently structured their listening days are."}, {"file": "combined/habits_monthly.html", "name": "Monthly Volume", "label": "Monthly", "desc": "Total listening volume aggregated by calendar month, spanning the full date range. Seasonal trends, life-event disruptions, and long-term engagement shifts surface as recurring or one-off patterns. Multi-year comparison shows whether month-to-month habits are stable or evolving."}, {"file": "combined/habits_radar.html", "name": "Behavior Radar", "label": "Radar", "desc": "Radar chart comparing both listeners across behavioral dimensions: session length, skip rate, shuffle usage, offline proportion, and peak listening hour. Each axis is normalized so both listeners' shapes are directly comparable. The overall 'web' shape is a fingerprint of each person's listening personality."}, {"file": "combined/habits_sessions.html", "name": "Session Lengths", "label": "Sessions", "desc": "Histogram of listening session lengths in minutes, showing the full distribution from quick bursts to marathon sessions. The peak of the distribution reveals the most typical session duration; the long tail shows how often truly extended listening happens. A heavy right tail suggests a habit of losing track of time and listening for hours."}]}, "Shuffle Behavior": {"linden": [{"file": "linden/shuffle_behavior_hourly.html", "name": "Shuffle by Hour", "label": "Hourly", "desc": "When you choose shuffle vs. deliberately picking tracks, broken down by hour of the day. Morning randomness vs. evening curation patterns emerge clearly — shuffle often dominates distracted listening contexts, intentional picks dominate focused ones. Consistent shuffle-heavy hours reveal when you're least engaged with choosing."}, {"file": "linden/shuffle_behavior_overview.html", "name": "Shuffle Overview", "label": "Overview", "desc": "Side-by-side comparison of key metrics — skip rate, session length, artist diversity, and track completion rate — for shuffle vs. intentional listening. Reveals how much shuffle changes behavior: whether you skip more, listen shorter, or explore more widely when the algorithm chooses for you. The gap between the two bars on each metric is the true 'shuffle effect.'"}], "gus": [{"file": "gus/shuffle_behavior_hourly.html", "name": "Shuffle by Hour", "label": "Hourly", "desc": "When you choose shuffle vs. deliberately picking tracks, broken down by hour of the day. Morning randomness vs. evening curation patterns emerge clearly — shuffle often dominates distracted listening contexts, intentional picks dominate focused ones. Consistent shuffle-heavy hours reveal when you're least engaged with choosing."}, {"file": "gus/shuffle_behavior_overview.html", "name": "Shuffle Overview", "label": "Overview", "desc": "Side-by-side comparison of key metrics — skip rate, session length, artist diversity, and track completion rate — for shuffle vs. intentional listening. Reveals how much shuffle changes behavior: whether you skip more, listen shorter, or explore more widely when the algorithm chooses for you. The gap between the two bars on each metric is the true 'shuffle effect.'"}], "combined": []}, "Discovery vs. Comfort Ratio": {"linden": [{"file": "linden/discovery_comfort_ratio_1.html", "name": "Overview", "label": "Overview", "desc": "Overview of the ratio between listening time spent on new/unfamiliar artists vs. familiar returning favorites, across the full period. A high discovery ratio means you're actively exploring; a high comfort ratio means you've found what you like and are deepening into it. The overall balance describes your fundamental listening personality."}, {"file": "linden/discovery_comfort_ratio_2_rolling.html", "name": "Rolling Ratio", "label": "Rolling", "desc": "Rolling ratio of new artist listening time vs. comfort listening, smoothed over a sliding window to reveal phases of exploration and consolidation. Rising curves indicate exploratory phases; falling curves show retreating into known favorites. The shape of the curve over time tells the story of how your musical curiosity has ebbed and flowed."}, {"file": "linden/discovery_comfort_ratio_3_discovery.html", "name": "Discovery Periods", "label": "Discovery", "desc": "Zoomed-in view of the periods where discovery most spiked — your most actively exploratory phases. Shows which new artists drove each discovery peak and how long the explorations lasted before settling. Recurring discovery bursts suggest a pattern of periodic musical reinvention."}, {"file": "linden/discovery_comfort_ratio_4_comfort.html", "name": "Comfort Periods", "label": "Comfort", "desc": "Zoomed-in view of comfort-heavy listening phases, when you settled deeply into familiar artists. Shows the specific catalog of trusted artists that anchored each comfort period. Long comfort stretches often reflect stable life periods; sudden shifts back toward discovery often mark transitions."}, {"file": "linden/discovery_comfort_ratio_5_newdeep.html", "name": "New-Artist Deep Dives", "label": "New / Deep", "desc": "Artists you discovered for the first time and then immediately dove deep into — the honeymoon phase of a new musical relationship. These are the artists who captured your attention from the very first listen and held it long enough to accumulate substantial early play counts. The pattern here reveals how your musical obsessions tend to begin."}], "gus": [{"file": "gus/discovery_comfort_ratio_1.html", "name": "Overview", "label": "Overview", "desc": "Overview of the ratio between listening time spent on new/unfamiliar artists vs. familiar returning favorites, across the full period. A high discovery ratio means you're actively exploring; a high comfort ratio means you've found what you like and are deepening into it. The overall balance describes your fundamental listening personality."}, {"file": "gus/discovery_comfort_ratio_2_rolling.html", "name": "Rolling Ratio", "label": "Rolling", "desc": "Rolling ratio of new artist listening time vs. comfort listening, smoothed over a sliding window to reveal phases of exploration and consolidation. Rising curves indicate exploratory phases; falling curves show retreating into known favorites. The shape of the curve over time tells the story of how your musical curiosity has ebbed and flowed."}, {"file": "gus/discovery_comfort_ratio_3_discovery.html", "name": "Discovery Periods", "label": "Discovery", "desc": "Zoomed-in view of the periods where discovery most spiked — your most actively exploratory phases. Shows which new artists drove each discovery peak and how long the explorations lasted before settling. Recurring discovery bursts suggest a pattern of periodic musical reinvention."}, {"file": "gus/discovery_comfort_ratio_4_comfort.html", "name": "Comfort Periods", "label": "Comfort", "desc": "Zoomed-in view of comfort-heavy listening phases, when you settled deeply into familiar artists. Shows the specific catalog of trusted artists that anchored each comfort period. Long comfort stretches often reflect stable life periods; sudden shifts back toward discovery often mark transitions."}, {"file": "gus/discovery_comfort_ratio_5_newdeep.html", "name": "New-Artist Deep Dives", "label": "New / Deep", "desc": "Artists you discovered for the first time and then immediately dove deep into — the honeymoon phase of a new musical relationship. These are the artists who captured your attention from the very first listen and held it long enough to accumulate substantial early play counts. The pattern here reveals how your musical obsessions tend to begin."}], "combined": []}};
+const CARD_CATEGORY = {"Artist Co-listening Network": "Taste & Artists", "Joint Artist Space": "Taste & Artists", "Taste Overlap": "Taste & Artists", "Taste Convergence": "Taste & Artists", "Influence & Adoption": "Taste & Artists", "Listening DNA Heatmaps": "Listening Patterns", "Device Rhythm": "Listening Patterns", "Shuffle Behavior": "Listening Patterns", "Offline Listening": "Listening Patterns", "Listening Velocity": "Listening Patterns", "Listening Habits Comparison": "Listening Patterns", "Discovery vs. Comfort Ratio": "Discovery & Eras", "Era Detector": "Discovery & Eras", "Session Vibe Clustering": "Sessions & Vibes", "Session Embeddings": "Sessions & Vibes", "Session Acts": "Sessions & Vibes", "Joint Session Clustering": "Sessions & Vibes", "Track Transition Graph": "Tracks & Skips", "Skip Prediction": "Tracks & Skips", "Repeat Compulsion": "Tracks & Skips", "Playlist Analysis": "Playlist Analysis", "Search Behavior": "Search Behavior", "Library Curation": "Library Curation", "Spotify Inferences": "Spotify Inferences"};
+const USER_META     = {"linden": {"display": "Linden", "color": "#1DB954"}, "gus": {"display": "Gus", "color": "#E1306C"}, "combined": {"display": "Combined", "color": "#7c6af7"}};
+const COL_ORDER     = ["linden", "gus", "combined"];
+
+// ── Lightbox state ────────────────────────────────────────────────────────────
+let lb = { card: null, user: null, index: 0, compareMode: false, compareUser: null };
+
+function openLightbox(card, user, index) {
+  lb = { card, user, index, compareMode: false, compareUser: null };
+  renderLightbox();
+  document.getElementById('lightbox').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.add('hidden');
+  document.body.style.overflow = '';
+  document.getElementById('lb-body').innerHTML = '';
+}
+
+function navigate(dir) {
+  const files = CATALOG[lb.card][lb.user];
+  lb.index = (lb.index + dir + files.length) % files.length;
+  renderLightbox();
+}
+
+function getComparableUsers() {
+  return COL_ORDER.filter(u => u !== lb.user && CATALOG[lb.card] && CATALOG[lb.card][u] && CATALOG[lb.card][u].length > 0);
+}
+
+function toggleCompare() {
+  lb.compareMode = !lb.compareMode;
+  if (lb.compareMode && !lb.compareUser) {
+    const others = getComparableUsers();
+    if (others.length) lb.compareUser = others[0];
+  }
+  renderLightbox();
+}
+
+function setCompareUser(u) {
+  lb.compareUser = u;
+  renderLightbox();
+}
+
+function renderLightbox() {
+  const { card, user, index, compareMode, compareUser } = lb;
+  const files  = CATALOG[card][user];
+  const cur    = files[index];
+  const uMeta  = USER_META[user] || {};
+  const cat    = CARD_CATEGORY[card] || '';
+
+  // Breadcrumb
+  document.getElementById('lb-cat').textContent       = cat;
+  document.getElementById('lb-file-name').textContent = cur.name;
+  const badge       = document.getElementById('lb-user-badge');
+  badge.textContent = uMeta.display || user;
+  badge.style.color = uMeta.color   || '';
+
+  // Counter + nav
+  document.getElementById('lb-counter').textContent = `${index + 1} / ${files.length}`;
+  document.getElementById('lb-prev').disabled = files.length <= 1;
+  document.getElementById('lb-next').disabled = files.length <= 1;
+
+  // Description
+  document.getElementById('lb-desc').textContent = cur.desc || '';
+
+  // Compare button
+  const comparables = getComparableUsers();
+  const cBtn = document.getElementById('lb-compare-btn');
+  cBtn.style.display = comparables.length ? '' : 'none';
+  cBtn.textContent   = compareMode ? '⊟ Single' : '⊞ Compare';
+  cBtn.classList.toggle('compare-active', compareMode);
+
+  // Body
+  const body = document.getElementById('lb-body');
+  if (!compareMode) {
+    body.innerHTML = `<iframe class="lb-frame" src="${cur.file}"></iframe>`;
+  } else {
+    const cFiles = compareUser ? CATALOG[card][compareUser] : [];
+    const cItem  = cFiles.length ? cFiles[Math.min(index, cFiles.length - 1)] : null;
+    const cMeta  = (compareUser && USER_META[compareUser]) || {};
+    const opts   = comparables
+      .map(u => `<option value="${u}" ${u === compareUser ? 'selected' : ''}>${(USER_META[u]||{}).display||u}</option>`)
+      .join('');
+    body.innerHTML = `
+      <div class="lb-split">
+        <div class="lb-pane">
+          <div class="pane-label">
+            <span class="pip" style="background:${uMeta.color||''}"></span>
+            <span style="color:${uMeta.color||''};font-weight:600">${uMeta.display||user}</span>
+          </div>
+          <iframe class="lb-frame" src="${cur.file}"></iframe>
+        </div>
+        <div class="lb-pane">
+          <div class="pane-label">
+            <select onchange="setCompareUser(this.value)">${opts}</select>
+          </div>
+          <iframe class="lb-frame" src="${cItem ? cItem.file : ''}"></iframe>
+        </div>
+      </div>`;
+  }
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (document.getElementById('lightbox').classList.contains('hidden')) return;
+  if (e.key === 'ArrowLeft')  navigate(-1);
+  if (e.key === 'ArrowRight') navigate(1);
+  if (e.key === 'Escape')     closeLightbox();
+});
+
+// Click backdrop to close
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body>
+</html>

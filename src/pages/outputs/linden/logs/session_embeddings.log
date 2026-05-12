@@ -1,0 +1,71 @@
+[linden] Loaded 169,746 plays across 1584 days (7074 artists, 19304 tracks)
+Loaded 85,887 streams | 2021-11-08 → 2026-05-07
+Total sessions:  7,005
+Avg session len: 12.3 tracks
+
+============================================================
+  ENTITY: TRACK
+============================================================
+Unique tracks: 14,627
+Sessions used:   5,136 (avg len 16.2)
+Trained on 3760 tracks
+Reducing 3760 vectors to 2D with UMAP...
+Saved → C:\Users\Linud\Documents\Coding\personal-data\spotify-data\outputs\linden\session_embeddings_track.html
+
+--- Track similarity examples ---
+  Most similar to: 'Giant Virus — Epic Mountain'
+    0.958  What is Time — Epic Mountain
+    0.956  Infohazards — Epic Mountain
+    0.949  Climate Doom — Epic Mountain
+    0.946  A New History — Epic Mountain
+    0.945  Electro Smog — Epic Mountain
+    0.939  Alien Scale — Epic Mountain
+    0.939  Red Dwarfs — Epic Mountain
+    0.935  Cure Aging — Epic Mountain
+    0.935  Blood Vessels — Epic Mountain
+    0.934  Supernova — Epic Mountain
+  Most similar to: 'All I Need — Radiohead'
+    0.980  Everything In Its Right Place — Radiohead
+    0.955  Let Down — Radiohead
+    0.932  Karma Police — Radiohead
+    0.902  Climbing Up the Walls — Radiohead
+    0.899  No Surprises — Radiohead
+    0.882  Lucky — Radiohead
+    0.872  Exit Music (For A Film) — Radiohead
+    0.869  The Tourist — Radiohead
+    0.862  How to Disappear Completely — Radiohead
+    0.857  Subterranean Homesick Alien — Radiohead
+
+============================================================
+  ENTITY: ARTIST
+============================================================
+Unique artists: 4,929
+Sessions used:   5,136 (avg len 16.2)
+Trained on 1468 artists
+Reducing 1468 vectors to 2D with UMAP...
+Saved → C:\Users\Linud\Documents\Coding\personal-data\spotify-data\outputs\linden\session_embeddings_artist.html
+
+--- Artist similarity examples ---
+  Most similar to: 'Epic Mountain'
+    0.740  blink-182
+    0.595  Aaron Taylor
+    0.583  Aliyah's Interlude
+    0.568  River Boy
+    0.554  EpochMusic
+    0.543  Brad Breeck
+    0.543  Pentatonix
+    0.540  Glorb
+    0.535  Skrillex
+    0.515  Genesis Owusu
+  Most similar to: 'Magdalena Bay'
+    0.845  Soccer Mommy
+    0.822  Sleepy Parents
+    0.803  NEEDY GIRL OVERDOSE
+    0.798  Remi Wolf
+    0.796  berryblue
+    0.793  Bits & Noise
+    0.789  Tennis
+    0.788  Black Country, New Road
+    0.775  Wilco
+    0.774  Split Chain
+
