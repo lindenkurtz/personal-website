@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kyler Tomato Game</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; overflow: hidden; user-select: none; font-family: Arial, sans-serif; }
+  canvas { display: block; }
+
+  #ui { position: fixed; inset: 0; pointer-events: none; }
+
+  /* ── Name / action modal ─────────────────────────────────────────── */
+  #modal {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: all;
+    transition: opacity 0.15s;
+  }
+  #modal.hidden { opacity: 0; pointer-events: none; }
+
+  #name-input {
+    width: 220px;
+    padding: 10px 16px;
+    font-size: 18px;
+    font-family: inherit;
+    border: 3px solid #ff5252;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    text-align: center;
+    outline: none;
+  }
+  #name-input::placeholder { color: #555; }
+  #name-input:focus { border-color: #ff8a80; box-shadow: 0 0 0 2px rgba(255,82,82,0.25); }
+
+  #action-btn {
+    padding: 10px 36px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: inherit;
+    background: #ff5252;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.12s, transform 0.08s;
+  }
+  #action-btn:hover  { background: #ff1744; transform: scale(1.04); }
+  #action-btn:active { transform: scale(0.97); }
+
+  /* ── Leaderboard panel (top-right) ───────────────────────────────── */
+  #leaderboard {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 200px;
+    background: rgba(10,10,20,0.82);
+    border: 1.5px solid rgba(255,82,82,0.5);
+    border-radius: 10px;
+    padding: 10px 12px;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.2s;
+  }
+  #leaderboard.hidden { opacity: 0; }
+
+  #leaderboard h3 {
+    text-align: center;
+    color: #ff5252;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  #scores-list { list-style: none; }
+  #scores-list li {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 3px 2px;
+    font-size: 12px;
+    color: #ccc;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  #scores-list li:last-child { border-bottom: none; }
+  #scores-list li.me { color: #ffd740; font-weight: bold; }
+  #scores-list .rank { color: #ff5252; font-weight: bold; min-width: 22px; font-size: 11px; }
+  #scores-list .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 4px; }
+  #scores-list .pts  { font-weight: bold; color: #fff; min-width: 24px; text-align: right; }
+  #scores-list .placeholder { color: #444; font-style: italic; font-size: 11px; text-align: center; padding: 8px 0; display: block; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="ui">
+  <div id="modal">
+    <input id="name-input" type="text" maxlength="20" placeholder="Your name..." autocomplete="off" spellcheck="false">
+    <button id="action-btn">PLAY</button>
+  </div>
+
+  <div id="leaderboard">
+    <h3>&#127942; Top Scores</h3>
+    <ul id="scores-list"><li><span class="placeholder">Loading...</span></li></ul>
+  </div>
+</div>
+
+<script type="module">
+// ═══════════════════════════════════════════════════════════════════════
+//  FIREBASE SETUP
+//  1. Go to console.firebase.google.com and create a free project
+//  2. Add a Realtime Database (start in test mode for now)
+//  3. Replace the values below with your project's config
+// ═══════════════════════════════════════════════════════════════════════
+const FB_CONFIG = {
+  apiKey: "AIzaSyBmjRbIH63uOxmOwGWfcVOYfcNdgUYrG64",
+  authDomain: "kyler-game.firebaseapp.com",
+  databaseURL: "https://kyler-game-default-rtdb.firebaseio.com",
+  projectId: "kyler-game",
+  storageBucket: "kyler-game.firebasestorage.app",
+  messagingSenderId: "526977096517",
+  appId: "1:526977096517:web:e3d47eab71c645719afc2c",
+  measurementId: "G-C5B7FE80PW"
+};
+// ═══════════════════════════════════════════════════════════════════════
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
+import { getDatabase, ref, push, onValue, query, orderByChild, limitToLast }
+  from 'https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js';
+
+// ── Firebase init (graceful fallback if not configured yet) ──────────
+const fbReady = FB_CONFIG.apiKey !== 'YOUR_API_KEY';
+let lbRef = null;
+
+if (fbReady) {
+  try {
+    const app = initializeApp(FB_CONFIG);
+    const db  = getDatabase(app);
+    lbRef = ref(db, 'leaderboard');
+    watchLeaderboard();
+  } catch (e) {
+    console.warn('Firebase init failed:', e);
+    showLbPlaceholder('Config error — check console');
+  }
+} else {
+  showLbPlaceholder('Add Firebase config to enable online scores');
+}
+
+// ── Leaderboard helpers ───────────────────────────────────────────────
+function watchLeaderboard() {
+  const q = query(lbRef, orderByChild('score'), limitToLast(10));
+  onValue(q, snap => {
+    const rows = [];
+    snap.forEach(c => rows.push(c.val()));
+    rows.sort((a, b) => b.score - a.score);
+    renderLb(rows);
+  });
+}
+
+function renderLb(rows) {
+  const list = document.getElementById('scores-list');
+  if (!rows.length) {
+    list.innerHTML = '<li><span class="placeholder">No scores yet — be first!</span></li>';
+    return;
+  }
+  list.innerHTML = rows.map((r, i) => `
+    <li class="${r.name === playerName ? 'me' : ''}">
+      <span class="rank">#${i + 1}</span>
+      <span class="name" title="${esc(r.name)}">${esc(r.name)}</span>
+      <span class="pts">${r.score}</span>
+    </li>`).join('');
+}
+
+function showLbPlaceholder(msg) {
+  document.getElementById('scores-list').innerHTML =
+    `<li><span class="placeholder">${esc(msg)}</span></li>`;
+}
+
+async function submitScore(name, score) {
+  if (!fbReady || !lbRef || score <= 0) return;
+  try { await push(lbRef, { name, score, ts: Date.now() }); }
+  catch (e) { console.warn('Score submit failed:', e); }
+}
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+//  GAME
+// ═══════════════════════════════════════════════════════════════════════
+
+// ── Canvas ───────────────────────────────────────────────────────────
+const canvas = document.getElementById('c');
+const ctx    = canvas.getContext('2d');
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+
+// ── State ────────────────────────────────────────────────────────────
+const S = { MENU: 0, PLAYING: 1, GAME_OVER: 2 };
+let state        = S.MENU;
+let score        = 0;
+let highScore    = parseInt(localStorage.getItem('kylerHighScore') || '0');
+let newHighScore = false;
+let timeLeft     = 30;
+let lastBeepSec  = -1;
+let menuWobble   = 0;
+let playerName   = localStorage.getItem('kylerName') || '';
+
+// ── UI elements ───────────────────────────────────────────────────────
+const modal     = document.getElementById('modal');
+const nameInput = document.getElementById('name-input');
+const actionBtn = document.getElementById('action-btn');
+const lbPanel   = document.getElementById('leaderboard');
+
+nameInput.value = playerName;
+syncUI();
+
+function syncUI() {
+  const onMenu = state === S.MENU;
+  const onOver = state === S.GAME_OVER;
+
+  modal.classList.toggle('hidden', !onMenu && !onOver);
+  lbPanel.classList.toggle('hidden', !onMenu && !onOver);
+
+  nameInput.style.display = onMenu ? 'block' : 'none';
+  actionBtn.textContent   = onOver ? 'PLAY AGAIN' : 'PLAY';
+
+  canvas.style.cursor = state === S.PLAYING ? 'crosshair' : 'default';
+}
+
+// ── Audio ─────────────────────────────────────────────────────────────
+let audioCtx = null;
+function initAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+function noise(dur, vol) {
+  if (!audioCtx) return;
+  const len = Math.ceil(audioCtx.sampleRate * dur);
+  const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+  const d   = buf.getChannelData(0);
+  for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
+  const src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(vol, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+  src.connect(g); g.connect(audioCtx.destination); src.start();
+}
+function tone(freq, dur, vol, delay = 0) {
+  if (!audioCtx) return;
+  const osc = audioCtx.createOscillator();
+  const g   = audioCtx.createGain();
+  const t   = audioCtx.currentTime + delay;
+  osc.frequency.value = freq;
+  g.gain.setValueAtTime(vol, t);
+  g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+  osc.connect(g); g.connect(audioCtx.destination);
+  osc.start(t); osc.stop(t + dur);
+}
+function playThrow()    { noise(0.08, 0.12); }
+function playBeep()     { tone(880, 0.1, 0.18); }
+function playGameOver() { [523, 415, 330].forEach((f, i) => tone(f, 0.28, 0.22, i * 0.21)); }
+function playSplat() {
+  if (!audioCtx) return;
+  const osc = audioCtx.createOscillator();
+  const g   = audioCtx.createGain();
+  osc.frequency.setValueAtTime(180, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(55, audioCtx.currentTime + 0.15);
+  g.gain.setValueAtTime(0.4, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+  osc.connect(g); g.connect(audioCtx.destination);
+  osc.start(); osc.stop(audioCtx.currentTime + 0.15);
+  noise(0.1, 0.28);
+}
+
+// ── Kyler ─────────────────────────────────────────────────────────────
+const kyler = {
+  x: 0, y: 0, w: 120, h: 120,
+  vx: 1, vy: 1,
+  wobble: 0, hitTimer: 0, flashTimer: 0, teleportTimer: 3,
+  img: new Image(),
+
+  init()  { this.img.src = 'kyler.png'; },
+  speed() { return 80 + Math.floor(score / 5) * 8; },
+
+  reset() {
+    this.x = canvas.width  / 2 - this.w / 2;
+    this.y = canvas.height / 3 - this.h / 2;
+    this._setVel(Math.random() * Math.PI * 2);
+    this.wobble = 0; this.hitTimer = 0; this.flashTimer = 0;
+    this.teleportTimer = 3 + Math.random() * 2;
+  },
+
+  _setVel(angle) {
+    const sp = this.speed();
+    this.vx = Math.cos(angle) * sp;
+    this.vy = Math.sin(angle) * sp;
+  },
+
+  update(dt) {
+    this.wobble    += dt * 3;
+    this.hitTimer   = Math.max(0, this.hitTimer   - dt);
+    this.flashTimer = Math.max(0, this.flashTimer  - dt * 3.5);
+
+    const sp  = this.speed();
+    const mag = Math.hypot(this.vx, this.vy) || 1;
+    this.vx = (this.vx / mag) * sp;
+    this.vy = (this.vy / mag) * sp;
+    this.x += this.vx * dt;
+    this.y += this.vy * dt;
+
+    if (this.x < 0)                     { this.x = 0;                      this.vx =  Math.abs(this.vx); }
+    if (this.x + this.w > canvas.width) { this.x = canvas.width - this.w;  this.vx = -Math.abs(this.vx); }
+    if (this.y < 0)                     { this.y = 0;                       this.vy =  Math.abs(this.vy); }
+    if (this.y + this.h > canvas.height){ this.y = canvas.height - this.h; this.vy = -Math.abs(this.vy); }
+
+    this.teleportTimer -= dt;
+    if (this.teleportTimer <= 0) {
+      const m = 80;
+      this.x = m + Math.random() * (canvas.width  - this.w - m * 2);
+      this.y = m + Math.random() * (canvas.height - this.h - m * 2);
+      this.flashTimer = 1;
+      this._setVel(Math.random() * Math.PI * 2);
+      const minI = Math.max(1.5, 3 - Math.floor(score / 10) * 0.3);
+      this.teleportTimer = minI + Math.random() * 2;
+    }
+  },
+
+  draw() {
+    ctx.save();
+    const wy = Math.sin(this.wobble) * 3;
+
+    if (this.flashTimer > 0) {
+      ctx.globalAlpha = Math.min(1, this.flashTimer * 1.2);
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(this.x - 6, this.y + wy - 6, this.w + 12, this.h + 12);
+      ctx.globalAlpha = 1;
+    }
+    if (this.hitTimer > 0) ctx.filter = 'saturate(6) hue-rotate(-25deg)';
+
+    if (this.img.complete && this.img.naturalWidth > 0) {
+      ctx.drawImage(this.img, this.x, this.y + wy, this.w, this.h);
+    } else {
+      ctx.fillStyle = this.hitTimer > 0 ? '#f55' : '#ffcc99';
+      ctx.beginPath();
+      ctx.ellipse(this.x + this.w / 2, this.y + wy + this.h / 2, this.w / 2, this.h / 2, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#555';
+      ctx.font = 'bold 13px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('kyler.png', this.x + this.w / 2, this.y + wy + this.h / 2 + 5);
+    }
+    ctx.restore();
+  },
+
+  box() { return { l: this.x, r: this.x + this.w, t: this.y, b: this.y + this.h }; }
+};
+
+// ── Tomato ────────────────────────────────────────────────────────────
+class Tomato {
+  constructor(ox, oy, tx, ty) {
+    this.x = ox; this.y = oy;
+    const dx = tx - ox, dy = ty - oy;
+    const d  = Math.hypot(dx, dy) || 1;
+    this.vx = (dx / d) * 620; this.vy = (dy / d) * 620;
+    this.r = 14; this.trail = []; this.dead = false;
+  }
+  update(dt) {
+    this.trail.unshift({ x: this.x, y: this.y });
+    if (this.trail.length > 6) this.trail.pop();
+    this.x += this.vx * dt; this.y += this.vy * dt;
+    const pad = 90;
+    if (this.x < -pad || this.x > canvas.width + pad || this.y < -pad || this.y > canvas.height + pad)
+      this.dead = true;
+  }
+  draw() {
+    for (let i = 0; i < this.trail.length; i++) {
+      const a = (1 - i / this.trail.length) * 0.22;
+      const r = Math.max(1, this.r * (1 - i / this.trail.length * 0.55));
+      ctx.beginPath();
+      ctx.arc(this.trail[i].x, this.trail[i].y, r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(210,40,40,${a})`; ctx.fill();
+    }
+    ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = '#e53935'; ctx.fill();
+    ctx.strokeStyle = '#b71c1c'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.beginPath(); ctx.arc(this.x - 4, this.y - 4, 4, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,0.28)'; ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(this.x - 3, this.y - this.r + 1);
+    ctx.lineTo(this.x,     this.y - this.r - 7);
+    ctx.lineTo(this.x + 3, this.y - this.r + 1);
+    ctx.closePath(); ctx.fillStyle = '#388e3c'; ctx.fill();
+  }
+  hitsKyler() {
+    const b = kyler.box();
+    return this.x >= b.l && this.x <= b.r && this.y >= b.t && this.y <= b.b;
+  }
+}
+
+// ── Particle ──────────────────────────────────────────────────────────
+class Particle {
+  constructor(x, y) {
+    this.x = x; this.y = y;
+    const a = Math.random() * Math.PI * 2, sp = 70 + Math.random() * 190;
+    this.vx = Math.cos(a) * sp; this.vy = Math.sin(a) * sp;
+    this.life = 1; this.r = 3 + Math.random() * 7;
+  }
+  update(dt) { this.x += this.vx * dt; this.y += this.vy * dt; this.vy += 280 * dt; this.life -= dt * 2.2; }
+  draw() {
+    const a = Math.max(0, this.life);
+    ctx.beginPath(); ctx.arc(this.x, this.y, Math.max(0.5, this.r * a), 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(200,30,30,${a})`; ctx.fill();
+  }
+}
+
+// ── SplatText ─────────────────────────────────────────────────────────
+class SplatText {
+  constructor(x, y) { this.x = x; this.y = y; this.life = 1; this.scale = 0.3; }
+  update(dt) { this.life -= dt * 1.8; this.scale = Math.min(1.2, this.scale + dt * 7); this.y -= 28 * dt; }
+  draw() {
+    const a = Math.max(0, this.life);
+    ctx.save(); ctx.globalAlpha = a;
+    ctx.font = `bold ${Math.round(36 * this.scale)}px Arial Black, Arial`;
+    ctx.textAlign = 'center';
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 4; ctx.strokeText('SPLAT!', this.x, this.y);
+    ctx.fillStyle = '#ff1744'; ctx.fillText('SPLAT!', this.x, this.y);
+    ctx.restore();
+  }
+}
+
+// ── Collections ───────────────────────────────────────────────────────
+let tomatoes = [], particles = [], splatTexts = [];
+
+// ── Game flow ─────────────────────────────────────────────────────────
+function startGame() {
+  const raw = nameInput.value.trim();
+  if (!raw) { nameInput.focus(); nameInput.style.borderColor = '#ff1744'; return; }
+  nameInput.style.borderColor = '#ff5252';
+  playerName = raw;
+  localStorage.setItem('kylerName', playerName);
+
+  state = S.PLAYING; score = 0; timeLeft = 30; lastBeepSec = -1; newHighScore = false;
+  tomatoes = []; particles = []; splatTexts = [];
+  kyler.reset();
+  syncUI();
+}
+
+function endGame() {
+  state = S.GAME_OVER;
+  newHighScore = score > highScore;
+  if (newHighScore) { highScore = score; localStorage.setItem('kylerHighScore', highScore); }
+  submitScore(playerName, score);
+  playGameOver();
+  syncUI();
+}
+
+// ── Update ────────────────────────────────────────────────────────────
+function update(dt) {
+  if (state === S.MENU) { menuWobble += dt * 1.6; return; }
+  if (state === S.GAME_OVER) return;
+
+  timeLeft -= dt;
+  const sec = Math.ceil(timeLeft);
+  if (sec <= 5 && sec > 0 && sec !== lastBeepSec) { lastBeepSec = sec; playBeep(); }
+  if (timeLeft <= 0) { timeLeft = 0; endGame(); return; }
+
+  kyler.update(dt);
+
+  for (let i = tomatoes.length - 1; i >= 0; i--) {
+    const t = tomatoes[i]; t.update(dt);
+    if (t.hitsKyler()) {
+      const hx = t.x, hy = t.y;
+      tomatoes.splice(i, 1); score++; kyler.hitTimer = 0.22; playSplat();
+      for (let j = 0; j < 10; j++) particles.push(new Particle(hx, hy));
+      splatTexts.push(new SplatText(hx, hy)); continue;
+    }
+    if (t.dead) tomatoes.splice(i, 1);
+  }
+  for (let i = particles.length  - 1; i >= 0; i--) { particles[i].update(dt);  if (particles[i].life  <= 0) particles.splice(i, 1); }
+  for (let i = splatTexts.length - 1; i >= 0; i--) { splatTexts[i].update(dt); if (splatTexts[i].life <= 0) splatTexts.splice(i, 1); }
+}
+
+// ── Draw ──────────────────────────────────────────────────────────────
+function drawBg() {
+  const g = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  g.addColorStop(0, '#1a1a2e'); g.addColorStop(1, '#16213e');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function lbl(text, x, y, size, color, align = 'center', stroke = null) {
+  ctx.font = `bold ${size}px Arial Black, Arial`; ctx.textAlign = align;
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = Math.max(3, size / 9); ctx.strokeText(text, x, y); }
+  ctx.fillStyle = color; ctx.fillText(text, x, y);
+}
+
+function drawHUD() {
+  const cx = canvas.width / 2;
+  lbl(`Score: ${score}`,    20,              44, 26, '#fff',    'left');
+  lbl(`Best: ${highScore}`, canvas.width - 20, 44, 26, '#ffd740', 'right');
+  const urgent = timeLeft <= 5;
+  lbl(`${Math.ceil(timeLeft)}s`, cx, 44, urgent ? 36 : 28, urgent ? '#ff5252' : '#fff', 'center');
+  // Player name watermark
+  if (playerName) {
+    ctx.font = '13px Arial'; ctx.textAlign = 'left'; ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.fillText(playerName, 20, canvas.height - 14);
+  }
+}
+
+function drawMenu() {
+  drawBg();
+  const cx = canvas.width / 2, cy = canvas.height / 2;
+  kyler.x = cx - kyler.w / 2 + Math.sin(menuWobble * 0.75) * 22;
+  kyler.y = cy - kyler.h / 2 - 80 + Math.sin(menuWobble) * 14;
+  kyler.hitTimer = 0; kyler.flashTimer = 0;
+  kyler.draw();
+  lbl('KYLER TOMATO GAME', cx, cy + 20, 50, '#ff5252', 'center', '#000');
+  if (highScore > 0) lbl(`Best: ${highScore} hits`, cx, cy + 62, 20, '#ffd740', 'center');
+}
+
+function drawGameOver() {
+  drawBg();
+  kyler.draw();
+  for (const p of particles) p.draw();
+  ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+  for (const s of splatTexts) s.draw();
+
+  const cx = canvas.width / 2, cy = canvas.height / 2;
+  lbl("TIME'S UP!",     cx, cy - 60, 58, '#ff5252', 'center', '#000');
+  lbl(`Score: ${score}`, cx, cy - 4,  38, '#fff',    'center', '#000');
+  if (newHighScore) lbl('NEW HIGH SCORE!', cx, cy + 46, 26, '#ffd740', 'center', '#000');
+  else if (highScore > 0) lbl(`Best: ${highScore}`, cx, cy + 46, 22, '#aaa', 'center');
+}
+
+function draw() {
+  if (state === S.MENU)      { drawMenu();     return; }
+  if (state === S.GAME_OVER) { drawGameOver(); return; }
+  drawBg();
+  for (const t of tomatoes)  t.draw();
+  for (const p of particles) p.draw();
+  kyler.draw();
+  for (const s of splatTexts) s.draw();
+  drawHUD();
+}
+
+// ── Input ─────────────────────────────────────────────────────────────
+actionBtn.addEventListener('click', () => {
+  initAudio();
+  startGame();
+});
+
+nameInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { initAudio(); startGame(); }
+  nameInput.style.borderColor = '#ff5252'; // reset red highlight on type
+});
+
+canvas.addEventListener('click', e => {
+  if (state !== S.PLAYING) return;
+  tomatoes.push(new Tomato(canvas.width / 2, canvas.height, e.clientX, e.clientY));
+  playThrow();
+});
+
+canvas.addEventListener('mousemove', () => {
+  canvas.style.cursor = state === S.PLAYING ? 'crosshair' : 'default';
+});
+
+// ── Loop ──────────────────────────────────────────────────────────────
+let lastTs = 0;
+function loop(ts) {
+  const dt = Math.min((ts - lastTs) / 1000, 0.05);
+  lastTs = ts;
+  update(dt); draw();
+  requestAnimationFrame(loop);
+}
+
+kyler.init();
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
