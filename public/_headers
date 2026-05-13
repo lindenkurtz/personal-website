@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com;
+  Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.gstatic.com; connect-src 'self' https://cloudflareinsights.com https://*.firebaseio.com wss://*.firebaseio.com https://*.googleapis.com;
 
 /coding-stats.json
   Cache-Control: no-store
