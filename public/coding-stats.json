@@ -2,23 +2,23 @@
   "week": [
     {
       "name": "python",
-      "percent": 68.5
+      "percent": 69.6
     },
     {
       "name": "jupyter-notebook",
-      "percent": 12.9
-    },
-    {
-      "name": "html",
-      "percent": 3.9
+      "percent": 12.5
     },
     {
       "name": "markdown",
-      "percent": 3.9
+      "percent": 3.8
+    },
+    {
+      "name": "html",
+      "percent": 3.8
     },
     {
       "name": "json",
-      "percent": 3.4
+      "percent": 3.3
     },
     {
       "name": "mdx",
@@ -34,11 +34,11 @@
     },
     {
       "name": "astro",
-      "percent": 0.9
+      "percent": 0.8
     },
     {
       "name": "log",
-      "percent": 0.9
+      "percent": 0.8
     },
     {
       "name": "jsx",
@@ -56,19 +56,19 @@
   "alltime": [
     {
       "name": "python",
-      "percent": 34.4
+      "percent": 34.9
     },
     {
       "name": "javascript",
-      "percent": 22
+      "percent": 21.8
     },
     {
       "name": "astro",
-      "percent": 12.5
+      "percent": 12.4
     },
     {
       "name": "wolframlanguage",
-      "percent": 7.2
+      "percent": 7.1
     },
     {
       "name": "c++",
@@ -80,7 +80,7 @@
     },
     {
       "name": "jupyter-notebook",
-      "percent": 4
+      "percent": 3.9
     },
     {
       "name": "markdown",
@@ -92,7 +92,7 @@
     },
     {
       "name": "mdx",
-      "percent": 1.8
+      "percent": 1.7
     },
     {
       "name": "html",
@@ -107,11 +107,11 @@
       "percent": 0.7
     },
     {
-      "name": "typescript",
+      "name": "ignore",
       "percent": 0.4
     },
     {
-      "name": "ignore",
+      "name": "typescript",
       "percent": 0.4
     },
     {
@@ -127,11 +127,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
