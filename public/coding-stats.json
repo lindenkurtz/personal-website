@@ -2,19 +2,19 @@
   "week": [
     {
       "name": "python",
-      "percent": 68.6
+      "percent": 68.2
     },
     {
       "name": "jupyter-notebook",
-      "percent": 6.5
+      "percent": 6.4
     },
     {
       "name": "markdown",
-      "percent": 5
+      "percent": 4.9
     },
     {
       "name": "html",
-      "percent": 3.8
+      "percent": 4.2
     },
     {
       "name": "json",
@@ -26,11 +26,15 @@
     },
     {
       "name": "tsx",
-      "percent": 1.9
+      "percent": 2.3
     },
     {
       "name": "ignore",
       "percent": 1.5
+    },
+    {
+      "name": "typescript",
+      "percent": 1.1
     },
     {
       "name": "css",
@@ -38,10 +42,6 @@
     },
     {
       "name": "dotenv",
-      "percent": 1.1
-    },
-    {
-      "name": "typescript",
       "percent": 1.1
     },
     {
@@ -53,7 +53,7 @@
       "percent": 0.8
     },
     {
-      "name": "javascript",
+      "name": "pip-requirements",
       "percent": 0.4
     },
     {
@@ -61,11 +61,11 @@
       "percent": 0.4
     },
     {
-      "name": "pip-requirements",
+      "name": "yaml",
       "percent": 0.4
     },
     {
-      "name": "yaml",
+      "name": "javascript",
       "percent": 0.4
     }
   ],
@@ -76,11 +76,11 @@
     },
     {
       "name": "javascript",
-      "percent": 20.9
+      "percent": 20.8
     },
     {
       "name": "astro",
-      "percent": 11.9
+      "percent": 11.8
     },
     {
       "name": "wolframlanguage",
@@ -112,7 +112,7 @@
     },
     {
       "name": "html",
-      "percent": 1.1
+      "percent": 1.2
     },
     {
       "name": "css",
@@ -127,16 +127,16 @@
       "percent": 0.7
     },
     {
+      "name": "tsx",
+      "percent": 0.6
+    },
+    {
       "name": "jsonl",
       "percent": 0.6
     },
     {
       "name": "dotenv",
       "percent": 0.6
-    },
-    {
-      "name": "tsx",
-      "percent": 0.5
     },
     {
       "name": "ignore",
@@ -155,11 +155,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
