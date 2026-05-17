@@ -45,12 +45,16 @@
       "percent": 1.5
     },
     {
+      "name": "log",
+      "percent": 1
+    },
+    {
       "name": "plaintext",
       "percent": 1
     },
     {
-      "name": "log",
-      "percent": 1
+      "name": "yaml",
+      "percent": 0.5
     },
     {
       "name": "jsx",
@@ -58,10 +62,6 @@
     },
     {
       "name": "pip-requirements",
-      "percent": 0.5
-    },
-    {
-      "name": "yaml",
       "percent": 0.5
     }
   ],
@@ -143,11 +143,11 @@
       "percent": 0.2
     },
     {
-      "name": "yaml",
+      "name": "pip-requirements",
       "percent": 0.1
     },
     {
-      "name": "pip-requirements",
+      "name": "yaml",
       "percent": 0.1
     },
     {
