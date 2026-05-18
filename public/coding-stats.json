@@ -5,11 +5,11 @@
       "percent": 48.7
     },
     {
-      "name": "html",
+      "name": "markdown",
       "percent": 10.2
     },
     {
-      "name": "markdown",
+      "name": "html",
       "percent": 10.2
     },
     {
@@ -25,11 +25,11 @@
       "percent": 4.3
     },
     {
-      "name": "tsx",
+      "name": "jsonl",
       "percent": 3.2
     },
     {
-      "name": "jsonl",
+      "name": "tsx",
       "percent": 3.2
     },
     {
@@ -53,15 +53,15 @@
       "percent": 1.1
     },
     {
+      "name": "yaml",
+      "percent": 0.5
+    },
+    {
       "name": "jsx",
       "percent": 0.5
     },
     {
       "name": "pip-requirements",
-      "percent": 0.5
-    },
-    {
-      "name": "yaml",
       "percent": 0.5
     }
   ],
@@ -123,11 +123,11 @@
       "percent": 0.7
     },
     {
-      "name": "tsx",
+      "name": "jsonl",
       "percent": 0.6
     },
     {
-      "name": "jsonl",
+      "name": "tsx",
       "percent": 0.6
     },
     {
@@ -151,19 +151,19 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
       "name": "go",
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
