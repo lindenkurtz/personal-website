@@ -2,23 +2,23 @@
   "week": [
     {
       "name": "python",
-      "percent": 44.2
+      "percent": 43.6
     },
     {
       "name": "html",
-      "percent": 13
+      "percent": 13.5
     },
     {
       "name": "markdown",
-      "percent": 10.4
+      "percent": 10.9
     },
     {
       "name": "typescript",
-      "percent": 6.5
+      "percent": 6.4
     },
     {
       "name": "javascript",
-      "percent": 5.2
+      "percent": 5.1
     },
     {
       "name": "tsx",
@@ -26,7 +26,7 @@
     },
     {
       "name": "jsonl",
-      "percent": 3.9
+      "percent": 3.8
     },
     {
       "name": "css",
@@ -49,11 +49,11 @@
       "percent": 1.3
     },
     {
-      "name": "yaml",
+      "name": "jsx",
       "percent": 0.6
     },
     {
-      "name": "jsx",
+      "name": "yaml",
       "percent": 0.6
     },
     {
@@ -80,7 +80,7 @@
     },
     {
       "name": "c++",
-      "percent": 4.7
+      "percent": 4.6
     },
     {
       "name": "jsx",
@@ -92,11 +92,11 @@
     },
     {
       "name": "markdown",
-      "percent": 3.4
+      "percent": 3.5
     },
     {
       "name": "html",
-      "percent": 2.3
+      "percent": 2.4
     },
     {
       "name": "json",
