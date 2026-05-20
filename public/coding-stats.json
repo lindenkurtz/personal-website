@@ -5,11 +5,11 @@
       "percent": 42.3
     },
     {
-      "name": "markdown",
+      "name": "html",
       "percent": 12
     },
     {
-      "name": "html",
+      "name": "markdown",
       "percent": 12
     },
     {
@@ -45,15 +45,15 @@
       "percent": 1.4
     },
     {
+      "name": "yaml",
+      "percent": 0.7
+    },
+    {
       "name": "pip-requirements",
       "percent": 0.7
     },
     {
       "name": "plaintext",
-      "percent": 0.7
-    },
-    {
-      "name": "yaml",
       "percent": 0.7
     }
   ],
@@ -143,19 +143,19 @@
       "percent": 0.1
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
