@@ -135,15 +135,11 @@
       "percent": 0.2
     },
     {
-      "name": "yaml",
-      "percent": 0.1
-    },
-    {
       "name": "pip-requirements",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "yaml",
       "percent": 0.1
     },
     {
@@ -151,11 +147,15 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0
+    },
+    {
+      "name": "tsconfig",
       "percent": 0
     }
   ]
