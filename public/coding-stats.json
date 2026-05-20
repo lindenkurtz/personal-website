@@ -45,15 +45,15 @@
       "percent": 1.4
     },
     {
+      "name": "plaintext",
+      "percent": 0.7
+    },
+    {
       "name": "yaml",
       "percent": 0.7
     },
     {
       "name": "pip-requirements",
-      "percent": 0.7
-    },
-    {
-      "name": "plaintext",
       "percent": 0.7
     }
   ],
@@ -135,11 +135,11 @@
       "percent": 0.2
     },
     {
-      "name": "pip-requirements",
+      "name": "yaml",
       "percent": 0.1
     },
     {
-      "name": "yaml",
+      "name": "pip-requirements",
       "percent": 0.1
     },
     {
