@@ -53,11 +53,11 @@
       "percent": 0.8
     },
     {
-      "name": "ignore",
+      "name": "pip-requirements",
       "percent": 0.8
     },
     {
-      "name": "pip-requirements",
+      "name": "ignore",
       "percent": 0.8
     }
   ],
@@ -95,11 +95,11 @@
       "percent": 3.4
     },
     {
-      "name": "json",
+      "name": "html",
       "percent": 2.4
     },
     {
-      "name": "html",
+      "name": "json",
       "percent": 2.4
     },
     {
