@@ -2,77 +2,77 @@
   "week": [
     {
       "name": "python",
-      "percent": 29.8
+      "percent": 28.9
     },
     {
       "name": "markdown",
-      "percent": 11.5
+      "percent": 11.1
     },
     {
       "name": "html",
-      "percent": 11.5
-    },
-    {
-      "name": "csv",
-      "percent": 8.4
-    },
-    {
-      "name": "typescript",
-      "percent": 7.6
+      "percent": 11.1
     },
     {
       "name": "javascript",
-      "percent": 5.3
+      "percent": 8.1
+    },
+    {
+      "name": "csv",
+      "percent": 8.1
+    },
+    {
+      "name": "typescript",
+      "percent": 7.4
     },
     {
       "name": "tsx",
-      "percent": 5.3
+      "percent": 5.2
     },
     {
       "name": "jsonl",
-      "percent": 4.6
+      "percent": 4.4
     },
     {
       "name": "json",
-      "percent": 3.8
+      "percent": 3.7
     },
     {
       "name": "jupyter-notebook",
-      "percent": 3.8
+      "percent": 3.7
     },
     {
       "name": "css",
-      "percent": 3.8
+      "percent": 3.7
     },
     {
       "name": "dotenv",
-      "percent": 2.3
+      "percent": 2.2
     },
     {
       "name": "plaintext",
-      "percent": 0.8
+      "percent": 0.7
     },
     {
       "name": "pip-requirements",
-      "percent": 0.8
+      "percent": 0.7
     },
     {
       "name": "ignore",
-      "percent": 0.8
+      "percent": 0.7
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 33.8
+      "percent": 33.6
     },
     {
       "name": "javascript",
-      "percent": 19.9
+      "percent": 20.2
     },
     {
       "name": "astro",
-      "percent": 11
+      "percent": 10.9
     },
     {
       "name": "wolframlanguage",
@@ -80,7 +80,7 @@
     },
     {
       "name": "c++",
-      "percent": 4.6
+      "percent": 4.5
     },
     {
       "name": "jupyter-notebook",
@@ -95,11 +95,11 @@
       "percent": 3.4
     },
     {
-      "name": "html",
+      "name": "json",
       "percent": 2.4
     },
     {
-      "name": "json",
+      "name": "html",
       "percent": 2.4
     },
     {
@@ -143,15 +143,11 @@
       "percent": 0.2
     },
     {
-      "name": "pip-requirements",
-      "percent": 0.1
-    },
-    {
       "name": "yaml",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "pip-requirements",
       "percent": 0.1
     },
     {
@@ -159,11 +155,15 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
