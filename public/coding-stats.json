@@ -2,19 +2,19 @@
   "week": [
     {
       "name": "python",
-      "percent": 25
-    },
-    {
-      "name": "html",
-      "percent": 10.3
+      "percent": 24.8
     },
     {
       "name": "plaintext",
-      "percent": 10.3
+      "percent": 11
+    },
+    {
+      "name": "html",
+      "percent": 10.2
     },
     {
       "name": "markdown",
-      "percent": 9.6
+      "percent": 9.5
     },
     {
       "name": "javascript",
@@ -22,11 +22,11 @@
     },
     {
       "name": "csv",
-      "percent": 8.1
+      "percent": 8
     },
     {
       "name": "typescript",
-      "percent": 5.2
+      "percent": 5.1
     },
     {
       "name": "yaml",
@@ -42,23 +42,19 @@
     },
     {
       "name": "wolframlanguage",
-      "percent": 2.9
+      "percent": 2.8
     },
     {
       "name": "json",
       "percent": 2.2
     },
     {
-      "name": "tsx",
-      "percent": 1.5
-    },
-    {
       "name": "css",
       "percent": 1.5
     },
     {
-      "name": "ignore",
-      "percent": 0.7
+      "name": "tsx",
+      "percent": 1.5
     },
     {
       "name": "pip-requirements",
@@ -67,12 +63,16 @@
     {
       "name": "dotenv",
       "percent": 0.7
+    },
+    {
+      "name": "ignore",
+      "percent": 0.7
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 33.4
+      "percent": 33.3
     },
     {
       "name": "javascript",
@@ -103,16 +103,16 @@
       "percent": 3.4
     },
     {
-      "name": "json",
-      "percent": 2.3
-    },
-    {
       "name": "html",
       "percent": 2.3
     },
     {
+      "name": "json",
+      "percent": 2.3
+    },
+    {
       "name": "plaintext",
-      "percent": 1.9
+      "percent": 2
     },
     {
       "name": "mdx",
