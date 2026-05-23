@@ -13,11 +13,11 @@
       "percent": 11.2
     },
     {
-      "name": "javascript",
+      "name": "markdown",
       "percent": 10.4
     },
     {
-      "name": "markdown",
+      "name": "javascript",
       "percent": 10.4
     },
     {
@@ -25,11 +25,11 @@
       "percent": 9.5
     },
     {
-      "name": "typescript",
+      "name": "yaml",
       "percent": 5.2
     },
     {
-      "name": "yaml",
+      "name": "typescript",
       "percent": 5.2
     },
     {
@@ -87,11 +87,11 @@
       "percent": 3.4
     },
     {
-      "name": "json",
+      "name": "html",
       "percent": 2.3
     },
     {
-      "name": "html",
+      "name": "json",
       "percent": 2.3
     },
     {
