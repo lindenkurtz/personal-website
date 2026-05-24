@@ -9,11 +9,11 @@
       "percent": 14.7
     },
     {
-      "name": "csv",
+      "name": "javascript",
       "percent": 10.1
     },
     {
-      "name": "javascript",
+      "name": "csv",
       "percent": 10.1
     },
     {
@@ -29,11 +29,11 @@
       "percent": 5.5
     },
     {
-      "name": "jupyter-notebook",
+      "name": "typescript",
       "percent": 4.6
     },
     {
-      "name": "typescript",
+      "name": "jupyter-notebook",
       "percent": 4.6
     },
     {
@@ -115,11 +115,11 @@
       "percent": 1
     },
     {
-      "name": "yaml",
+      "name": "tsx",
       "percent": 0.6
     },
     {
-      "name": "tsx",
+      "name": "yaml",
       "percent": 0.6
     },
     {
@@ -143,11 +143,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
