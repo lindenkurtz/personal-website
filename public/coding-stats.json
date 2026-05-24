@@ -9,11 +9,11 @@
       "percent": 14.7
     },
     {
-      "name": "javascript",
+      "name": "csv",
       "percent": 10.1
     },
     {
-      "name": "csv",
+      "name": "javascript",
       "percent": 10.1
     },
     {
@@ -29,11 +29,11 @@
       "percent": 5.5
     },
     {
-      "name": "typescript",
+      "name": "jupyter-notebook",
       "percent": 4.6
     },
     {
-      "name": "jupyter-notebook",
+      "name": "typescript",
       "percent": 4.6
     },
     {
@@ -87,11 +87,11 @@
       "percent": 3.4
     },
     {
-      "name": "html",
+      "name": "json",
       "percent": 2.3
     },
     {
-      "name": "json",
+      "name": "html",
       "percent": 2.3
     },
     {
@@ -143,19 +143,19 @@
       "percent": 0.1
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0
+    },
+    {
+      "name": "tsconfig",
       "percent": 0
     }
   ]
