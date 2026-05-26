@@ -29,11 +29,11 @@
       "percent": 7.8
     },
     {
-      "name": "json",
+      "name": "tsx",
       "percent": 3.2
     },
     {
-      "name": "tsx",
+      "name": "json",
       "percent": 3.2
     },
     {
@@ -135,19 +135,19 @@
       "percent": 0.1
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0
+    },
+    {
+      "name": "tsconfig",
       "percent": 0
     }
   ]
