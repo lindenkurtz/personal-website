@@ -41,11 +41,11 @@
       "percent": 2.9
     },
     {
-      "name": "markdown",
+      "name": "tsx",
       "percent": 2.9
     },
     {
-      "name": "tsx",
+      "name": "markdown",
       "percent": 2.9
     },
     {
@@ -151,11 +151,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
