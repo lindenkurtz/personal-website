@@ -2,35 +2,39 @@
   "week": [
     {
       "name": "plaintext",
-      "percent": 23.6
+      "percent": 22.9
     },
     {
       "name": "csv",
-      "percent": 16.2
+      "percent": 15.7
     },
     {
       "name": "python",
-      "percent": 13.3
+      "percent": 12.9
     },
     {
       "name": "yaml",
-      "percent": 8.8
+      "percent": 8.6
     },
     {
       "name": "jupyter-notebook",
-      "percent": 7.4
-    },
-    {
-      "name": "javascript",
-      "percent": 7.4
-    },
-    {
-      "name": "wolframlanguage",
       "percent": 7.2
     },
     {
+      "name": "javascript",
+      "percent": 7.2
+    },
+    {
+      "name": "wolframlanguage",
+      "percent": 7
+    },
+    {
       "name": "xml",
-      "percent": 4.4
+      "percent": 4.3
+    },
+    {
+      "name": "csharp",
+      "percent": 4.3
     },
     {
       "name": "json",
@@ -45,26 +49,22 @@
       "percent": 2.9
     },
     {
-      "name": "csharp",
-      "percent": 1.5
-    },
-    {
       "name": "typescript",
-      "percent": 1.5
+      "percent": 1.4
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 33.1
+      "percent": 33
     },
     {
       "name": "javascript",
-      "percent": 19.5
+      "percent": 19.4
     },
     {
       "name": "astro",
-      "percent": 10.5
+      "percent": 10.4
     },
     {
       "name": "wolframlanguage",
@@ -76,7 +76,7 @@
     },
     {
       "name": "jupyter-notebook",
-      "percent": 3.8
+      "percent": 3.7
     },
     {
       "name": "jsx",
@@ -87,11 +87,11 @@
       "percent": 3.4
     },
     {
-      "name": "html",
+      "name": "json",
       "percent": 2.3
     },
     {
-      "name": "json",
+      "name": "html",
       "percent": 2.3
     },
     {
@@ -135,6 +135,10 @@
       "percent": 0.5
     },
     {
+      "name": "csharp",
+      "percent": 0.3
+    },
+    {
       "name": "xml",
       "percent": 0.3
     },
@@ -147,10 +151,6 @@
       "percent": 0.1
     },
     {
-      "name": "csharp",
-      "percent": 0.1
-    },
-    {
       "name": "go",
       "percent": 0.1
     },
@@ -159,11 +159,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
