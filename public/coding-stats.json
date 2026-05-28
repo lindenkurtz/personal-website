@@ -29,19 +29,19 @@
       "percent": 5
     },
     {
-      "name": "xml",
-      "percent": 4.1
-    },
-    {
       "name": "json",
       "percent": 4.1
     },
     {
-      "name": "astro",
-      "percent": 2
+      "name": "xml",
+      "percent": 4.1
     },
     {
       "name": "tsx",
+      "percent": 2
+    },
+    {
+      "name": "astro",
       "percent": 2
     },
     {
@@ -147,19 +147,19 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
       "name": "go",
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
