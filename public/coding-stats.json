@@ -2,65 +2,65 @@
   "week": [
     {
       "name": "csharp",
-      "percent": 35.2
+      "percent": 39.8
     },
     {
       "name": "plaintext",
-      "percent": 17.6
+      "percent": 16.3
     },
     {
       "name": "python",
-      "percent": 9.9
+      "percent": 9.2
     },
     {
       "name": "yaml",
-      "percent": 6.6
+      "percent": 6.1
     },
     {
       "name": "markdown",
-      "percent": 5.5
+      "percent": 5.1
     },
     {
       "name": "javascript",
-      "percent": 5.5
+      "percent": 5.1
     },
     {
       "name": "wolframlanguage",
-      "percent": 5.4
+      "percent": 5
     },
     {
       "name": "xml",
-      "percent": 4.4
+      "percent": 4.1
     },
     {
       "name": "json",
-      "percent": 4.4
+      "percent": 4.1
     },
     {
       "name": "astro",
-      "percent": 2.2
+      "percent": 2
     },
     {
       "name": "tsx",
-      "percent": 2.2
+      "percent": 2
     },
     {
       "name": "typescript",
-      "percent": 1.1
+      "percent": 1
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 31.9
+      "percent": 31.7
     },
     {
       "name": "javascript",
-      "percent": 18.8
+      "percent": 18.7
     },
     {
       "name": "astro",
-      "percent": 10.3
+      "percent": 10.2
     },
     {
       "name": "wolframlanguage",
@@ -76,15 +76,15 @@
     },
     {
       "name": "markdown",
-      "percent": 3.6
+      "percent": 3.5
+    },
+    {
+      "name": "csharp",
+      "percent": 3.4
     },
     {
       "name": "jsx",
       "percent": 3.4
-    },
-    {
-      "name": "csharp",
-      "percent": 2.8
     },
     {
       "name": "json",
@@ -147,11 +147,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
