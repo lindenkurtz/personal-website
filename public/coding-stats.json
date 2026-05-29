@@ -9,19 +9,19 @@
       "percent": 11.1
     },
     {
-      "name": "yaml",
-      "percent": 7.4
-    },
-    {
       "name": "python",
       "percent": 7.4
     },
     {
-      "name": "json",
-      "percent": 4.9
+      "name": "yaml",
+      "percent": 7.4
     },
     {
       "name": "xml",
+      "percent": 4.9
+    },
+    {
+      "name": "json",
       "percent": 4.9
     },
     {
@@ -29,11 +29,11 @@
       "percent": 4.9
     },
     {
-      "name": "csv",
+      "name": "astro",
       "percent": 2.5
     },
     {
-      "name": "astro",
+      "name": "csv",
       "percent": 2.5
     },
     {
@@ -45,11 +45,11 @@
       "percent": 1.2
     },
     {
-      "name": "javascript",
+      "name": "typescript",
       "percent": 1.2
     },
     {
-      "name": "typescript",
+      "name": "javascript",
       "percent": 1.2
     }
   ],
@@ -159,11 +159,11 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     }
   ]
