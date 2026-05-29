@@ -2,55 +2,55 @@
   "week": [
     {
       "name": "csharp",
-      "percent": 38.7
+      "percent": 48.1
     },
     {
       "name": "plaintext",
-      "percent": 15.9
+      "percent": 11.1
     },
     {
       "name": "python",
-      "percent": 9.9
+      "percent": 7.4
     },
     {
       "name": "yaml",
-      "percent": 5.9
+      "percent": 7.4
     },
     {
       "name": "markdown",
-      "percent": 5
-    },
-    {
-      "name": "javascript",
-      "percent": 5
-    },
-    {
-      "name": "wolframlanguage",
       "percent": 4.9
     },
     {
       "name": "xml",
-      "percent": 4
+      "percent": 4.9
     },
     {
       "name": "json",
-      "percent": 4
-    },
-    {
-      "name": "astro",
-      "percent": 2
+      "percent": 4.9
     },
     {
       "name": "tsx",
-      "percent": 2
+      "percent": 2.5
     },
     {
       "name": "csv",
-      "percent": 2
+      "percent": 2.5
+    },
+    {
+      "name": "astro",
+      "percent": 2.5
+    },
+    {
+      "name": "wolframlanguage",
+      "percent": 1.2
     },
     {
       "name": "typescript",
-      "percent": 1
+      "percent": 1.2
+    },
+    {
+      "name": "javascript",
+      "percent": 1.2
     }
   ],
   "alltime": [
