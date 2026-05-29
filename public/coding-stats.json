@@ -9,15 +9,15 @@
       "percent": 11.1
     },
     {
-      "name": "python",
-      "percent": 7.4
-    },
-    {
       "name": "yaml",
       "percent": 7.4
     },
     {
-      "name": "markdown",
+      "name": "python",
+      "percent": 7.4
+    },
+    {
+      "name": "json",
       "percent": 4.9
     },
     {
@@ -25,11 +25,11 @@
       "percent": 4.9
     },
     {
-      "name": "json",
+      "name": "markdown",
       "percent": 4.9
     },
     {
-      "name": "tsx",
+      "name": "astro",
       "percent": 2.5
     },
     {
@@ -37,7 +37,7 @@
       "percent": 2.5
     },
     {
-      "name": "astro",
+      "name": "tsx",
       "percent": 2.5
     },
     {
@@ -45,11 +45,11 @@
       "percent": 1.2
     },
     {
-      "name": "typescript",
+      "name": "javascript",
       "percent": 1.2
     },
     {
-      "name": "javascript",
+      "name": "typescript",
       "percent": 1.2
     }
   ],
@@ -151,11 +151,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
