@@ -5,6 +5,10 @@
       "percent": 59.1
     },
     {
+      "name": "markdown",
+      "percent": 6.1
+    },
+    {
       "name": "json",
       "percent": 6.1
     },
@@ -13,23 +17,15 @@
       "percent": 6.1
     },
     {
-      "name": "markdown",
-      "percent": 6.1
-    },
-    {
       "name": "python",
       "percent": 4.5
-    },
-    {
-      "name": "tsx",
-      "percent": 3
     },
     {
       "name": "csv",
       "percent": 3
     },
     {
-      "name": "astro",
+      "name": "tsx",
       "percent": 3
     },
     {
@@ -37,12 +33,8 @@
       "percent": 3
     },
     {
-      "name": "wolframlanguage",
-      "percent": 1.5
-    },
-    {
-      "name": "dotenv",
-      "percent": 1.5
+      "name": "astro",
+      "percent": 3
     },
     {
       "name": "jsx",
@@ -50,6 +42,14 @@
     },
     {
       "name": "plaintext",
+      "percent": 1.5
+    },
+    {
+      "name": "dotenv",
+      "percent": 1.5
+    },
+    {
+      "name": "wolframlanguage",
       "percent": 1.5
     }
   ],
@@ -151,19 +151,19 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
       "name": "go",
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
