@@ -4,6 +4,7 @@ import { writeFileSync } from 'fs';
 const NORMALIZE = {
     'cpp': 'c++',
     'jsonc': 'json',
+    'jsonl': 'json',
     'javascriptreact': 'jsx',
     'typescriptreact': 'tsx',
     'shellscript': 'shell',
