@@ -28,7 +28,6 @@ import * as d3 from 'd3';
 type Family = { label: string; hue: number; sat: number; languages: string[] };
 
 const FAMILIES: Record<string, Family> = {
-
   systems: {
     label: 'Systems',
     hue: 210, sat: 55,
@@ -41,13 +40,14 @@ const FAMILIES: Record<string, Family> = {
     languages: ['python', 'jupyter-notebook', 'r', 'wolframlanguage', 'julia', 'matlab', 'fortran', 'sas'],
   },
 
-  web: {
-    label: 'Web',
+  frontend: { // Renamed from 'web' to include all UI frameworks
+    label: 'Frontend & Web',
     hue: 175, sat: 60,
     languages: [
       'javascript', 'typescript',
       'javascriptreact', 'typescriptreact', 'jsx', 'tsx',
       'html', 'css', 'scss', 'sass', 'less', 'stylus',
+      'astro', 'svelte', 'vue', // Moved from 'meta'
     ],
   },
 
@@ -57,10 +57,16 @@ const FAMILIES: Record<string, Family> = {
     languages: ['bash', 'shell', 'sh', 'zsh', 'fish', 'lua', 'ruby', 'perl', 'powershell'],
   },
 
-  config: {
+  config: { // Strictly for environment and tool configuration
     label: 'Config',
     hue: 270, sat: 40,
-    languages: ['json', 'json5', 'yaml', 'toml', 'dotenv', 'ini', 'xml', 'sql', 'graphql', 'prisma', 'hcl', 'terraform'],
+    languages: ['yaml', 'toml', 'dotenv', 'ini', 'hcl', 'terraform'],
+  },
+
+  data: { // NEW: Dedicated to data storage, querying, and serialization
+    label: 'Data & Databases',
+    hue: 190, sat: 50, 
+    languages: ['json', 'json5', 'xml', 'csv', 'sql', 'graphql', 'prisma'],
   },
 
   markup: {
@@ -75,16 +81,11 @@ const FAMILIES: Record<string, Family> = {
     languages: ['java', 'kotlin', 'swift', 'dart', 'scala', 'groovy', 'clojure', 'flutter'],
   },
 
-  meta: {
-    label: 'Frameworks',
-    hue: 20, sat: 78,
-    languages: ['astro', 'svelte', 'vue'],
+  dotnet: {
+    label: '.NET',       
+    hue: 258, sat: 60, 
+    languages: ['csharp', 'fsharp', 'visualbasic'] 
   },
-
-  // ── Add more families below ───────────────────────────────────────────────
-  // functional: { label: 'Functional', hue: 155, sat: 50, languages: ['haskell', 'elixir', 'erlang', 'ocaml', 'fsharp'] },
-  // dotnet:     { label: '.NET',       hue: 258, sat: 60, languages: ['csharp', 'fsharp', 'visualbasic'] },
-
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
