@@ -5,11 +5,11 @@
       "percent": 59.1
     },
     {
-      "name": "xml",
+      "name": "json",
       "percent": 6.1
     },
     {
-      "name": "json",
+      "name": "xml",
       "percent": 6.1
     },
     {
@@ -21,7 +21,7 @@
       "percent": 4.5
     },
     {
-      "name": "astro",
+      "name": "tsx",
       "percent": 3
     },
     {
@@ -29,7 +29,7 @@
       "percent": 3
     },
     {
-      "name": "tsx",
+      "name": "astro",
       "percent": 3
     },
     {
@@ -45,11 +45,11 @@
       "percent": 1.5
     },
     {
-      "name": "plaintext",
+      "name": "jsx",
       "percent": 1.5
     },
     {
-      "name": "jsx",
+      "name": "plaintext",
       "percent": 1.5
     }
   ],
