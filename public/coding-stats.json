@@ -2,69 +2,65 @@
   "week": [
     {
       "name": "csharp",
-      "percent": 58.2
-    },
-    {
-      "name": "xml",
-      "percent": 6
+      "percent": 56.5
     },
     {
       "name": "json",
-      "percent": 6
+      "percent": 5.8
+    },
+    {
+      "name": "xml",
+      "percent": 5.8
+    },
+    {
+      "name": "html",
+      "percent": 5.8
     },
     {
       "name": "markdown",
-      "percent": 6
+      "percent": 5.8
     },
     {
       "name": "python",
-      "percent": 4.5
-    },
-    {
-      "name": "csv",
-      "percent": 3
+      "percent": 4.3
     },
     {
       "name": "astro",
-      "percent": 3
+      "percent": 2.9
     },
     {
-      "name": "typescript",
-      "percent": 3
+      "name": "csv",
+      "percent": 2.9
     },
     {
       "name": "tsx",
-      "percent": 3
+      "percent": 2.9
     },
     {
-      "name": "jsx",
-      "percent": 1.5
+      "name": "typescript",
+      "percent": 2.9
     },
     {
       "name": "dotenv",
-      "percent": 1.5
+      "percent": 1.4
     },
     {
-      "name": "wolframlanguage",
-      "percent": 1.5
+      "name": "jsx",
+      "percent": 1.4
     },
     {
       "name": "javascript",
-      "percent": 1.5
-    },
-    {
-      "name": "plaintext",
-      "percent": 1.5
+      "percent": 1.4
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 31.7
+      "percent": 31.6
     },
     {
       "name": "javascript",
-      "percent": 18.6
+      "percent": 18.5
     },
     {
       "name": "astro",
@@ -100,11 +96,11 @@
     },
     {
       "name": "html",
-      "percent": 2.2
+      "percent": 2.5
     },
     {
       "name": "plaintext",
-      "percent": 2.1
+      "percent": 2
     },
     {
       "name": "mdx",
