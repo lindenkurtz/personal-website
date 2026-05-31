@@ -17,11 +17,11 @@
       "percent": 4.9
     },
     {
-      "name": "xml",
+      "name": "json",
       "percent": 4.9
     },
     {
-      "name": "json",
+      "name": "xml",
       "percent": 4.9
     },
     {
@@ -37,11 +37,11 @@
       "percent": 2.5
     },
     {
-      "name": "csv",
+      "name": "astro",
       "percent": 2.5
     },
     {
-      "name": "astro",
+      "name": "csv",
       "percent": 2.5
     },
     {
@@ -49,7 +49,7 @@
       "percent": 2.5
     },
     {
-      "name": "dotenv",
+      "name": "jsx",
       "percent": 1.2
     },
     {
@@ -57,7 +57,7 @@
       "percent": 1.2
     },
     {
-      "name": "jsx",
+      "name": "dotenv",
       "percent": 1.2
     }
   ],
@@ -163,11 +163,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
