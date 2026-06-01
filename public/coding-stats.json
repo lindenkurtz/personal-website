@@ -13,10 +13,6 @@
       "percent": 6.2
     },
     {
-      "name": "json",
-      "percent": 4.9
-    },
-    {
       "name": "markdown",
       "percent": 4.9
     },
@@ -25,12 +21,20 @@
       "percent": 4.9
     },
     {
-      "name": "python",
-      "percent": 3.7
+      "name": "json",
+      "percent": 4.9
     },
     {
       "name": "css",
       "percent": 3.7
+    },
+    {
+      "name": "python",
+      "percent": 3.7
+    },
+    {
+      "name": "typescript",
+      "percent": 2.5
     },
     {
       "name": "tsx",
@@ -45,8 +49,8 @@
       "percent": 2.5
     },
     {
-      "name": "typescript",
-      "percent": 2.5
+      "name": "dotenv",
+      "percent": 1.2
     },
     {
       "name": "ignore",
@@ -54,10 +58,6 @@
     },
     {
       "name": "jsx",
-      "percent": 1.2
-    },
-    {
-      "name": "dotenv",
       "percent": 1.2
     }
   ],
@@ -111,11 +111,11 @@
       "percent": 2
     },
     {
-      "name": "typescript",
+      "name": "mdx",
       "percent": 1.4
     },
     {
-      "name": "mdx",
+      "name": "typescript",
       "percent": 1.4
     },
     {
@@ -163,11 +163,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
