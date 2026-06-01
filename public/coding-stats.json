@@ -41,11 +41,11 @@
       "percent": 2.5
     },
     {
-      "name": "astro",
+      "name": "csv",
       "percent": 2.5
     },
     {
-      "name": "csv",
+      "name": "astro",
       "percent": 2.5
     },
     {
@@ -111,11 +111,11 @@
       "percent": 2
     },
     {
-      "name": "mdx",
+      "name": "typescript",
       "percent": 1.4
     },
     {
-      "name": "typescript",
+      "name": "mdx",
       "percent": 1.4
     },
     {
@@ -155,19 +155,19 @@
       "percent": 0.1
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
