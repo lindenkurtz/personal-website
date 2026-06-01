@@ -25,16 +25,12 @@
       "percent": 4.9
     },
     {
-      "name": "css",
-      "percent": 3.7
-    },
-    {
       "name": "python",
       "percent": 3.7
     },
     {
-      "name": "typescript",
-      "percent": 2.5
+      "name": "css",
+      "percent": 3.7
     },
     {
       "name": "tsx",
@@ -46,6 +42,10 @@
     },
     {
       "name": "astro",
+      "percent": 2.5
+    },
+    {
+      "name": "typescript",
       "percent": 2.5
     },
     {
@@ -111,11 +111,11 @@
       "percent": 2
     },
     {
-      "name": "typescript",
+      "name": "mdx",
       "percent": 1.4
     },
     {
-      "name": "mdx",
+      "name": "typescript",
       "percent": 1.4
     },
     {
@@ -155,19 +155,19 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
       "name": "go",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0
+    },
+    {
+      "name": "tsconfig",
       "percent": 0
     }
   ]
