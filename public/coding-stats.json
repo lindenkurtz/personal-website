@@ -17,6 +17,10 @@
       "percent": 5.6
     },
     {
+      "name": "markdown",
+      "percent": 4.2
+    },
+    {
       "name": "python",
       "percent": 4.2
     },
@@ -25,24 +29,12 @@
       "percent": 4.2
     },
     {
-      "name": "markdown",
-      "percent": 4.2
-    },
-    {
-      "name": "csv",
-      "percent": 2.8
-    },
-    {
       "name": "astro",
       "percent": 2.8
     },
     {
-      "name": "jsx",
-      "percent": 1.4
-    },
-    {
-      "name": "typescript",
-      "percent": 1.4
+      "name": "csv",
+      "percent": 2.8
     },
     {
       "name": "ignore",
@@ -54,6 +46,14 @@
     },
     {
       "name": "dotenv",
+      "percent": 1.4
+    },
+    {
+      "name": "jsx",
+      "percent": 1.4
+    },
+    {
+      "name": "typescript",
       "percent": 1.4
     }
   ],
@@ -151,11 +151,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
