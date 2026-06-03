@@ -17,10 +17,6 @@
       "percent": 5.6
     },
     {
-      "name": "markdown",
-      "percent": 4.2
-    },
-    {
       "name": "python",
       "percent": 4.2
     },
@@ -29,23 +25,19 @@
       "percent": 4.2
     },
     {
-      "name": "astro",
-      "percent": 2.8
+      "name": "markdown",
+      "percent": 4.2
     },
     {
       "name": "csv",
       "percent": 2.8
     },
     {
-      "name": "ignore",
-      "percent": 1.4
+      "name": "astro",
+      "percent": 2.8
     },
     {
-      "name": "xml",
-      "percent": 1.4
-    },
-    {
-      "name": "dotenv",
+      "name": "typescript",
       "percent": 1.4
     },
     {
@@ -53,7 +45,15 @@
       "percent": 1.4
     },
     {
-      "name": "typescript",
+      "name": "ignore",
+      "percent": 1.4
+    },
+    {
+      "name": "dotenv",
+      "percent": 1.4
+    },
+    {
+      "name": "xml",
       "percent": 1.4
     }
   ],
@@ -107,11 +107,11 @@
       "percent": 2
     },
     {
-      "name": "typescript",
+      "name": "mdx",
       "percent": 1.4
     },
     {
-      "name": "mdx",
+      "name": "typescript",
       "percent": 1.4
     },
     {
@@ -159,11 +159,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
