@@ -1,60 +1,40 @@
 {
   "week": [
     {
-      "name": "csharp",
-      "percent": 50.7
-    },
-    {
       "name": "html",
-      "percent": 11.3
+      "percent": 32
     },
     {
       "name": "javascript",
-      "percent": 7
-    },
-    {
-      "name": "json",
-      "percent": 5.6
+      "percent": 20
     },
     {
       "name": "python",
-      "percent": 4.2
+      "percent": 12
     },
     {
       "name": "css",
-      "percent": 4.2
-    },
-    {
-      "name": "markdown",
-      "percent": 4.2
+      "percent": 12
     },
     {
       "name": "csv",
-      "percent": 2.8
-    },
-    {
-      "name": "astro",
-      "percent": 2.8
-    },
-    {
-      "name": "typescript",
-      "percent": 1.4
-    },
-    {
-      "name": "jsx",
-      "percent": 1.4
-    },
-    {
-      "name": "ignore",
-      "percent": 1.4
+      "percent": 8
     },
     {
       "name": "dotenv",
-      "percent": 1.4
+      "percent": 4
     },
     {
-      "name": "xml",
-      "percent": 1.4
+      "name": "jsx",
+      "percent": 4
+    },
+    {
+      "name": "typescript",
+      "percent": 4
+    },
+    {
+      "name": "ignore",
+      "percent": 4
     }
   ],
   "alltime": [
@@ -107,11 +87,11 @@
       "percent": 2
     },
     {
-      "name": "mdx",
+      "name": "typescript",
       "percent": 1.4
     },
     {
-      "name": "typescript",
+      "name": "mdx",
       "percent": 1.4
     },
     {
@@ -159,11 +139,11 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     }
   ]
