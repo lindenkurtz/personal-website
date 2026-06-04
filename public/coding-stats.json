@@ -9,11 +9,11 @@
       "percent": 20
     },
     {
-      "name": "python",
+      "name": "css",
       "percent": 12
     },
     {
-      "name": "css",
+      "name": "python",
       "percent": 12
     },
     {
@@ -25,15 +25,15 @@
       "percent": 4
     },
     {
-      "name": "jsx",
-      "percent": 4
-    },
-    {
       "name": "dotenv",
       "percent": 4
     },
     {
       "name": "ignore",
+      "percent": 4
+    },
+    {
+      "name": "jsx",
       "percent": 4
     }
   ],
@@ -139,11 +139,11 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     }
   ]
