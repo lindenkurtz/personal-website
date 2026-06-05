@@ -17,19 +17,19 @@
       "percent": 9.1
     },
     {
-      "name": "jsx",
-      "percent": 4.5
-    },
-    {
-      "name": "typescript",
-      "percent": 4.5
-    },
-    {
       "name": "dotenv",
       "percent": 4.5
     },
     {
       "name": "ignore",
+      "percent": 4.5
+    },
+    {
+      "name": "jsx",
+      "percent": 4.5
+    },
+    {
+      "name": "typescript",
       "percent": 4.5
     }
   ],
@@ -127,19 +127,19 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
       "name": "go",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0
+    },
+    {
+      "name": "tsconfig",
       "percent": 0
     }
   ]
