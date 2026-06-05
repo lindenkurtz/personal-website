@@ -2,39 +2,35 @@
   "week": [
     {
       "name": "html",
-      "percent": 32
+      "percent": 36.4
     },
     {
       "name": "javascript",
-      "percent": 20
+      "percent": 22.7
     },
     {
       "name": "css",
-      "percent": 12
+      "percent": 13.6
     },
     {
       "name": "python",
-      "percent": 12
-    },
-    {
-      "name": "csv",
-      "percent": 8
-    },
-    {
-      "name": "typescript",
-      "percent": 4
-    },
-    {
-      "name": "dotenv",
-      "percent": 4
-    },
-    {
-      "name": "ignore",
-      "percent": 4
+      "percent": 9.1
     },
     {
       "name": "jsx",
-      "percent": 4
+      "percent": 4.5
+    },
+    {
+      "name": "dotenv",
+      "percent": 4.5
+    },
+    {
+      "name": "ignore",
+      "percent": 4.5
+    },
+    {
+      "name": "typescript",
+      "percent": 4.5
     }
   ],
   "alltime": [
@@ -131,19 +127,19 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
-      "percent": 0.1
-    },
-    {
       "name": "go",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
-      "percent": 0
+      "name": "github-actions-workflow",
+      "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0
+    },
+    {
+      "name": "tsconfig",
       "percent": 0
     }
   ]
