@@ -17,19 +17,19 @@
       "percent": 9.1
     },
     {
-      "name": "typescript",
-      "percent": 4.5
-    },
-    {
       "name": "jsx",
       "percent": 4.5
     },
     {
-      "name": "ignore",
+      "name": "typescript",
       "percent": 4.5
     },
     {
       "name": "dotenv",
+      "percent": 4.5
+    },
+    {
+      "name": "ignore",
       "percent": 4.5
     }
   ],
