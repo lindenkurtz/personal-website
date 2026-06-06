@@ -83,11 +83,11 @@
       "percent": 1.4
     },
     {
-      "name": "typescript",
+      "name": "mdx",
       "percent": 1.4
     },
     {
-      "name": "mdx",
+      "name": "typescript",
       "percent": 1.4
     },
     {
@@ -123,11 +123,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
