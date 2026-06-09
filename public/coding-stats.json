@@ -21,15 +21,15 @@
       "percent": 5
     },
     {
-      "name": "typescript",
-      "percent": 5
-    },
-    {
       "name": "json",
       "percent": 5
     },
     {
       "name": "css",
+      "percent": 5
+    },
+    {
+      "name": "typescript",
       "percent": 5
     }
   ],
