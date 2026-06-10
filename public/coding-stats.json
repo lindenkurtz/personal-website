@@ -17,15 +17,15 @@
       "percent": 5
     },
     {
+      "name": "typescript",
+      "percent": 5
+    },
+    {
       "name": "html",
       "percent": 5
     },
     {
       "name": "dotenv",
-      "percent": 5
-    },
-    {
-      "name": "typescript",
       "percent": 5
     },
     {
