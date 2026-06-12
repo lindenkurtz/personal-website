@@ -13,19 +13,7 @@
       "percent": 9.5
     },
     {
-      "name": "css",
-      "percent": 4.8
-    },
-    {
-      "name": "python",
-      "percent": 4.8
-    },
-    {
-      "name": "html",
-      "percent": 4.8
-    },
-    {
-      "name": "typescript",
+      "name": "dotenv",
       "percent": 4.8
     },
     {
@@ -33,7 +21,19 @@
       "percent": 4.8
     },
     {
-      "name": "dotenv",
+      "name": "typescript",
+      "percent": 4.8
+    },
+    {
+      "name": "html",
+      "percent": 4.8
+    },
+    {
+      "name": "css",
+      "percent": 4.8
+    },
+    {
+      "name": "python",
       "percent": 4.8
     }
   ],
@@ -131,11 +131,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
