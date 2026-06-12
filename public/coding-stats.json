@@ -13,11 +13,15 @@
       "percent": 9.5
     },
     {
-      "name": "dotenv",
+      "name": "json",
       "percent": 4.8
     },
     {
       "name": "typescript",
+      "percent": 4.8
+    },
+    {
+      "name": "html",
       "percent": 4.8
     },
     {
@@ -29,11 +33,7 @@
       "percent": 4.8
     },
     {
-      "name": "html",
-      "percent": 4.8
-    },
-    {
-      "name": "json",
+      "name": "dotenv",
       "percent": 4.8
     }
   ],
@@ -139,11 +139,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
