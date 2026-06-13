@@ -1,40 +1,16 @@
 {
   "week": [
     {
-      "name": "javascript",
-      "percent": 47.6
-    },
-    {
-      "name": "plaintext",
-      "percent": 14.3
-    },
-    {
       "name": "tsx",
-      "percent": 9.5
-    },
-    {
-      "name": "json",
-      "percent": 4.8
-    },
-    {
-      "name": "typescript",
-      "percent": 4.8
-    },
-    {
-      "name": "html",
-      "percent": 4.8
-    },
-    {
-      "name": "css",
-      "percent": 4.8
+      "percent": 50
     },
     {
       "name": "python",
-      "percent": 4.8
+      "percent": 25
     },
     {
-      "name": "dotenv",
-      "percent": 4.8
+      "name": "typescript",
+      "percent": 25
     }
   ],
   "alltime": [
