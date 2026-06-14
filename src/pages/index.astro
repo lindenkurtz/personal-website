@@ -12,20 +12,20 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
 
 <Layout>
     <!-- Primary hero section with intro copy and resume CTA. -->
-    <section id="home" class="flex-col p-10 scroll-mt-36">
-        <div class="flex items-center justify-between w-full">
+    <section id="home" class="p-10 scroll-mt-24">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16 text-center md:text-left">
             <div>
                 <h1 class="text-5xl font-bold text-primary">
                     Hello, I'm Linden
                 </h1>
-                <p class="mt-4 text-lg max-w-120">
+                <p class="mt-4 text-lg max-w-120 mx-auto md:mx-0">
                     I'm a student at the University of Colorado Boulder studying Statistics & Data Science and Computer Science.
                 </p>
                 <a href="/resume.pdf" target="_blank" class="mt-6 inline-block bg-accent text-white px-6 py-2 rounded">
                     My Resume
                 </a>
             </div>
-            <div class="ml-16 md:ml-32 lg:ml-48 shrink-0">
+            <div class="shrink-0">
                 <img
                     src="/images/headshot.jpeg"
                     alt="Linden Kurtz"
@@ -36,7 +36,7 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
     </section>
 
     <!-- Featured projects section passes sorted project entries into the ProjectFeatured component. -->
-    <section id="projects" class="pt-16 mb-4 px-10 mx-auto scroll-mt-16">
+    <section id="projects" class="pt-16 mb-4 px-10 mx-auto scroll-mt-24">
         <div class="mb-12">
             <h2 class="text-4xl font-bold text-primary-dark">Projects</h2>
         </div>
@@ -44,16 +44,15 @@ const sorted = projects.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 9
     </section>
 
     <!-- Live activity section rendered by the WakaChart component. -->
-    <section id="now" class="pt-16 mb-4 px-10 mx-auto scroll-mt-16">
+    <section id="now" class="pt-16 mb-4 px-10 mx-auto scroll-mt-24">
         <div class="mb-12">
             <h2 class="text-4xl font-bold text-primary-dark">Now</h2>
         </div>
         <WakaChart />
-        <div class="space-y-24" />
     </section>
 
-    <!-- Temporary notification for current site status. -->
-    <h3 class="flex justify-center text-3xl pt-30 pb-60">
+    <!-- Notice for current site status. -->
+    <div class="max-w-3xl mx-auto mt-16 mb-12 px-6 py-4 text-center text-ink">
         ⚠️ Under Construction ⚠️
-    </h3>
+    </div>
 </Layout>

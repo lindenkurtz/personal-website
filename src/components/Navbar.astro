@@ -6,24 +6,91 @@ const navLinks = [
 ]
 ---
 
-<nav class="sticky top-0 z-50 flex items-center justify-between p-6 bg-base/80 backdrop-blur-md border-b border-base-dark">
-    <a href="/" class="text-2xl font-bold text-primary-dark">
-        Linden <span class="text-primary">Kurtz</span>
-    </a>
+<nav class="sticky top-0 z-50 bg-base/80 backdrop-blur-md border-b border-base-dark">
+    <div class="flex items-center justify-between p-6">
+        <a href="/" class="text-2xl font-bold text-primary-dark">
+            Linden <span class="text-primary">Kurtz</span>
+        </a>
 
-    <div class="space-x-8 hidden md:flex text-ink">
+        <div class="space-x-8 hidden md:flex text-ink">
+            {navLinks.map(({ href, label }) => (
+                <a
+                    href={`/#${href}`}
+                    data-section={href}
+                    class="nav-section-link hover:text-primary transition-colors"
+                >
+                    {label}
+                </a>
+            ))}
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="/contact" class="bg-accent text-white px-5 py-2 rounded font-medium hover:bg-opacity-90 transition-all">
+                Contact
+            </a>
+
+            <button
+                id="nav-toggle"
+                type="button"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-mobile-menu"
+                class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 text-ink hover:text-primary transition-colors"
+            >
+                <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+                <svg id="nav-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="nav-mobile-menu" class="hidden md:hidden flex-col gap-4 px-6 pb-6 text-ink">
         {navLinks.map(({ href, label }) => (
             <a
                 href={`/#${href}`}
                 data-section={href}
-                class="nav-section-link hover:text-primary transition-colors"
+                class="nav-section-link hover:text-primary transition-colors text-lg"
             >
                 {label}
             </a>
         ))}
     </div>
-
-    <a href="/contact" class="bg-accent text-white px-5 py-2 rounded font-medium hover:bg-opacity-90 transition-all">
-        Contact
-    </a>
 </nav>
+
+<script>
+    const toggle = document.getElementById('nav-toggle')
+    const menu = document.getElementById('nav-mobile-menu')
+    const iconOpen = document.getElementById('nav-icon-open')
+    const iconClose = document.getElementById('nav-icon-close')
+
+    const closeMenu = () => {
+        menu?.classList.remove('flex')
+        menu?.classList.add('hidden')
+        toggle?.setAttribute('aria-expanded', 'false')
+        iconOpen?.classList.remove('hidden')
+        iconClose?.classList.add('hidden')
+    }
+
+    toggle?.addEventListener('click', () => {
+        const isOpen = menu?.classList.contains('hidden')
+        if (isOpen) {
+            menu?.classList.remove('hidden')
+            menu?.classList.add('flex')
+            toggle.setAttribute('aria-expanded', 'true')
+            iconOpen?.classList.add('hidden')
+            iconClose?.classList.remove('hidden')
+        } else {
+            closeMenu()
+        }
+    })
+
+    menu?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu)
+    })
+</script>
