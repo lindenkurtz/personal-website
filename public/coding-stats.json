@@ -5,11 +5,11 @@
       "percent": 50
     },
     {
-      "name": "python",
+      "name": "typescript",
       "percent": 25
     },
     {
-      "name": "typescript",
+      "name": "python",
       "percent": 25
     }
   ],
@@ -115,11 +115,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
