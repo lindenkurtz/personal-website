@@ -13,7 +13,7 @@
       "percent": 14.3
     },
     {
-      "name": "ignore",
+      "name": "markdown",
       "percent": 7.1
     },
     {
@@ -21,7 +21,7 @@
       "percent": 7.1
     },
     {
-      "name": "markdown",
+      "name": "ignore",
       "percent": 7.1
     }
   ],
@@ -119,11 +119,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
