@@ -5,11 +5,11 @@
       "percent": 50
     },
     {
-      "name": "csv",
+      "name": "python",
       "percent": 14.3
     },
     {
-      "name": "python",
+      "name": "csv",
       "percent": 14.3
     },
     {
@@ -17,11 +17,11 @@
       "percent": 7.1
     },
     {
-      "name": "markdown",
+      "name": "plaintext",
       "percent": 7.1
     },
     {
-      "name": "plaintext",
+      "name": "markdown",
       "percent": 7.1
     }
   ],
@@ -119,11 +119,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
