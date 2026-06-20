@@ -9,10 +9,6 @@
       "percent": 15.4
     },
     {
-      "name": "python",
-      "percent": 7.7
-    },
-    {
       "name": "ignore",
       "percent": 7.7
     },
@@ -22,6 +18,10 @@
     },
     {
       "name": "markdown",
+      "percent": 7.7
+    },
+    {
+      "name": "python",
       "percent": 7.7
     }
   ],
@@ -119,11 +119,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
