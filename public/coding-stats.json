@@ -9,10 +9,6 @@
       "percent": 15.4
     },
     {
-      "name": "python",
-      "percent": 7.7
-    },
-    {
       "name": "ignore",
       "percent": 7.7
     },
@@ -22,6 +18,10 @@
     },
     {
       "name": "markdown",
+      "percent": 7.7
+    },
+    {
+      "name": "python",
       "percent": 7.7
     }
   ],
@@ -99,11 +99,11 @@
       "percent": 0.7
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
