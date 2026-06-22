@@ -1,28 +1,20 @@
 {
   "week": [
     {
-      "name": "astro",
-      "percent": 53.8
-    },
-    {
-      "name": "csv",
-      "percent": 15.4
-    },
-    {
-      "name": "ignore",
-      "percent": 7.7
+      "name": "python",
+      "percent": 25
     },
     {
       "name": "plaintext",
-      "percent": 7.7
+      "percent": 25
+    },
+    {
+      "name": "ignore",
+      "percent": 25
     },
     {
       "name": "markdown",
-      "percent": 7.7
-    },
-    {
-      "name": "python",
-      "percent": 7.7
+      "percent": 25
     }
   ],
   "alltime": [
@@ -127,11 +119,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
