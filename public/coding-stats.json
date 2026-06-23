@@ -13,7 +13,7 @@
       "percent": 12.5
     },
     {
-      "name": "python",
+      "name": "ignore",
       "percent": 6.3
     },
     {
@@ -21,7 +21,7 @@
       "percent": 6.3
     },
     {
-      "name": "ignore",
+      "name": "python",
       "percent": 6.3
     }
   ],
@@ -87,11 +87,11 @@
       "percent": 1.3
     },
     {
-      "name": "csv",
+      "name": "tsx",
       "percent": 1.2
     },
     {
-      "name": "tsx",
+      "name": "csv",
       "percent": 1.2
     },
     {
@@ -127,11 +127,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
