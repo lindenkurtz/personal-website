@@ -17,11 +17,11 @@
       "percent": 10
     },
     {
-      "name": "sql",
+      "name": "json",
       "percent": 5
     },
     {
-      "name": "json",
+      "name": "sql",
       "percent": 5
     }
   ],
@@ -83,11 +83,11 @@
       "percent": 1.5
     },
     {
-      "name": "mdx",
+      "name": "tsx",
       "percent": 1.3
     },
     {
-      "name": "tsx",
+      "name": "mdx",
       "percent": 1.3
     },
     {
@@ -99,11 +99,11 @@
       "percent": 0.6
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
@@ -115,11 +115,11 @@
       "percent": 0.2
     },
     {
-      "name": "pip-requirements",
+      "name": "sql",
       "percent": 0.1
     },
     {
-      "name": "sql",
+      "name": "pip-requirements",
       "percent": 0.1
     },
     {
@@ -131,11 +131,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
