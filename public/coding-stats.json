@@ -115,19 +115,19 @@
       "percent": 0.2
     },
     {
-      "name": "sql",
-      "percent": 0.1
-    },
-    {
       "name": "pip-requirements",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "sql",
       "percent": 0.1
     },
     {
       "name": "go",
+      "percent": 0.1
+    },
+    {
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
