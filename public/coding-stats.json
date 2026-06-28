@@ -13,11 +13,11 @@
       "percent": 20
     },
     {
-      "name": "css",
+      "name": "sql",
       "percent": 8
     },
     {
-      "name": "sql",
+      "name": "css",
       "percent": 8
     },
     {
@@ -99,11 +99,11 @@
       "percent": 0.6
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
@@ -131,11 +131,11 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     }
   ]
