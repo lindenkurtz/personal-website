@@ -13,11 +13,11 @@
       "percent": 20
     },
     {
-      "name": "css",
+      "name": "sql",
       "percent": 8
     },
     {
-      "name": "sql",
+      "name": "css",
       "percent": 8
     },
     {
@@ -111,11 +111,11 @@
       "percent": 0.3
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
