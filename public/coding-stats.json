@@ -9,11 +9,11 @@
       "percent": 23.1
     },
     {
-      "name": "css",
+      "name": "markdown",
       "percent": 15.4
     },
     {
-      "name": "markdown",
+      "name": "css",
       "percent": 15.4
     },
     {
@@ -111,11 +111,11 @@
       "percent": 0.3
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
