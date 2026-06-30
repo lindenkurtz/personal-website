@@ -1,16 +1,12 @@
 {
   "week": [
     {
-      "name": "tsx",
-      "percent": 23.1
-    },
-    {
       "name": "typescript",
       "percent": 23.1
     },
     {
-      "name": "sql",
-      "percent": 15.4
+      "name": "tsx",
+      "percent": 23.1
     },
     {
       "name": "css",
@@ -18,6 +14,10 @@
     },
     {
       "name": "markdown",
+      "percent": 15.4
+    },
+    {
+      "name": "sql",
       "percent": 15.4
     },
     {
@@ -99,11 +99,11 @@
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
@@ -111,11 +111,11 @@
       "percent": 0.3
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
