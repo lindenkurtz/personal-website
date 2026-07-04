@@ -86,11 +86,11 @@
       "percent": 0.3
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
@@ -106,11 +106,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
