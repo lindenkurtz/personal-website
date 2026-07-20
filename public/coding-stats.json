@@ -5,11 +5,11 @@
       "percent": 40
     },
     {
-      "name": "plaintext",
+      "name": "javascript",
       "percent": 20
     },
     {
-      "name": "javascript",
+      "name": "plaintext",
       "percent": 20
     },
     {
@@ -115,11 +115,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
