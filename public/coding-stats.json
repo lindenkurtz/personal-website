@@ -5,15 +5,15 @@
       "percent": 40
     },
     {
-      "name": "javascript",
-      "percent": 20
-    },
-    {
       "name": "plaintext",
       "percent": 20
     },
     {
       "name": "markdown",
+      "percent": 20
+    },
+    {
+      "name": "javascript",
       "percent": 20
     }
   ],
@@ -103,11 +103,11 @@
       "percent": 0.3
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
@@ -115,19 +115,19 @@
       "percent": 0.1
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "git config",
+      "percent": 0
+    },
+    {
+      "name": "tsconfig",
       "percent": 0
     }
   ]
