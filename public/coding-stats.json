@@ -103,11 +103,11 @@
       "percent": 0.3
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
@@ -115,11 +115,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
