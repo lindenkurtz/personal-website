@@ -1,30 +1,38 @@
 {
   "week": [
     {
-      "name": "python",
-      "percent": 33.3
-    },
-    {
-      "name": "plaintext",
-      "percent": 33.3
+      "name": "tsx",
+      "percent": 18.2
     },
     {
       "name": "markdown",
-      "percent": 16.7
+      "percent": 18.2
+    },
+    {
+      "name": "python",
+      "percent": 18.2
+    },
+    {
+      "name": "typescript",
+      "percent": 18.2
+    },
+    {
+      "name": "plaintext",
+      "percent": 18.2
     },
     {
       "name": "javascript",
-      "percent": 16.7
+      "percent": 9.1
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 29.9
+      "percent": 29.8
     },
     {
       "name": "javascript",
-      "percent": 18.6
+      "percent": 18.5
     },
     {
       "name": "astro",
@@ -36,7 +44,7 @@
     },
     {
       "name": "markdown",
-      "percent": 4.1
+      "percent": 4.2
     },
     {
       "name": "c++",
@@ -68,14 +76,14 @@
     },
     {
       "name": "typescript",
-      "percent": 1.8
-    },
-    {
-      "name": "css",
-      "percent": 1.5
+      "percent": 1.9
     },
     {
       "name": "tsx",
+      "percent": 1.6
+    },
+    {
+      "name": "css",
       "percent": 1.5
     },
     {
@@ -115,11 +123,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
