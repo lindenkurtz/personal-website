@@ -1,11 +1,11 @@
 {
   "week": [
     {
-      "name": "tsx",
+      "name": "plaintext",
       "percent": 18.2
     },
     {
-      "name": "plaintext",
+      "name": "markdown",
       "percent": 18.2
     },
     {
@@ -17,7 +17,7 @@
       "percent": 18.2
     },
     {
-      "name": "markdown",
+      "name": "tsx",
       "percent": 18.2
     },
     {
@@ -99,11 +99,11 @@
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
