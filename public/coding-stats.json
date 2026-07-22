@@ -1,11 +1,15 @@
 {
   "week": [
     {
-      "name": "tsx",
+      "name": "plaintext",
       "percent": 18.2
     },
     {
       "name": "markdown",
+      "percent": 18.2
+    },
+    {
+      "name": "tsx",
       "percent": 18.2
     },
     {
@@ -14,10 +18,6 @@
     },
     {
       "name": "typescript",
-      "percent": 18.2
-    },
-    {
-      "name": "plaintext",
       "percent": 18.2
     },
     {
@@ -131,11 +131,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
