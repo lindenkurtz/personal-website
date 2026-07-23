@@ -1,14 +1,6 @@
 {
   "week": [
     {
-      "name": "python",
-      "percent": 18.2
-    },
-    {
-      "name": "plaintext",
-      "percent": 18.2
-    },
-    {
       "name": "typescript",
       "percent": 18.2
     },
@@ -17,7 +9,15 @@
       "percent": 18.2
     },
     {
+      "name": "plaintext",
+      "percent": 18.2
+    },
+    {
       "name": "markdown",
+      "percent": 18.2
+    },
+    {
+      "name": "python",
       "percent": 18.2
     },
     {
