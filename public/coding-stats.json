@@ -1,15 +1,11 @@
 {
   "week": [
     {
-      "name": "plaintext",
-      "percent": 18.2
-    },
-    {
-      "name": "markdown",
-      "percent": 18.2
-    },
-    {
       "name": "python",
+      "percent": 18.2
+    },
+    {
+      "name": "plaintext",
       "percent": 18.2
     },
     {
@@ -18,6 +14,10 @@
     },
     {
       "name": "tsx",
+      "percent": 18.2
+    },
+    {
+      "name": "markdown",
       "percent": 18.2
     },
     {
