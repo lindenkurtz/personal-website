@@ -1,28 +1,24 @@
 {
   "week": [
     {
-      "name": "tsx",
-      "percent": 18.2
-    },
-    {
-      "name": "markdown",
-      "percent": 18.2
-    },
-    {
       "name": "python",
-      "percent": 18.2
+      "percent": 22.2
     },
     {
       "name": "typescript",
-      "percent": 18.2
+      "percent": 22.2
+    },
+    {
+      "name": "markdown",
+      "percent": 22.2
+    },
+    {
+      "name": "tsx",
+      "percent": 22.2
     },
     {
       "name": "plaintext",
-      "percent": 18.2
-    },
-    {
-      "name": "javascript",
-      "percent": 9.1
+      "percent": 11.1
     }
   ],
   "alltime": [
@@ -123,19 +119,19 @@
       "percent": 0.1
     },
     {
-      "name": "go",
-      "percent": 0.1
-    },
-    {
       "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
