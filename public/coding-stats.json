@@ -9,11 +9,11 @@
       "percent": 33.3
     },
     {
-      "name": "plaintext",
+      "name": "markdown",
       "percent": 16.7
     },
     {
-      "name": "markdown",
+      "name": "plaintext",
       "percent": 16.7
     }
   ],
