@@ -2,23 +2,19 @@
   "week": [
     {
       "name": "typescript",
-      "percent": 22.2
+      "percent": 33.3
     },
     {
       "name": "tsx",
-      "percent": 22.2
-    },
-    {
-      "name": "markdown",
-      "percent": 22.2
-    },
-    {
-      "name": "python",
-      "percent": 22.2
+      "percent": 33.3
     },
     {
       "name": "plaintext",
-      "percent": 11.1
+      "percent": 16.7
+    },
+    {
+      "name": "markdown",
+      "percent": 16.7
     }
   ],
   "alltime": [
