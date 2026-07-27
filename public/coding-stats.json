@@ -95,11 +95,11 @@
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
