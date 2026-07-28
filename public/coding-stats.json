@@ -13,11 +13,11 @@
       "percent": 8.3
     },
     {
-      "name": "plaintext",
+      "name": "json",
       "percent": 8.3
     },
     {
-      "name": "json",
+      "name": "plaintext",
       "percent": 8.3
     }
   ],
