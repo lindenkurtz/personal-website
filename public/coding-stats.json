@@ -9,15 +9,15 @@
       "percent": 33.3
     },
     {
-      "name": "markdown",
-      "percent": 8.3
-    },
-    {
       "name": "json",
       "percent": 8.3
     },
     {
       "name": "plaintext",
+      "percent": 8.3
+    },
+    {
+      "name": "markdown",
       "percent": 8.3
     }
   ],
@@ -95,11 +95,11 @@
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
@@ -107,11 +107,11 @@
       "percent": 0.3
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
@@ -119,11 +119,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
