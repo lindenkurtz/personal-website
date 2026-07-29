@@ -87,11 +87,11 @@
       "percent": 0.6
     },
     {
-      "name": "yaml",
+      "name": "ignore",
       "percent": 0.6
     },
     {
-      "name": "ignore",
+      "name": "yaml",
       "percent": 0.6
     },
     {
@@ -111,11 +111,11 @@
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
