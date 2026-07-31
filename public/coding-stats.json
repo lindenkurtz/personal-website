@@ -99,11 +99,11 @@
       "percent": 0.3
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
