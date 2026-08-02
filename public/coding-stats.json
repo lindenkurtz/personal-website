@@ -1,28 +1,20 @@
 {
   "week": [
     {
-      "name": "typescript",
-      "percent": 21.4
-    },
-    {
       "name": "tsx",
       "percent": 21.4
     },
     {
-      "name": "c",
-      "percent": 14.3
+      "name": "typescript",
+      "percent": 21.4
     },
     {
       "name": "dockerfile",
       "percent": 14.3
     },
     {
-      "name": "ignore",
-      "percent": 7.1
-    },
-    {
-      "name": "c++",
-      "percent": 7.1
+      "name": "c",
+      "percent": 14.3
     },
     {
       "name": "shell",
@@ -30,6 +22,14 @@
     },
     {
       "name": "json",
+      "percent": 7.1
+    },
+    {
+      "name": "ignore",
+      "percent": 7.1
+    },
+    {
+      "name": "c++",
       "percent": 7.1
     }
   ],
@@ -123,10 +123,6 @@
       "percent": 0.2
     },
     {
-      "name": "dockerfile",
-      "percent": 0.2
-    },
-    {
       "name": "log",
       "percent": 0.2
     },
@@ -135,19 +131,23 @@
       "percent": 0.2
     },
     {
-      "name": "pip-requirements",
-      "percent": 0.1
+      "name": "dockerfile",
+      "percent": 0.2
     },
     {
       "name": "shell",
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "pip-requirements",
       "percent": 0.1
     },
     {
       "name": "go",
+      "percent": 0.1
+    },
+    {
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
