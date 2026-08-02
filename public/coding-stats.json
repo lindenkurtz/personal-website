@@ -119,15 +119,15 @@
       "percent": 0.3
     },
     {
-      "name": "log",
-      "percent": 0.2
-    },
-    {
       "name": "sql",
       "percent": 0.2
     },
     {
       "name": "dockerfile",
+      "percent": 0.2
+    },
+    {
+      "name": "log",
       "percent": 0.2
     },
     {
