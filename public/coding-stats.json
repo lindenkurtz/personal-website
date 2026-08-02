@@ -1,24 +1,20 @@
 {
   "week": [
     {
-      "name": "tsx",
-      "percent": 21.4
-    },
-    {
       "name": "typescript",
       "percent": 21.4
     },
     {
-      "name": "c",
-      "percent": 14.3
+      "name": "tsx",
+      "percent": 21.4
     },
     {
       "name": "dockerfile",
       "percent": 14.3
     },
     {
-      "name": "json",
-      "percent": 7.1
+      "name": "c",
+      "percent": 14.3
     },
     {
       "name": "shell",
@@ -30,6 +26,10 @@
     },
     {
       "name": "ignore",
+      "percent": 7.1
+    },
+    {
+      "name": "json",
       "percent": 7.1
     }
   ],
@@ -119,19 +119,19 @@
       "percent": 0.3
     },
     {
-      "name": "c",
-      "percent": 0.2
-    },
-    {
       "name": "dockerfile",
       "percent": 0.2
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "c",
+      "percent": 0.2
+    },
+    {
+      "name": "log",
       "percent": 0.2
     },
     {
@@ -151,11 +151,11 @@
       "percent": 0.1
     },
     {
-      "name": "tsconfig",
+      "name": "git config",
       "percent": 0
     },
     {
-      "name": "git config",
+      "name": "tsconfig",
       "percent": 0
     }
   ]
