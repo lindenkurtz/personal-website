@@ -9,19 +9,19 @@
       "percent": 25
     },
     {
-      "name": "ignore",
-      "percent": 12.5
-    },
-    {
       "name": "c++",
       "percent": 12.5
     },
     {
-      "name": "typescript",
+      "name": "ignore",
       "percent": 12.5
     },
     {
       "name": "shell",
+      "percent": 12.5
+    },
+    {
+      "name": "typescript",
       "percent": 12.5
     }
   ],
@@ -111,11 +111,11 @@
       "percent": 0.3
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
