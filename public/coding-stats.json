@@ -13,7 +13,7 @@
       "percent": 12.5
     },
     {
-      "name": "ignore",
+      "name": "c++",
       "percent": 12.5
     },
     {
@@ -21,7 +21,7 @@
       "percent": 12.5
     },
     {
-      "name": "c++",
+      "name": "ignore",
       "percent": 12.5
     }
   ],
@@ -111,19 +111,19 @@
       "percent": 0.3
     },
     {
-      "name": "c",
-      "percent": 0.2
-    },
-    {
-      "name": "dockerfile",
-      "percent": 0.2
-    },
-    {
       "name": "log",
       "percent": 0.2
     },
     {
       "name": "sql",
+      "percent": 0.2
+    },
+    {
+      "name": "c",
+      "percent": 0.2
+    },
+    {
+      "name": "dockerfile",
       "percent": 0.2
     },
     {
@@ -135,11 +135,11 @@
       "percent": 0.1
     },
     {
-      "name": "github-actions-workflow",
+      "name": "go",
       "percent": 0.1
     },
     {
-      "name": "go",
+      "name": "github-actions-workflow",
       "percent": 0.1
     },
     {
