@@ -1,34 +1,34 @@
 {
   "week": [
     {
-      "name": "dockerfile",
-      "percent": 25
+      "name": "shell",
+      "percent": 22.2
     },
     {
       "name": "c",
-      "percent": 25
+      "percent": 22.2
     },
     {
-      "name": "ignore",
-      "percent": 12.5
-    },
-    {
-      "name": "c++",
-      "percent": 12.5
-    },
-    {
-      "name": "shell",
-      "percent": 12.5
+      "name": "dockerfile",
+      "percent": 22.2
     },
     {
       "name": "typescript",
-      "percent": 12.5
+      "percent": 11.1
+    },
+    {
+      "name": "ignore",
+      "percent": 11.1
+    },
+    {
+      "name": "c++",
+      "percent": 11.1
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 29.5
+      "percent": 29.4
     },
     {
       "name": "javascript",
@@ -111,6 +111,10 @@
       "percent": 0.3
     },
     {
+      "name": "shell",
+      "percent": 0.2
+    },
+    {
       "name": "c",
       "percent": 0.2
     },
@@ -125,10 +129,6 @@
     {
       "name": "sql",
       "percent": 0.2
-    },
-    {
-      "name": "shell",
-      "percent": 0.1
     },
     {
       "name": "pip-requirements",
