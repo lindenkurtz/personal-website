@@ -1,11 +1,11 @@
 {
   "week": [
     {
-      "name": "shell",
+      "name": "c",
       "percent": 22.2
     },
     {
-      "name": "c",
+      "name": "shell",
       "percent": 22.2
     },
     {
@@ -13,11 +13,11 @@
       "percent": 22.2
     },
     {
-      "name": "typescript",
+      "name": "ignore",
       "percent": 11.1
     },
     {
-      "name": "ignore",
+      "name": "typescript",
       "percent": 11.1
     },
     {
@@ -111,10 +111,6 @@
       "percent": 0.3
     },
     {
-      "name": "shell",
-      "percent": 0.2
-    },
-    {
       "name": "c",
       "percent": 0.2
     },
@@ -128,6 +124,10 @@
     },
     {
       "name": "dockerfile",
+      "percent": 0.2
+    },
+    {
+      "name": "shell",
       "percent": 0.2
     },
     {
