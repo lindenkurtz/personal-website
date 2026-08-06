@@ -2,41 +2,41 @@
   "week": [
     {
       "name": "c",
-      "percent": 58.8
-    },
-    {
-      "name": "shell",
-      "percent": 11.8
+      "percent": 69.6
     },
     {
       "name": "dockerfile",
-      "percent": 11.8
+      "percent": 8.7
+    },
+    {
+      "name": "shell",
+      "percent": 8.7
     },
     {
       "name": "ignore",
-      "percent": 5.9
-    },
-    {
-      "name": "typescript",
-      "percent": 5.9
+      "percent": 4.3
     },
     {
       "name": "c++",
-      "percent": 5.9
+      "percent": 4.3
+    },
+    {
+      "name": "typescript",
+      "percent": 4.3
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 29.3
+      "percent": 29.1
     },
     {
       "name": "javascript",
-      "percent": 18.2
+      "percent": 18.1
     },
     {
       "name": "astro",
-      "percent": 9.8
+      "percent": 9.7
     },
     {
       "name": "wolframlanguage",
@@ -48,11 +48,11 @@
     },
     {
       "name": "c++",
-      "percent": 3.9
+      "percent": 3.8
     },
     {
       "name": "jupyter-notebook",
-      "percent": 3.3
+      "percent": 3.2
     },
     {
       "name": "jsx",
@@ -72,7 +72,7 @@
     },
     {
       "name": "plaintext",
-      "percent": 2.4
+      "percent": 2.3
     },
     {
       "name": "typescript",
@@ -87,16 +87,16 @@
       "percent": 1.4
     },
     {
+      "name": "c",
+      "percent": 1.3
+    },
+    {
       "name": "mdx",
       "percent": 1.3
     },
     {
       "name": "csv",
       "percent": 1.2
-    },
-    {
-      "name": "c",
-      "percent": 0.8
     },
     {
       "name": "ignore",
@@ -119,7 +119,7 @@
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "dockerfile",
       "percent": 0.2
     },
     {
@@ -127,7 +127,7 @@
       "percent": 0.2
     },
     {
-      "name": "dockerfile",
+      "name": "sql",
       "percent": 0.2
     },
     {
