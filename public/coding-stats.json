@@ -17,11 +17,11 @@
       "percent": 4.3
     },
     {
-      "name": "c++",
+      "name": "typescript",
       "percent": 4.3
     },
     {
-      "name": "typescript",
+      "name": "c++",
       "percent": 4.3
     }
   ],
@@ -115,11 +115,7 @@
       "percent": 0.3
     },
     {
-      "name": "shell",
-      "percent": 0.2
-    },
-    {
-      "name": "dockerfile",
+      "name": "sql",
       "percent": 0.2
     },
     {
@@ -127,7 +123,11 @@
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "shell",
+      "percent": 0.2
+    },
+    {
+      "name": "dockerfile",
       "percent": 0.2
     },
     {
