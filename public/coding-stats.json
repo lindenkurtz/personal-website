@@ -5,16 +5,12 @@
       "percent": 75
     },
     {
-      "name": "dockerfile",
-      "percent": 7.1
-    },
-    {
       "name": "shell",
       "percent": 7.1
     },
     {
-      "name": "ignore",
-      "percent": 3.6
+      "name": "dockerfile",
+      "percent": 7.1
     },
     {
       "name": "typescript",
@@ -22,6 +18,10 @@
     },
     {
       "name": "c++",
+      "percent": 3.6
+    },
+    {
+      "name": "ignore",
       "percent": 3.6
     }
   ],
@@ -119,10 +119,6 @@
       "percent": 0.2
     },
     {
-      "name": "log",
-      "percent": 0.2
-    },
-    {
       "name": "shell",
       "percent": 0.2
     },
@@ -131,11 +127,11 @@
       "percent": 0.2
     },
     {
-      "name": "pip-requirements",
-      "percent": 0.1
+      "name": "log",
+      "percent": 0.2
     },
     {
-      "name": "go",
+      "name": "pip-requirements",
       "percent": 0.1
     },
     {
@@ -143,11 +139,15 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
