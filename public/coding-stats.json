@@ -2,45 +2,53 @@
   "week": [
     {
       "name": "c",
-      "percent": 84.7
-    },
-    {
-      "name": "json",
-      "percent": 3.5
+      "percent": 80
     },
     {
       "name": "shell",
-      "percent": 3.5
+      "percent": 4.4
+    },
+    {
+      "name": "python",
+      "percent": 3.3
+    },
+    {
+      "name": "json",
+      "percent": 3.3
     },
     {
       "name": "dockerfile",
-      "percent": 2.4
+      "percent": 2.2
     },
     {
       "name": "plaintext",
-      "percent": 2.4
+      "percent": 2.2
     },
     {
       "name": "ignore",
-      "percent": 1.2
+      "percent": 1.1
     },
     {
       "name": "typescript",
-      "percent": 1.2
+      "percent": 1.1
     },
     {
       "name": "c++",
-      "percent": 1.2
+      "percent": 1.1
+    },
+    {
+      "name": "wolframlanguage",
+      "percent": 1.1
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 27.8
+      "percent": 27.9
     },
     {
       "name": "javascript",
-      "percent": 17.3
+      "percent": 17.2
     },
     {
       "name": "astro",
@@ -52,7 +60,7 @@
     },
     {
       "name": "wolframlanguage",
-      "percent": 5.3
+      "percent": 5.4
     },
     {
       "name": "markdown",
@@ -72,7 +80,7 @@
     },
     {
       "name": "jsx",
-      "percent": 3
+      "percent": 2.9
     },
     {
       "name": "csharp",
@@ -124,11 +132,7 @@
     },
     {
       "name": "shell",
-      "percent": 0.2
-    },
-    {
-      "name": "sql",
-      "percent": 0.2
+      "percent": 0.3
     },
     {
       "name": "dockerfile",
@@ -139,11 +143,11 @@
       "percent": 0.2
     },
     {
-      "name": "pip-requirements",
-      "percent": 0.1
+      "name": "sql",
+      "percent": 0.2
     },
     {
-      "name": "go",
+      "name": "pip-requirements",
       "percent": 0.1
     },
     {
@@ -151,11 +155,15 @@
       "percent": 0.1
     },
     {
-      "name": "git config",
-      "percent": 0
+      "name": "go",
+      "percent": 0.1
     },
     {
       "name": "tsconfig",
+      "percent": 0
+    },
+    {
+      "name": "git config",
       "percent": 0
     }
   ]
