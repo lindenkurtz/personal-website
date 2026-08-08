@@ -1,51 +1,75 @@
-import { MongoClient } from 'mongodb';
-import { writeFileSync } from 'fs';
+/**
+ * Regenerate `public/coding-stats.json` from MongoDB.
+ *
+ * Run by `.github/workflows/update-stats.yml` every 6 hours, on Node — which is
+ * why this, and not the SSR API route, is what actually feeds the live chart.
+ *
+ *   MONGO_URI=... node scripts/generate-stats.mjs
+ *
+ * Every number here comes from `src/lib/takatime-stats.mjs`, the same module the
+ * API route uses. This script derives nothing on its own and must never sum the
+ * legacy `duration` field. See CLAUDE.md § "Coding-stats data contract".
+ */
 
-const NORMALIZE = {
-    'cpp': 'c++',
-    'jsonc': 'json',
-    'jsonl': 'json',
-    'javascriptreact': 'jsx',
-    'typescriptreact': 'tsx',
-    'shellscript': 'shell',
-    'unknown': 'other',
-};
+import { writeFileSync } from 'node:fs';
 
-async function getLanguages(collection, dateFilter = null) {
-    const pipeline = [];
-    if (dateFilter) pipeline.push({ $match: { date: { $gte: dateFilter } } });
-    pipeline.push(
-        { $addFields: { normalizedLanguage: { $switch: {
-            branches: Object.entries(NORMALIZE).map(([k, v]) => ({
-                case: { $eq: ['$language', k] }, then: v
-            })),
-            default: '$language'
-        }}}},
-        { $group: { _id: '$normalizedLanguage', totalDuration: { $sum: '$duration' } } },
-        { $sort: { totalDuration: -1 } }
-    );
-    const results = await collection.aggregate(pipeline).toArray();
-    const total = results.reduce((sum, r) => sum + r.totalDuration, 0);
-    return results.map(r => ({
-        name: r._id,
-        percent: parseFloat(((r.totalDuration / total) * 100).toFixed(1))
-    }));
-}
+import { closeClient, getLogsCollection } from '../src/lib/mongo.mjs';
+import { ALGORITHM_VERSION, getStats } from '../src/lib/takatime-stats.mjs';
 
-const client = new MongoClient(process.env.MONGO_URI);
-await client.connect();
-const collection = client.db('takatime').collection('logs');
+const OUT = 'public/coding-stats.json';
 
-const sevenDaysAgo = new Date();
-sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-const dateStr = sevenDaysAgo.toISOString().split('T')[0];
+const collection = await getLogsCollection(process.env.MONGO_URI);
 
 const [week, alltime] = await Promise.all([
-    getLanguages(collection, dateStr),
-    getLanguages(collection)
+  getStats(collection, 'week'),
+  getStats(collection, 'alltime'),
 ]);
 
-await client.close();
+await closeClient();
 
-writeFileSync('public/coding-stats.json', JSON.stringify({ week, alltime }, null, 2));
-console.log('Stats written to public/coding-stats.json');
+// `week` and `alltime` stay top-level arrays of `{ name, percent, ... }` so the
+// existing chart keeps working untouched; `seconds`/`formatted` ride along, and
+// everything non-chart lives under `meta`.
+writeFileSync(
+  OUT,
+  JSON.stringify(
+    {
+      week: week.languages,
+      alltime: alltime.languages,
+      meta: {
+        algorithmVersion: ALGORITHM_VERSION,
+        generatedAt: new Date().toISOString(),
+        week: summaryOf(week),
+        alltime: summaryOf(alltime),
+      },
+    },
+    null,
+    2,
+  ) + '\n',
+);
+
+// `totalMs` is carried through because it is the only exact figure — the
+// per-language `ms` values sum to it precisely, `totalSeconds` is a rounding.
+function summaryOf({ totalMs, totalSeconds, totalFormatted, days, meta }) {
+  return { totalMs, totalSeconds, totalFormatted, days, ...meta };
+}
+
+const report = (label, s) =>
+  `  ${label.padEnd(8)} ${s.totalFormatted.padStart(10)}  (${s.languages.length} languages, ${s.meta.sessionCount} sessions)`;
+
+console.log(`Stats written to ${OUT}  [algorithm v${ALGORITHM_VERSION}]`);
+console.log(report('week', week));
+console.log(report('alltime', alltime));
+
+for (const [label, s] of [
+  ['week', week],
+  ['alltime', alltime],
+]) {
+  if (s.meta.unstampedHeartbeats > 0) {
+    console.warn(
+      `WARNING: ${label} contains ${s.meta.unstampedHeartbeats} heartbeat(s) with no configVersion ` +
+        `(${s.meta.inexactIntervalHeartbeats} of them session heads, where it affects the total). ` +
+        `A tracker is misconfigured — see METHODOLOGY.md.`,
+    );
+  }
+}
