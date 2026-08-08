@@ -2,169 +2,379 @@
   "week": [
     {
       "name": "c",
-      "percent": 80
+      "percent": 78.1,
+      "ms": 26713900,
+      "seconds": 26714,
+      "formatted": "7h25m14s"
     },
     {
-      "name": "shell",
-      "percent": 4.4
+      "name": "javascript",
+      "percent": 7,
+      "ms": 2386270,
+      "seconds": 2386,
+      "formatted": "0h39m46s"
     },
     {
       "name": "python",
-      "percent": 3.3
+      "percent": 3.7,
+      "ms": 1251517,
+      "seconds": 1252,
+      "formatted": "0h20m52s"
+    },
+    {
+      "name": "shell",
+      "percent": 3.3,
+      "ms": 1136526,
+      "seconds": 1137,
+      "formatted": "0h18m57s"
     },
     {
       "name": "json",
-      "percent": 3.3
+      "percent": 3.2,
+      "ms": 1078755,
+      "seconds": 1079,
+      "formatted": "0h17m59s"
     },
     {
-      "name": "dockerfile",
-      "percent": 2.2
-    },
-    {
-      "name": "plaintext",
-      "percent": 2.2
-    },
-    {
-      "name": "ignore",
-      "percent": 1.1
-    },
-    {
-      "name": "typescript",
-      "percent": 1.1
-    },
-    {
-      "name": "c++",
-      "percent": 1.1
+      "name": "markdown",
+      "percent": 2.9,
+      "ms": 1007876,
+      "seconds": 1008,
+      "formatted": "0h16m48s"
     },
     {
       "name": "wolframlanguage",
-      "percent": 1.1
+      "percent": 1.6,
+      "ms": 548667,
+      "seconds": 549,
+      "formatted": "0h09m09s"
+    },
+    {
+      "name": "plaintext",
+      "percent": 0.2,
+      "ms": 71092,
+      "seconds": 71,
+      "formatted": "0h01m11s"
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 27.9
+      "percent": 32,
+      "ms": 141588618,
+      "seconds": 141589,
+      "formatted": "39h19m49s"
     },
     {
       "name": "javascript",
-      "percent": 17.2
-    },
-    {
-      "name": "astro",
-      "percent": 9.3
-    },
-    {
-      "name": "c",
-      "percent": 5.4
+      "percent": 12.8,
+      "ms": 56464587,
+      "seconds": 56465,
+      "formatted": "15h41m05s"
     },
     {
       "name": "wolframlanguage",
-      "percent": 5.4
+      "percent": 6.5,
+      "ms": 28769903,
+      "seconds": 28770,
+      "formatted": "7h59m30s"
     },
     {
-      "name": "markdown",
-      "percent": 3.9
+      "name": "astro",
+      "percent": 6.5,
+      "ms": 28674715,
+      "seconds": 28675,
+      "formatted": "7h57m55s"
     },
     {
-      "name": "c++",
-      "percent": 3.7
-    },
-    {
-      "name": "jupyter-notebook",
-      "percent": 3.1
-    },
-    {
-      "name": "json",
-      "percent": 3.1
+      "name": "c",
+      "percent": 6.2,
+      "ms": 27584439,
+      "seconds": 27584,
+      "formatted": "7h39m44s"
     },
     {
       "name": "jsx",
-      "percent": 2.9
+      "percent": 4.8,
+      "ms": 21168654,
+      "seconds": 21169,
+      "formatted": "5h52m49s"
+    },
+    {
+      "name": "markdown",
+      "percent": 4.5,
+      "ms": 19934176,
+      "seconds": 19934,
+      "formatted": "5h32m14s"
     },
     {
       "name": "csharp",
-      "percent": 2.9
+      "percent": 3.9,
+      "ms": 17206770,
+      "seconds": 17207,
+      "formatted": "4h46m47s"
     },
     {
       "name": "html",
-      "percent": 2.5
+      "percent": 3.6,
+      "ms": 15777530,
+      "seconds": 15778,
+      "formatted": "4h22m58s"
+    },
+    {
+      "name": "json",
+      "percent": 3.3,
+      "ms": 14613155,
+      "seconds": 14613,
+      "formatted": "4h03m33s"
+    },
+    {
+      "name": "c++",
+      "percent": 3.1,
+      "ms": 13921581,
+      "seconds": 13922,
+      "formatted": "3h52m02s"
     },
     {
       "name": "plaintext",
-      "percent": 2.4
+      "percent": 2.4,
+      "ms": 10450135,
+      "seconds": 10450,
+      "formatted": "2h54m10s"
     },
     {
       "name": "typescript",
-      "percent": 2
+      "percent": 2.3,
+      "ms": 10031910,
+      "seconds": 10032,
+      "formatted": "2h47m12s"
     },
     {
       "name": "tsx",
-      "percent": 1.7
-    },
-    {
-      "name": "css",
-      "percent": 1.4
-    },
-    {
-      "name": "mdx",
-      "percent": 1.2
+      "percent": 1.5,
+      "ms": 6656090,
+      "seconds": 6656,
+      "formatted": "1h50m56s"
     },
     {
       "name": "csv",
-      "percent": 1.1
+      "percent": 1.2,
+      "ms": 5143765,
+      "seconds": 5144,
+      "formatted": "1h25m44s"
     },
     {
-      "name": "ignore",
-      "percent": 0.6
+      "name": "css",
+      "percent": 1.2,
+      "ms": 5141038,
+      "seconds": 5141,
+      "formatted": "1h25m41s"
     },
     {
       "name": "dotenv",
-      "percent": 0.6
+      "percent": 0.9,
+      "ms": 3879480,
+      "seconds": 3879,
+      "formatted": "1h04m39s"
+    },
+    {
+      "name": "mdx",
+      "percent": 0.9,
+      "ms": 3831758,
+      "seconds": 3832,
+      "formatted": "1h03m52s"
+    },
+    {
+      "name": "ignore",
+      "percent": 0.6,
+      "ms": 2677603,
+      "seconds": 2678,
+      "formatted": "0h44m38s"
     },
     {
       "name": "yaml",
-      "percent": 0.5
+      "percent": 0.4,
+      "ms": 1964807,
+      "seconds": 1965,
+      "formatted": "0h32m45s"
     },
     {
       "name": "xml",
-      "percent": 0.3
+      "percent": 0.4,
+      "ms": 1909811,
+      "seconds": 1910,
+      "formatted": "0h31m50s"
     },
     {
       "name": "shell",
-      "percent": 0.3
-    },
-    {
-      "name": "dockerfile",
-      "percent": 0.2
-    },
-    {
-      "name": "log",
-      "percent": 0.2
+      "percent": 0.4,
+      "ms": 1738058,
+      "seconds": 1738,
+      "formatted": "0h28m58s"
     },
     {
       "name": "sql",
-      "percent": 0.2
-    },
-    {
-      "name": "pip-requirements",
-      "percent": 0.1
-    },
-    {
-      "name": "github-actions-workflow",
-      "percent": 0.1
+      "percent": 0.2,
+      "ms": 981333,
+      "seconds": 981,
+      "formatted": "0h16m21s"
     },
     {
       "name": "go",
-      "percent": 0.1
+      "percent": 0.2,
+      "ms": 835691,
+      "seconds": 836,
+      "formatted": "0h13m56s"
+    },
+    {
+      "name": "log",
+      "percent": 0.2,
+      "ms": 785321,
+      "seconds": 785,
+      "formatted": "0h13m05s"
+    },
+    {
+      "name": "pip-requirements",
+      "percent": 0.1,
+      "ms": 327093,
+      "seconds": 327,
+      "formatted": "0h05m27s"
+    },
+    {
+      "name": "github-actions-workflow",
+      "percent": 0.1,
+      "ms": 248211,
+      "seconds": 248,
+      "formatted": "0h04m08s"
+    },
+    {
+      "name": "dockerfile",
+      "percent": 0,
+      "ms": 186481,
+      "seconds": 186,
+      "formatted": "0h03m06s"
     },
     {
       "name": "tsconfig",
-      "percent": 0
+      "percent": 0,
+      "ms": 3242,
+      "seconds": 3,
+      "formatted": "0h00m03s"
     },
     {
       "name": "git config",
-      "percent": 0
+      "percent": 0,
+      "ms": 593,
+      "seconds": 1,
+      "formatted": "0h00m01s"
     }
-  ]
+  ],
+  "meta": {
+    "algorithmVersion": "1.0.0",
+    "generatedAt": "2026-08-08T21:38:52.845Z",
+    "week": {
+      "totalMs": 34194603,
+      "totalSeconds": 34195,
+      "totalFormatted": "9h29m55s",
+      "days": {
+        "2026-08-04": 300,
+        "2026-08-05": 2484,
+        "2026-08-06": 4412,
+        "2026-08-07": 21077,
+        "2026-08-08": 5922
+      },
+      "algorithmVersion": "1.0.0",
+      "idleTimeoutSeconds": 900,
+      "timeZone": "America/Denver",
+      "sessionCount": 21,
+      "countedHeartbeats": 101,
+      "contextHeartbeats": 0,
+      "unstampedHeartbeats": 0,
+      "inexactIntervalHeartbeats": 0,
+      "rangeStart": "2026-08-02T06:00:00.000Z",
+      "rangeEnd": "2026-08-09T06:00:00.000Z"
+    },
+    "alltime": {
+      "totalMs": 442496548,
+      "totalSeconds": 442497,
+      "totalFormatted": "122h54m57s",
+      "days": {
+        "2026-04-03": 2037,
+        "2026-04-04": 12422,
+        "2026-04-05": 1241,
+        "2026-04-06": 4668,
+        "2026-04-07": 1648,
+        "2026-04-08": 5134,
+        "2026-04-11": 19743,
+        "2026-04-12": 10227,
+        "2026-04-13": 17550,
+        "2026-04-14": 4440,
+        "2026-04-16": 12116,
+        "2026-04-17": 21717,
+        "2026-04-19": 4138,
+        "2026-04-20": 6516,
+        "2026-04-21": 8798,
+        "2026-04-23": 4937,
+        "2026-04-25": 6725,
+        "2026-04-26": 4214,
+        "2026-04-27": 1488,
+        "2026-04-29": 2216,
+        "2026-05-02": 17292,
+        "2026-05-03": 604,
+        "2026-05-05": 16169,
+        "2026-05-06": 643,
+        "2026-05-07": 7396,
+        "2026-05-08": 13273,
+        "2026-05-09": 21167,
+        "2026-05-10": 14003,
+        "2026-05-11": 16055,
+        "2026-05-12": 5399,
+        "2026-05-13": 10354,
+        "2026-05-14": 12090,
+        "2026-05-15": 8904,
+        "2026-05-16": 3676,
+        "2026-05-17": 15195,
+        "2026-05-18": 3638,
+        "2026-05-20": 6934,
+        "2026-05-21": 9162,
+        "2026-05-22": 5633,
+        "2026-05-23": 600,
+        "2026-05-25": 1134,
+        "2026-05-26": 2676,
+        "2026-05-27": 22493,
+        "2026-05-28": 660,
+        "2026-05-29": 2151,
+        "2026-05-30": 6723,
+        "2026-06-05": 7994,
+        "2026-06-07": 936,
+        "2026-06-11": 300,
+        "2026-06-14": 3117,
+        "2026-06-17": 1343,
+        "2026-06-22": 4218,
+        "2026-06-23": 3345,
+        "2026-06-25": 608,
+        "2026-06-26": 1211,
+        "2026-07-17": 600,
+        "2026-07-18": 1125,
+        "2026-07-21": 1938,
+        "2026-07-26": 2553,
+        "2026-08-01": 3012,
+        "2026-08-04": 300,
+        "2026-08-05": 2484,
+        "2026-08-06": 4412,
+        "2026-08-07": 21077,
+        "2026-08-08": 5922
+      },
+      "algorithmVersion": "1.0.0",
+      "idleTimeoutSeconds": 900,
+      "timeZone": "America/Denver",
+      "sessionCount": 287,
+      "countedHeartbeats": 2146,
+      "contextHeartbeats": 0,
+      "unstampedHeartbeats": 0,
+      "inexactIntervalHeartbeats": 0,
+      "rangeStart": null,
+      "rangeEnd": null
+    }
+  }
 }
