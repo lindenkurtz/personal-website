@@ -2,57 +2,57 @@
   "week": [
     {
       "name": "c",
-      "percent": 83.3
+      "percent": 84.7
     },
     {
       "name": "shell",
-      "percent": 4.5
-    },
-    {
-      "name": "dockerfile",
-      "percent": 3
-    },
-    {
-      "name": "plaintext",
-      "percent": 3
-    },
-    {
-      "name": "ignore",
-      "percent": 1.5
-    },
-    {
-      "name": "typescript",
-      "percent": 1.5
-    },
-    {
-      "name": "c++",
-      "percent": 1.5
+      "percent": 3.5
     },
     {
       "name": "json",
-      "percent": 1.5
+      "percent": 3.5
+    },
+    {
+      "name": "dockerfile",
+      "percent": 2.4
+    },
+    {
+      "name": "plaintext",
+      "percent": 2.4
+    },
+    {
+      "name": "typescript",
+      "percent": 1.2
+    },
+    {
+      "name": "ignore",
+      "percent": 1.2
+    },
+    {
+      "name": "c++",
+      "percent": 1.2
     }
   ],
   "alltime": [
     {
       "name": "python",
-      "percent": 28.2
+      "percent": 27.8
     },
     {
       "name": "javascript",
-      "percent": 17.5
+      "percent": 17.3
     },
     {
       "name": "astro",
-      "percent": 9.4
-    },
-    {
-      "name": "wolframlanguage",
-      "percent": 5.4
+      "percent": 9.3
     },
     {
       "name": "c",
-      "percent": 4.2
+      "percent": 5.4
+    },
+    {
+      "name": "wolframlanguage",
+      "percent": 5.3
     },
     {
       "name": "markdown",
@@ -67,20 +67,20 @@
       "percent": 3.1
     },
     {
+      "name": "json",
+      "percent": 3.1
+    },
+    {
       "name": "jsx",
       "percent": 3
     },
     {
       "name": "csharp",
-      "percent": 3
-    },
-    {
-      "name": "json",
-      "percent": 3
+      "percent": 2.9
     },
     {
       "name": "html",
-      "percent": 2.6
+      "percent": 2.5
     },
     {
       "name": "plaintext",
@@ -88,11 +88,11 @@
     },
     {
       "name": "typescript",
-      "percent": 2.1
+      "percent": 2
     },
     {
       "name": "tsx",
-      "percent": 1.8
+      "percent": 1.7
     },
     {
       "name": "css",
@@ -127,11 +127,11 @@
       "percent": 0.2
     },
     {
-      "name": "sql",
+      "name": "log",
       "percent": 0.2
     },
     {
-      "name": "log",
+      "name": "sql",
       "percent": 0.2
     },
     {
