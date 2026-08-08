@@ -5,11 +5,11 @@
       "percent": 84.7
     },
     {
-      "name": "shell",
+      "name": "json",
       "percent": 3.5
     },
     {
-      "name": "json",
+      "name": "shell",
       "percent": 3.5
     },
     {
@@ -21,11 +21,11 @@
       "percent": 2.4
     },
     {
-      "name": "typescript",
+      "name": "ignore",
       "percent": 1.2
     },
     {
-      "name": "ignore",
+      "name": "typescript",
       "percent": 1.2
     },
     {
@@ -127,15 +127,15 @@
       "percent": 0.2
     },
     {
-      "name": "log",
-      "percent": 0.2
-    },
-    {
       "name": "sql",
       "percent": 0.2
     },
     {
       "name": "dockerfile",
+      "percent": 0.2
+    },
+    {
+      "name": "log",
       "percent": 0.2
     },
     {
