@@ -2,56 +2,56 @@
   "week": [
     {
       "name": "c",
-      "percent": 65.7,
-      "ms": 39167956,
-      "seconds": 39168,
-      "formatted": "10h52m48s"
+      "percent": 64.2,
+      "ms": 36684301,
+      "seconds": 36684,
+      "formatted": "10h11m24s"
     },
     {
       "name": "markdown",
-      "percent": 8.1,
+      "percent": 8.5,
       "ms": 4831169,
       "seconds": 4831,
       "formatted": "1h20m31s"
     },
     {
       "name": "swift",
-      "percent": 7.9,
+      "percent": 8.2,
       "ms": 4686854,
       "seconds": 4687,
       "formatted": "1h18m07s"
     },
     {
       "name": "javascript",
-      "percent": 7.6,
+      "percent": 8,
       "ms": 4559741,
       "seconds": 4560,
       "formatted": "1h16m00s"
     },
     {
       "name": "shell",
-      "percent": 3.4,
+      "percent": 3.6,
       "ms": 2053107,
       "seconds": 2053,
       "formatted": "0h34m13s"
     },
     {
       "name": "json",
-      "percent": 3,
+      "percent": 3.2,
       "ms": 1806983,
       "seconds": 1807,
       "formatted": "0h30m07s"
     },
     {
       "name": "python",
-      "percent": 2.1,
+      "percent": 2.2,
       "ms": 1251517,
       "seconds": 1252,
       "formatted": "0h20m52s"
     },
     {
       "name": "wolframlanguage",
-      "percent": 0.9,
+      "percent": 1,
       "ms": 548667,
       "seconds": 549,
       "formatted": "0h09m09s"
@@ -65,7 +65,7 @@
     },
     {
       "name": "dotenv",
-      "percent": 0.5,
+      "percent": 0.6,
       "ms": 327764,
       "seconds": 328,
       "formatted": "0h05m28s"
@@ -299,13 +299,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-12T01:44:41.661Z",
+    "generatedAt": "2026-08-12T07:20:47.553Z",
     "week": {
-      "totalMs": 59634613,
-      "totalSeconds": 59635,
-      "totalFormatted": "16h33m55s",
+      "totalMs": 57150958,
+      "totalSeconds": 57151,
+      "totalFormatted": "15h52m31s",
       "days": {
-        "2026-08-05": 2484,
         "2026-08-06": 4412,
         "2026-08-07": 21077,
         "2026-08-08": 11751,
@@ -316,13 +315,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 34,
-      "countedHeartbeats": 227,
+      "sessionCount": 32,
+      "countedHeartbeats": 219,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-08-05T06:00:00.000Z",
-      "rangeEnd": "2026-08-12T06:00:00.000Z"
+      "rangeStart": "2026-08-06T06:00:00.000Z",
+      "rangeEnd": "2026-08-13T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 468236558,
