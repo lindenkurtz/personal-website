@@ -2,42 +2,42 @@
   "week": [
     {
       "name": "c",
-      "percent": 49.6,
-      "ms": 3136987,
-      "seconds": 3137,
-      "formatted": "0h52m17s"
+      "percent": 48.6,
+      "ms": 3016987,
+      "seconds": 3017,
+      "formatted": "0h50m17s"
     },
     {
       "name": "swift",
-      "percent": 39.8,
+      "percent": 40.6,
       "ms": 2518381,
       "seconds": 2518,
       "formatted": "0h41m58s"
     },
     {
       "name": "plaintext",
-      "percent": 3.8,
+      "percent": 3.9,
       "ms": 240000,
       "seconds": 240,
       "formatted": "0h04m00s"
     },
     {
       "name": "json",
-      "percent": 2.3,
+      "percent": 2.4,
       "ms": 146673,
       "seconds": 147,
       "formatted": "0h02m27s"
     },
     {
       "name": "javascript",
-      "percent": 2.3,
+      "percent": 2.4,
       "ms": 146384,
       "seconds": 146,
       "formatted": "0h02m26s"
     },
     {
       "name": "markdown",
-      "percent": 2.1,
+      "percent": 2.2,
       "ms": 133513,
       "seconds": 134,
       "formatted": "0h02m14s"
@@ -264,26 +264,25 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-18T01:04:49.825Z",
+    "generatedAt": "2026-08-18T06:38:39.810Z",
     "week": {
-      "totalMs": 6321938,
-      "totalSeconds": 6322,
-      "totalFormatted": "1h45m22s",
+      "totalMs": 6201938,
+      "totalSeconds": 6202,
+      "totalFormatted": "1h43m22s",
       "days": {
-        "2026-08-11": 120,
         "2026-08-12": 3185,
         "2026-08-13": 3017
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 9,
-      "countedHeartbeats": 33,
+      "sessionCount": 8,
+      "countedHeartbeats": 32,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-08-11T06:00:00.000Z",
-      "rangeEnd": "2026-08-18T06:00:00.000Z"
+      "rangeStart": "2026-08-12T06:00:00.000Z",
+      "rangeEnd": "2026-08-19T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 474438496,
