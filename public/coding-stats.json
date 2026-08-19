@@ -2,45 +2,17 @@
   "week": [
     {
       "name": "c",
-      "percent": 48.6,
-      "ms": 3016987,
-      "seconds": 3017,
-      "formatted": "0h50m17s"
-    },
-    {
-      "name": "swift",
-      "percent": 40.6,
-      "ms": 2518381,
-      "seconds": 2518,
-      "formatted": "0h41m58s"
+      "percent": 96,
+      "ms": 2896987,
+      "seconds": 2897,
+      "formatted": "0h48m17s"
     },
     {
       "name": "plaintext",
-      "percent": 3.9,
-      "ms": 240000,
-      "seconds": 240,
-      "formatted": "0h04m00s"
-    },
-    {
-      "name": "json",
-      "percent": 2.4,
-      "ms": 146673,
-      "seconds": 147,
-      "formatted": "0h02m27s"
-    },
-    {
-      "name": "javascript",
-      "percent": 2.4,
-      "ms": 146384,
-      "seconds": 146,
-      "formatted": "0h02m26s"
-    },
-    {
-      "name": "markdown",
-      "percent": 2.2,
-      "ms": 133513,
-      "seconds": 134,
-      "formatted": "0h02m14s"
+      "percent": 4,
+      "ms": 120000,
+      "seconds": 120,
+      "formatted": "0h02m00s"
     }
   ],
   "alltime": [
@@ -264,25 +236,24 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-19T01:05:38.054Z",
+    "generatedAt": "2026-08-19T06:39:14.556Z",
     "week": {
-      "totalMs": 6201938,
-      "totalSeconds": 6202,
-      "totalFormatted": "1h43m22s",
+      "totalMs": 3016987,
+      "totalSeconds": 3017,
+      "totalFormatted": "0h50m17s",
       "days": {
-        "2026-08-12": 3185,
         "2026-08-13": 3017
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 8,
-      "countedHeartbeats": 32,
+      "sessionCount": 2,
+      "countedHeartbeats": 13,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-08-12T06:00:00.000Z",
-      "rangeEnd": "2026-08-19T06:00:00.000Z"
+      "rangeStart": "2026-08-13T06:00:00.000Z",
+      "rangeEnd": "2026-08-20T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 474438496,
