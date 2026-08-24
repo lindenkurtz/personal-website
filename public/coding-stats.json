@@ -2,17 +2,17 @@
   "week": [
     {
       "name": "c",
-      "percent": 89.6,
+      "percent": 75,
       "ms": 2056906,
       "seconds": 2057,
       "formatted": "0h34m17s"
     },
     {
       "name": "shell",
-      "percent": 10.4,
-      "ms": 240000,
-      "seconds": 240,
-      "formatted": "0h04m00s"
+      "percent": 25,
+      "ms": 686159,
+      "seconds": 686,
+      "formatted": "0h11m26s"
     }
   ],
   "alltime": [
@@ -151,10 +151,10 @@
     },
     {
       "name": "shell",
-      "percent": 0.7,
-      "ms": 3194639,
-      "seconds": 3195,
-      "formatted": "0h53m15s"
+      "percent": 0.8,
+      "ms": 3640798,
+      "seconds": 3641,
+      "formatted": "1h00m41s"
     },
     {
       "name": "ignore",
@@ -236,30 +236,30 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-24T01:07:54.521Z",
+    "generatedAt": "2026-08-24T06:53:01.892Z",
     "week": {
-      "totalMs": 2296906,
-      "totalSeconds": 2297,
-      "totalFormatted": "0h38m17s",
+      "totalMs": 2743065,
+      "totalSeconds": 2743,
+      "totalFormatted": "0h45m43s",
       "days": {
         "2026-08-21": 2057,
-        "2026-08-23": 240
+        "2026-08-23": 686
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 4,
-      "countedHeartbeats": 12,
+      "sessionCount": 5,
+      "countedHeartbeats": 15,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-08-17T06:00:00.000Z",
-      "rangeEnd": "2026-08-24T06:00:00.000Z"
+      "rangeStart": "2026-08-18T06:00:00.000Z",
+      "rangeEnd": "2026-08-25T06:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 476735402,
-      "totalSeconds": 476735,
-      "totalFormatted": "132h25m35s",
+      "totalMs": 477181561,
+      "totalSeconds": 477182,
+      "totalFormatted": "132h33m02s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -332,13 +332,13 @@
         "2026-08-12": 3185,
         "2026-08-13": 3017,
         "2026-08-21": 2057,
-        "2026-08-23": 240
+        "2026-08-23": 686
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 313,
-      "countedHeartbeats": 2317,
+      "sessionCount": 314,
+      "countedHeartbeats": 2320,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
