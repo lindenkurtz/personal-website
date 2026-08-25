@@ -257,7 +257,7 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-25T01:07:01.945Z",
+    "generatedAt": "2026-08-25T06:41:37.717Z",
     "week": {
       "totalMs": 3275708,
       "totalSeconds": 3276,
@@ -275,8 +275,8 @@
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-08-18T06:00:00.000Z",
-      "rangeEnd": "2026-08-25T06:00:00.000Z"
+      "rangeStart": "2026-08-19T06:00:00.000Z",
+      "rangeEnd": "2026-08-26T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 477714204,
