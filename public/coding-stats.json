@@ -2,31 +2,31 @@
   "week": [
     {
       "name": "c",
-      "percent": 76,
+      "percent": 74.4,
       "ms": 4246399,
       "seconds": 4246,
       "formatted": "1h10m46s"
     },
     {
       "name": "shell",
-      "percent": 12.3,
+      "percent": 12,
       "ms": 686159,
       "seconds": 686,
       "formatted": "0h11m26s"
     },
     {
+      "name": "wolframlanguage",
+      "percent": 6.3,
+      "ms": 360000,
+      "seconds": 360,
+      "formatted": "0h06m00s"
+    },
+    {
       "name": "plaintext",
-      "percent": 5.2,
+      "percent": 5.1,
       "ms": 292643,
       "seconds": 293,
       "formatted": "0h04m53s"
-    },
-    {
-      "name": "wolframlanguage",
-      "percent": 4.3,
-      "ms": 240000,
-      "seconds": 240,
-      "formatted": "0h04m00s"
     },
     {
       "name": "css",
@@ -60,10 +60,10 @@
     },
     {
       "name": "wolframlanguage",
-      "percent": 6,
-      "ms": 29009903,
-      "seconds": 29010,
-      "formatted": "8h03m30s"
+      "percent": 6.1,
+      "ms": 29129903,
+      "seconds": 29130,
+      "formatted": "8h05m30s"
     },
     {
       "name": "astro",
@@ -257,23 +257,24 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-27T07:17:42.277Z",
+    "generatedAt": "2026-08-27T21:45:31.270Z",
     "week": {
-      "totalMs": 5585201,
-      "totalSeconds": 5585,
-      "totalFormatted": "1h33m05s",
+      "totalMs": 5705201,
+      "totalSeconds": 5705,
+      "totalFormatted": "1h35m05s",
       "days": {
         "2026-08-21": 2057,
         "2026-08-23": 686,
         "2026-08-24": 533,
         "2026-08-25": 2069,
-        "2026-08-26": 240
+        "2026-08-26": 240,
+        "2026-08-27": 120
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 11,
-      "countedHeartbeats": 31,
+      "sessionCount": 12,
+      "countedHeartbeats": 32,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
@@ -281,9 +282,9 @@
       "rangeEnd": "2026-08-28T06:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 480023697,
-      "totalSeconds": 480024,
-      "totalFormatted": "133h20m24s",
+      "totalMs": 480143697,
+      "totalSeconds": 480144,
+      "totalFormatted": "133h22m24s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -359,13 +360,14 @@
         "2026-08-23": 686,
         "2026-08-24": 533,
         "2026-08-25": 2069,
-        "2026-08-26": 240
+        "2026-08-26": 240,
+        "2026-08-27": 120
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 320,
-      "countedHeartbeats": 2336,
+      "sessionCount": 321,
+      "countedHeartbeats": 2337,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
