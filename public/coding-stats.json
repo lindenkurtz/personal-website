@@ -2,35 +2,35 @@
   "week": [
     {
       "name": "c",
-      "percent": 74.4,
-      "ms": 4246399,
-      "seconds": 4246,
-      "formatted": "1h10m46s"
+      "percent": 60,
+      "ms": 2189493,
+      "seconds": 2189,
+      "formatted": "0h36m29s"
     },
     {
       "name": "shell",
-      "percent": 12,
+      "percent": 18.8,
       "ms": 686159,
       "seconds": 686,
       "formatted": "0h11m26s"
     },
     {
       "name": "wolframlanguage",
-      "percent": 6.3,
+      "percent": 9.9,
       "ms": 360000,
       "seconds": 360,
       "formatted": "0h06m00s"
     },
     {
       "name": "plaintext",
-      "percent": 5.1,
+      "percent": 8,
       "ms": 292643,
       "seconds": 293,
       "formatted": "0h04m53s"
     },
     {
       "name": "css",
-      "percent": 2.1,
+      "percent": 3.3,
       "ms": 120000,
       "seconds": 120,
       "formatted": "0h02m00s"
@@ -257,13 +257,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-27T21:45:31.270Z",
+    "generatedAt": "2026-08-28T09:31:41.248Z",
     "week": {
-      "totalMs": 5705201,
-      "totalSeconds": 5705,
-      "totalFormatted": "1h35m05s",
+      "totalMs": 3648295,
+      "totalSeconds": 3648,
+      "totalFormatted": "1h00m48s",
       "days": {
-        "2026-08-21": 2057,
         "2026-08-23": 686,
         "2026-08-24": 533,
         "2026-08-25": 2069,
@@ -273,13 +272,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 12,
-      "countedHeartbeats": 32,
+      "sessionCount": 10,
+      "countedHeartbeats": 22,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-08-21T06:00:00.000Z",
-      "rangeEnd": "2026-08-28T06:00:00.000Z"
+      "rangeStart": "2026-08-22T06:00:00.000Z",
+      "rangeEnd": "2026-08-29T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 480143697,
