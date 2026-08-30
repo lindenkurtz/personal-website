@@ -2,28 +2,28 @@
   "week": [
     {
       "name": "c",
-      "percent": 70.3,
+      "percent": 73.4,
       "ms": 11649529,
       "seconds": 11650,
       "formatted": "3h14m10s"
     },
     {
       "name": "python",
-      "percent": 14.4,
+      "percent": 15,
       "ms": 2384285,
       "seconds": 2384,
       "formatted": "0h39m44s"
     },
     {
       "name": "shell",
-      "percent": 8.3,
-      "ms": 1382011,
-      "seconds": 1382,
-      "formatted": "0h23m02s"
+      "percent": 4.4,
+      "ms": 695852,
+      "seconds": 696,
+      "formatted": "0h11m36s"
     },
     {
       "name": "wolframlanguage",
-      "percent": 2.2,
+      "percent": 2.3,
       "ms": 360000,
       "seconds": 360,
       "formatted": "0h06m00s"
@@ -44,14 +44,14 @@
     },
     {
       "name": "css",
-      "percent": 0.7,
+      "percent": 0.8,
       "ms": 120000,
       "seconds": 120,
       "formatted": "0h02m00s"
     },
     {
       "name": "ignore",
-      "percent": 0.7,
+      "percent": 0.8,
       "ms": 120000,
       "seconds": 120,
       "formatted": "0h02m00s"
@@ -285,13 +285,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-08-30T03:37:47.645Z",
+    "generatedAt": "2026-08-30T11:15:16.088Z",
     "week": {
-      "totalMs": 16567337,
-      "totalSeconds": 16567,
-      "totalFormatted": "4h36m07s",
+      "totalMs": 15881178,
+      "totalSeconds": 15881,
+      "totalFormatted": "4h24m41s",
       "days": {
-        "2026-08-23": 686,
         "2026-08-24": 533,
         "2026-08-25": 2069,
         "2026-08-26": 240,
@@ -302,13 +301,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 17,
-      "countedHeartbeats": 87,
+      "sessionCount": 14,
+      "countedHeartbeats": 82,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-08-23T06:00:00.000Z",
-      "rangeEnd": "2026-08-30T06:00:00.000Z"
+      "rangeStart": "2026-08-24T06:00:00.000Z",
+      "rangeEnd": "2026-08-31T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 493062739,
