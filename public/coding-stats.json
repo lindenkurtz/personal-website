@@ -1,78 +1,78 @@
 {
   "week": [
     {
-      "name": "latex",
-      "percent": 35.8,
-      "ms": 9133407,
-      "seconds": 9133,
-      "formatted": "2h32m13s"
-    },
-    {
       "name": "c",
-      "percent": 23.7,
+      "percent": 37.3,
       "ms": 6054748,
       "seconds": 6055,
       "formatted": "1h40m55s"
     },
     {
       "name": "markdown",
-      "percent": 10,
+      "percent": 15.7,
       "ms": 2554781,
       "seconds": 2555,
       "formatted": "0h42m35s"
     },
     {
       "name": "python",
-      "percent": 8.8,
+      "percent": 13.9,
       "ms": 2248054,
       "seconds": 2248,
       "formatted": "0h37m28s"
     },
     {
       "name": "other",
-      "percent": 8.5,
-      "ms": 2170352,
-      "seconds": 2170,
-      "formatted": "0h36m10s"
+      "percent": 11,
+      "ms": 1792472,
+      "seconds": 1792,
+      "formatted": "0h29m52s"
     },
     {
       "name": "javascript",
-      "percent": 4.2,
+      "percent": 6.5,
       "ms": 1059742,
       "seconds": 1060,
       "formatted": "0h17m40s"
     },
     {
       "name": "toml",
-      "percent": 4.1,
+      "percent": 6.5,
       "ms": 1050678,
       "seconds": 1051,
       "formatted": "0h17m31s"
     },
     {
       "name": "typescript",
-      "percent": 2.4,
+      "percent": 3.8,
       "ms": 618803,
       "seconds": 619,
       "formatted": "0h10m19s"
     },
     {
       "name": "tsx",
-      "percent": 1.5,
+      "percent": 2.3,
       "ms": 372277,
       "seconds": 372,
       "formatted": "0h06m12s"
     },
     {
+      "name": "latex",
+      "percent": 1.3,
+      "ms": 218310,
+      "seconds": 218,
+      "formatted": "0h03m38s"
+    },
+    {
       "name": "json",
-      "percent": 0.5,
+      "percent": 0.8,
       "ms": 133114,
       "seconds": 133,
       "formatted": "0h02m13s"
     },
     {
       "name": "plaintext",
-      "percent": 0.5,
+      "percent": 0.8,
       "ms": 127622,
       "seconds": 128,
       "formatted": "0h02m08s"
@@ -320,13 +320,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-09-16T03:20:02.635Z",
+    "generatedAt": "2026-09-16T10:50:43.958Z",
     "week": {
-      "totalMs": 25523578,
-      "totalSeconds": 25524,
-      "totalFormatted": "7h05m24s",
+      "totalMs": 16230601,
+      "totalSeconds": 16231,
+      "totalFormatted": "4h30m31s",
       "days": {
-        "2026-09-09": 9293,
         "2026-09-10": 4474,
         "2026-09-11": 2313,
         "2026-09-12": 1091,
@@ -337,13 +336,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 15,
-      "countedHeartbeats": 149,
+      "sessionCount": 12,
+      "countedHeartbeats": 97,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-09-09T06:00:00.000Z",
-      "rangeEnd": "2026-09-16T06:00:00.000Z"
+      "rangeStart": "2026-09-10T06:00:00.000Z",
+      "rangeEnd": "2026-09-17T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 602221507,
