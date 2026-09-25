@@ -2,42 +2,42 @@
   "week": [
     {
       "name": "markdown",
-      "percent": 43.1,
-      "ms": 2884424,
-      "seconds": 2884,
-      "formatted": "0h48m04s"
+      "percent": 60.9,
+      "ms": 6318509,
+      "seconds": 6319,
+      "formatted": "1h45m19s"
     },
     {
       "name": "plaintext",
-      "percent": 22.7,
-      "ms": 1516902,
-      "seconds": 1517,
-      "formatted": "0h25m17s"
+      "percent": 17,
+      "ms": 1762203,
+      "seconds": 1762,
+      "formatted": "0h29m22s"
     },
     {
       "name": "c",
-      "percent": 19.8,
+      "percent": 12.8,
       "ms": 1326635,
       "seconds": 1327,
       "formatted": "0h22m07s"
     },
     {
       "name": "other",
-      "percent": 7.7,
+      "percent": 5,
       "ms": 517618,
       "seconds": 518,
       "formatted": "0h08m38s"
     },
     {
       "name": "javascript",
-      "percent": 4.9,
+      "percent": 3.2,
       "ms": 326978,
       "seconds": 327,
       "formatted": "0h05m27s"
     },
     {
       "name": "asm-intel-x86-generic",
-      "percent": 1.8,
+      "percent": 1.2,
       "ms": 120000,
       "seconds": 120,
       "formatted": "0h02m00s"
@@ -46,7 +46,7 @@
   "alltime": [
     {
       "name": "python",
-      "percent": 27.1,
+      "percent": 26.9,
       "ms": 165362539,
       "seconds": 165363,
       "formatted": "45h56m03s"
@@ -60,17 +60,17 @@
     },
     {
       "name": "javascript",
-      "percent": 10.8,
+      "percent": 10.7,
       "ms": 65744979,
       "seconds": 65745,
       "formatted": "18h15m45s"
     },
     {
       "name": "markdown",
-      "percent": 5.6,
-      "ms": 34373677,
-      "seconds": 34374,
-      "formatted": "9h32m54s"
+      "percent": 6.2,
+      "ms": 37807762,
+      "seconds": 37808,
+      "formatted": "10h30m08s"
     },
     {
       "name": "wolframlanguage",
@@ -88,7 +88,7 @@
     },
     {
       "name": "jsx",
-      "percent": 3.5,
+      "percent": 3.4,
       "ms": 21168654,
       "seconds": 21169,
       "formatted": "5h52m49s"
@@ -110,9 +110,9 @@
     {
       "name": "plaintext",
       "percent": 2.8,
-      "ms": 16820658,
-      "seconds": 16821,
-      "formatted": "4h40m21s"
+      "ms": 17065959,
+      "seconds": 17066,
+      "formatted": "4h44m26s"
     },
     {
       "name": "html",
@@ -123,7 +123,7 @@
     },
     {
       "name": "json",
-      "percent": 2.6,
+      "percent": 2.5,
       "ms": 15608761,
       "seconds": 15609,
       "formatted": "4h20m09s"
@@ -292,22 +292,22 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-09-24T21:08:42.256Z",
+    "generatedAt": "2026-09-25T03:25:50.486Z",
     "week": {
-      "totalMs": 6692557,
-      "totalSeconds": 6693,
-      "totalFormatted": "1h51m33s",
+      "totalMs": 10371943,
+      "totalSeconds": 10372,
+      "totalFormatted": "2h52m52s",
       "days": {
         "2026-09-19": 3328,
         "2026-09-20": 1127,
         "2026-09-21": 762,
-        "2026-09-24": 1475
+        "2026-09-24": 5154
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
       "sessionCount": 10,
-      "countedHeartbeats": 38,
+      "countedHeartbeats": 53,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
@@ -315,9 +315,9 @@
       "rangeEnd": "2026-09-25T06:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 610761522,
-      "totalSeconds": 610762,
-      "totalFormatted": "169h39m22s",
+      "totalMs": 614440908,
+      "totalSeconds": 614441,
+      "totalFormatted": "170h40m41s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -418,13 +418,13 @@
         "2026-09-19": 3328,
         "2026-09-20": 1127,
         "2026-09-21": 762,
-        "2026-09-24": 1475
+        "2026-09-24": 5154
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
       "sessionCount": 402,
-      "countedHeartbeats": 3185,
+      "countedHeartbeats": 3200,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
