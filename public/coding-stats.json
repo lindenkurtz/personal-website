@@ -2,42 +2,21 @@
   "week": [
     {
       "name": "markdown",
-      "percent": 61.4,
+      "percent": 89.9,
       "ms": 6438509,
       "seconds": 6439,
       "formatted": "1h47m19s"
     },
     {
       "name": "plaintext",
-      "percent": 16.8,
-      "ms": 1762203,
-      "seconds": 1762,
-      "formatted": "0h29m22s"
-    },
-    {
-      "name": "c",
-      "percent": 12.6,
-      "ms": 1326635,
-      "seconds": 1327,
-      "formatted": "0h22m07s"
-    },
-    {
-      "name": "other",
-      "percent": 4.9,
-      "ms": 517618,
-      "seconds": 518,
-      "formatted": "0h08m38s"
-    },
-    {
-      "name": "javascript",
-      "percent": 3.1,
-      "ms": 326978,
-      "seconds": 327,
-      "formatted": "0h05m27s"
+      "percent": 8.4,
+      "ms": 605301,
+      "seconds": 605,
+      "formatted": "0h10m05s"
     },
     {
       "name": "asm-intel-x86-generic",
-      "percent": 1.1,
+      "percent": 1.7,
       "ms": 120000,
       "seconds": 120,
       "formatted": "0h02m00s"
@@ -292,13 +271,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-09-26T03:31:19.050Z",
+    "generatedAt": "2026-09-26T10:49:00.848Z",
     "week": {
-      "totalMs": 10491943,
-      "totalSeconds": 10492,
-      "totalFormatted": "2h54m52s",
+      "totalMs": 7163810,
+      "totalSeconds": 7164,
+      "totalFormatted": "1h59m24s",
       "days": {
-        "2026-09-19": 3328,
         "2026-09-20": 1127,
         "2026-09-21": 762,
         "2026-09-24": 5274
@@ -306,13 +284,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 11,
-      "countedHeartbeats": 54,
+      "sessionCount": 9,
+      "countedHeartbeats": 32,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-09-19T06:00:00.000Z",
-      "rangeEnd": "2026-09-26T06:00:00.000Z"
+      "rangeStart": "2026-09-20T06:00:00.000Z",
+      "rangeEnd": "2026-09-27T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 614560908,
