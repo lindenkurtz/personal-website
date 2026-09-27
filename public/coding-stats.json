@@ -2,21 +2,42 @@
   "week": [
     {
       "name": "markdown",
-      "percent": 89.9,
+      "percent": 72.3,
       "ms": 6438509,
       "seconds": 6439,
       "formatted": "1h47m19s"
     },
     {
+      "name": "python",
+      "percent": 15.1,
+      "ms": 1343148,
+      "seconds": 1343,
+      "formatted": "0h22m23s"
+    },
+    {
       "name": "plaintext",
-      "percent": 8.4,
+      "percent": 6.8,
       "ms": 605301,
       "seconds": 605,
       "formatted": "0h10m05s"
     },
     {
+      "name": "shell",
+      "percent": 3,
+      "ms": 271133,
+      "seconds": 271,
+      "formatted": "0h04m31s"
+    },
+    {
+      "name": "other",
+      "percent": 1.5,
+      "ms": 131976,
+      "seconds": 132,
+      "formatted": "0h02m12s"
+    },
+    {
       "name": "asm-intel-x86-generic",
-      "percent": 1.7,
+      "percent": 1.3,
       "ms": 120000,
       "seconds": 120,
       "formatted": "0h02m00s"
@@ -25,14 +46,14 @@
   "alltime": [
     {
       "name": "python",
-      "percent": 26.9,
-      "ms": 165362539,
-      "seconds": 165363,
-      "formatted": "45h56m03s"
+      "percent": 27,
+      "ms": 166705687,
+      "seconds": 166706,
+      "formatted": "46h18m26s"
     },
     {
       "name": "c",
-      "percent": 13.2,
+      "percent": 13.1,
       "ms": 80889039,
       "seconds": 80889,
       "formatted": "22h28m09s"
@@ -74,7 +95,7 @@
     },
     {
       "name": "latex",
-      "percent": 3.4,
+      "percent": 3.3,
       "ms": 20640213,
       "seconds": 20640,
       "formatted": "5h44m00s"
@@ -110,9 +131,9 @@
     {
       "name": "other",
       "percent": 2.3,
-      "ms": 13982796,
-      "seconds": 13983,
-      "formatted": "3h53m03s"
+      "ms": 14114772,
+      "seconds": 14115,
+      "formatted": "3h55m15s"
     },
     {
       "name": "typescript",
@@ -159,9 +180,9 @@
     {
       "name": "shell",
       "percent": 0.8,
-      "ms": 4772493,
-      "seconds": 4772,
-      "formatted": "1h19m32s"
+      "ms": 5043626,
+      "seconds": 5044,
+      "formatted": "1h24m04s"
     },
     {
       "name": "dotenv",
@@ -271,21 +292,22 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-09-26T20:39:02.157Z",
+    "generatedAt": "2026-09-27T03:40:27.270Z",
     "week": {
-      "totalMs": 7163810,
-      "totalSeconds": 7164,
-      "totalFormatted": "1h59m24s",
+      "totalMs": 8910067,
+      "totalSeconds": 8910,
+      "totalFormatted": "2h28m30s",
       "days": {
         "2026-09-20": 1127,
         "2026-09-21": 762,
-        "2026-09-24": 5274
+        "2026-09-24": 5274,
+        "2026-09-26": 1746
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 9,
-      "countedHeartbeats": 32,
+      "sessionCount": 10,
+      "countedHeartbeats": 44,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
@@ -293,9 +315,9 @@
       "rangeEnd": "2026-09-27T06:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 614560908,
-      "totalSeconds": 614561,
-      "totalFormatted": "170h42m41s",
+      "totalMs": 616307165,
+      "totalSeconds": 616307,
+      "totalFormatted": "171h11m47s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -396,13 +418,14 @@
         "2026-09-19": 3328,
         "2026-09-20": 1127,
         "2026-09-21": 762,
-        "2026-09-24": 5274
+        "2026-09-24": 5274,
+        "2026-09-26": 1746
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 403,
-      "countedHeartbeats": 3201,
+      "sessionCount": 404,
+      "countedHeartbeats": 3213,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
