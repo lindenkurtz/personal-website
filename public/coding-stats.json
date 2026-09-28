@@ -2,35 +2,35 @@
   "week": [
     {
       "name": "markdown",
-      "percent": 72.9,
-      "ms": 5671153,
-      "seconds": 5671,
-      "formatted": "1h34m31s"
+      "percent": 71.6,
+      "ms": 5029032,
+      "seconds": 5029,
+      "formatted": "1h23m49s"
     },
     {
       "name": "python",
-      "percent": 17.3,
+      "percent": 19.1,
       "ms": 1343148,
       "seconds": 1343,
       "formatted": "0h22m23s"
     },
     {
-      "name": "plaintext",
-      "percent": 4.7,
-      "ms": 365301,
-      "seconds": 365,
-      "formatted": "0h06m05s"
-    },
-    {
       "name": "shell",
-      "percent": 3.5,
+      "percent": 3.9,
       "ms": 271133,
       "seconds": 271,
       "formatted": "0h04m31s"
     },
     {
+      "name": "plaintext",
+      "percent": 3.5,
+      "ms": 245301,
+      "seconds": 245,
+      "formatted": "0h04m05s"
+    },
+    {
       "name": "other",
-      "percent": 1.7,
+      "percent": 1.9,
       "ms": 131976,
       "seconds": 132,
       "formatted": "0h02m12s"
@@ -285,26 +285,25 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-09-28T03:38:51.796Z",
+    "generatedAt": "2026-09-28T12:54:24.941Z",
     "week": {
-      "totalMs": 7782711,
-      "totalSeconds": 7783,
-      "totalFormatted": "2h09m43s",
+      "totalMs": 7020590,
+      "totalSeconds": 7021,
+      "totalFormatted": "1h57m01s",
       "days": {
-        "2026-09-21": 762,
         "2026-09-24": 5274,
         "2026-09-26": 1746
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 5,
-      "countedHeartbeats": 35,
+      "sessionCount": 3,
+      "countedHeartbeats": 32,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-09-21T06:00:00.000Z",
-      "rangeEnd": "2026-09-28T06:00:00.000Z"
+      "rangeStart": "2026-09-22T06:00:00.000Z",
+      "rangeEnd": "2026-09-29T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 616307165,
