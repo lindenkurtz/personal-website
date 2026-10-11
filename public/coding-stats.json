@@ -1,57 +1,50 @@
 {
   "week": [
     {
-      "name": "plaintext",
-      "percent": 29.1,
-      "ms": 5877393,
-      "seconds": 5877,
-      "formatted": "1h37m57s"
-    },
-    {
       "name": "markdown",
-      "percent": 25.5,
+      "percent": 36.5,
       "ms": 5151532,
       "seconds": 5152,
       "formatted": "1h25m52s"
     },
     {
       "name": "python",
-      "percent": 23.9,
+      "percent": 34.2,
       "ms": 4831669,
       "seconds": 4832,
       "formatted": "1h20m32s"
     },
     {
-      "name": "asm-intel-x86-generic",
-      "percent": 11.1,
-      "ms": 2246827,
-      "seconds": 2247,
-      "formatted": "0h37m27s"
+      "name": "plaintext",
+      "percent": 14.3,
+      "ms": 2018102,
+      "seconds": 2018,
+      "formatted": "0h33m38s"
     },
     {
       "name": "other",
-      "percent": 5.9,
+      "percent": 8.4,
       "ms": 1186842,
       "seconds": 1187,
       "formatted": "0h19m47s"
     },
     {
       "name": "javascript",
-      "percent": 3.5,
+      "percent": 5.1,
       "ms": 714746,
       "seconds": 715,
       "formatted": "0h11m55s"
     },
     {
       "name": "ignore",
-      "percent": 0.6,
+      "percent": 0.9,
       "ms": 120689,
       "seconds": 121,
       "formatted": "0h02m01s"
     },
     {
       "name": "shell",
-      "percent": 0.5,
+      "percent": 0.7,
       "ms": 95135,
       "seconds": 95,
       "formatted": "0h01m35s"
@@ -306,13 +299,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-10-11T03:59:50.519Z",
+    "generatedAt": "2026-10-11T12:06:21.151Z",
     "week": {
-      "totalMs": 20224833,
-      "totalSeconds": 20225,
-      "totalFormatted": "5h37m05s",
+      "totalMs": 14118715,
+      "totalSeconds": 14119,
+      "totalFormatted": "3h55m19s",
       "days": {
-        "2026-10-04": 6106,
         "2026-10-06": 3603,
         "2026-10-07": 1030,
         "2026-10-09": 3822,
@@ -321,13 +313,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 33,
-      "countedHeartbeats": 130,
-      "contextHeartbeats": 0,
+      "sessionCount": 28,
+      "countedHeartbeats": 98,
+      "contextHeartbeats": 1,
       "unstampedHeartbeats": 1,
       "inexactIntervalHeartbeats": 1,
-      "rangeStart": "2026-10-04T06:00:00.000Z",
-      "rangeEnd": "2026-10-11T06:00:00.000Z"
+      "rangeStart": "2026-10-05T06:00:00.000Z",
+      "rangeEnd": "2026-10-12T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 656615845,
