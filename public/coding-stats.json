@@ -313,7 +313,7 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-10-12T04:20:02.051Z",
+    "generatedAt": "2026-10-12T14:25:21.236Z",
     "week": {
       "totalMs": 18229165,
       "totalSeconds": 18229,
@@ -328,13 +328,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 33,
+      "sessionCount": 32,
       "countedHeartbeats": 120,
-      "contextHeartbeats": 1,
+      "contextHeartbeats": 0,
       "unstampedHeartbeats": 1,
       "inexactIntervalHeartbeats": 1,
-      "rangeStart": "2026-10-05T06:00:00.000Z",
-      "rangeEnd": "2026-10-12T06:00:00.000Z"
+      "rangeStart": "2026-10-06T06:00:00.000Z",
+      "rangeEnd": "2026-10-13T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 660726295,
