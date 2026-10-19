@@ -2,56 +2,56 @@
   "week": [
     {
       "name": "plaintext",
-      "percent": 31.8,
+      "percent": 33.9,
       "ms": 6478464,
       "seconds": 6478,
       "formatted": "1h47m58s"
     },
     {
       "name": "c++",
-      "percent": 28.4,
+      "percent": 30.3,
       "ms": 5787174,
       "seconds": 5787,
       "formatted": "1h36m27s"
     },
     {
       "name": "python",
-      "percent": 25.3,
-      "ms": 5149329,
-      "seconds": 5149,
-      "formatted": "1h25m49s"
+      "percent": 20.2,
+      "ms": 3857499,
+      "seconds": 3857,
+      "formatted": "1h04m17s"
     },
     {
       "name": "markdown",
-      "percent": 8.2,
+      "percent": 8.7,
       "ms": 1662976,
       "seconds": 1663,
       "formatted": "0h27m43s"
     },
     {
       "name": "asm-intel-x86-generic",
-      "percent": 2.3,
+      "percent": 2.5,
       "ms": 471826,
       "seconds": 472,
       "formatted": "0h07m52s"
     },
     {
       "name": "other",
-      "percent": 1.7,
+      "percent": 1.8,
       "ms": 351247,
       "seconds": 351,
       "formatted": "0h05m51s"
     },
     {
       "name": "makefile",
-      "percent": 1.4,
+      "percent": 1.5,
       "ms": 282695,
       "seconds": 283,
       "formatted": "0h04m43s"
     },
     {
       "name": "csv",
-      "percent": 1,
+      "percent": 1.1,
       "ms": 205390,
       "seconds": 205,
       "formatted": "0h03m25s"
@@ -313,13 +313,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-10-19T03:15:19.978Z",
+    "generatedAt": "2026-10-19T12:07:34.820Z",
     "week": {
-      "totalMs": 20389101,
-      "totalSeconds": 20389,
-      "totalFormatted": "5h39m49s",
+      "totalMs": 19097271,
+      "totalSeconds": 19097,
+      "totalFormatted": "5h18m17s",
       "days": {
-        "2026-10-12": 1292,
         "2026-10-13": 1533,
         "2026-10-14": 8555,
         "2026-10-15": 120,
@@ -329,13 +328,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 14,
-      "countedHeartbeats": 111,
+      "sessionCount": 13,
+      "countedHeartbeats": 101,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-10-12T06:00:00.000Z",
-      "rangeEnd": "2026-10-19T06:00:00.000Z"
+      "rangeStart": "2026-10-13T06:00:00.000Z",
+      "rangeEnd": "2026-10-20T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 681115396,
