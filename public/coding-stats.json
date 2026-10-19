@@ -2,35 +2,56 @@
   "week": [
     {
       "name": "plaintext",
-      "percent": 51.2,
+      "percent": 31.8,
       "ms": 6478464,
       "seconds": 6478,
       "formatted": "1h47m58s"
     },
     {
+      "name": "c++",
+      "percent": 28.4,
+      "ms": 5787174,
+      "seconds": 5787,
+      "formatted": "1h36m27s"
+    },
+    {
       "name": "python",
-      "percent": 40.7,
+      "percent": 25.3,
       "ms": 5149329,
       "seconds": 5149,
       "formatted": "1h25m49s"
     },
     {
+      "name": "markdown",
+      "percent": 8.2,
+      "ms": 1662976,
+      "seconds": 1663,
+      "formatted": "0h27m43s"
+    },
+    {
       "name": "asm-intel-x86-generic",
-      "percent": 3.7,
+      "percent": 2.3,
       "ms": 471826,
       "seconds": 472,
       "formatted": "0h07m52s"
     },
     {
       "name": "other",
-      "percent": 2.8,
+      "percent": 1.7,
       "ms": 351247,
       "seconds": 351,
       "formatted": "0h05m51s"
     },
     {
+      "name": "makefile",
+      "percent": 1.4,
+      "ms": 282695,
+      "seconds": 283,
+      "formatted": "0h04m43s"
+    },
+    {
       "name": "csv",
-      "percent": 1.6,
+      "percent": 1,
       "ms": 205390,
       "seconds": 205,
       "formatted": "0h03m25s"
@@ -39,31 +60,31 @@
   "alltime": [
     {
       "name": "python",
-      "percent": 27.4,
+      "percent": 27.1,
       "ms": 184690330,
       "seconds": 184690,
       "formatted": "51h18m10s"
     },
     {
       "name": "c",
-      "percent": 12,
+      "percent": 11.9,
       "ms": 80889039,
       "seconds": 80889,
       "formatted": "22h28m09s"
     },
     {
       "name": "javascript",
-      "percent": 9.9,
+      "percent": 9.8,
       "ms": 66459725,
       "seconds": 66460,
       "formatted": "18h27m40s"
     },
     {
       "name": "markdown",
-      "percent": 8.2,
-      "ms": 55403663,
-      "seconds": 55404,
-      "formatted": "15h23m24s"
+      "percent": 8.4,
+      "ms": 57066639,
+      "seconds": 57067,
+      "formatted": "15h51m07s"
     },
     {
       "name": "wolframlanguage",
@@ -81,7 +102,7 @@
     },
     {
       "name": "astro",
-      "percent": 4.3,
+      "percent": 4.2,
       "ms": 28674715,
       "seconds": 28675,
       "formatted": "7h57m55s"
@@ -95,14 +116,21 @@
     },
     {
       "name": "latex",
-      "percent": 3.1,
+      "percent": 3,
       "ms": 20640213,
       "seconds": 20640,
       "formatted": "5h44m00s"
     },
     {
+      "name": "c++",
+      "percent": 2.9,
+      "ms": 19708755,
+      "seconds": 19709,
+      "formatted": "5h28m29s"
+    },
+    {
       "name": "csharp",
-      "percent": 2.6,
+      "percent": 2.5,
       "ms": 17206770,
       "seconds": 17207,
       "formatted": "4h46m47s"
@@ -116,7 +144,7 @@
     },
     {
       "name": "html",
-      "percent": 2.4,
+      "percent": 2.3,
       "ms": 15928028,
       "seconds": 15928,
       "formatted": "4h25m28s"
@@ -130,21 +158,14 @@
     },
     {
       "name": "typescript",
-      "percent": 2.1,
+      "percent": 2,
       "ms": 13951351,
       "seconds": 13951,
       "formatted": "3h52m31s"
     },
     {
-      "name": "c++",
-      "percent": 2.1,
-      "ms": 13921581,
-      "seconds": 13922,
-      "formatted": "3h52m02s"
-    },
-    {
       "name": "swift",
-      "percent": 1.3,
+      "percent": 1.2,
       "ms": 8435759,
       "seconds": 8436,
       "formatted": "2h20m36s"
@@ -158,7 +179,7 @@
     },
     {
       "name": "css",
-      "percent": 1.1,
+      "percent": 1,
       "ms": 7116654,
       "seconds": 7117,
       "formatted": "1h58m37s"
@@ -179,7 +200,7 @@
     },
     {
       "name": "asm-intel-x86-generic",
-      "percent": 0.7,
+      "percent": 0.6,
       "ms": 4395789,
       "seconds": 4396,
       "formatted": "1h13m16s"
@@ -255,6 +276,13 @@
       "formatted": "0h05m27s"
     },
     {
+      "name": "makefile",
+      "percent": 0,
+      "ms": 282695,
+      "seconds": 283,
+      "formatted": "0h04m43s"
+    },
+    {
       "name": "github-actions-workflow",
       "percent": 0,
       "ms": 248211,
@@ -285,23 +313,24 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-10-18T20:05:46.665Z",
+    "generatedAt": "2026-10-19T03:15:19.978Z",
     "week": {
-      "totalMs": 12656256,
-      "totalSeconds": 12656,
-      "totalFormatted": "3h30m56s",
+      "totalMs": 20389101,
+      "totalSeconds": 20389,
+      "totalFormatted": "5h39m49s",
       "days": {
         "2026-10-12": 1292,
         "2026-10-13": 1533,
         "2026-10-14": 8555,
         "2026-10-15": 120,
-        "2026-10-16": 1157
+        "2026-10-16": 1157,
+        "2026-10-18": 7733
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 13,
-      "countedHeartbeats": 72,
+      "sessionCount": 14,
+      "countedHeartbeats": 111,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
@@ -309,9 +338,9 @@
       "rangeEnd": "2026-10-19T06:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 673382551,
-      "totalSeconds": 673383,
-      "totalFormatted": "187h03m03s",
+      "totalMs": 681115396,
+      "totalSeconds": 681115,
+      "totalFormatted": "189h11m55s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -430,13 +459,14 @@
         "2026-10-13": 1533,
         "2026-10-14": 8555,
         "2026-10-15": 120,
-        "2026-10-16": 1157
+        "2026-10-16": 1157,
+        "2026-10-18": 7733
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 469,
-      "countedHeartbeats": 3543,
+      "sessionCount": 470,
+      "countedHeartbeats": 3582,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 1,
       "inexactIntervalHeartbeats": 1,
