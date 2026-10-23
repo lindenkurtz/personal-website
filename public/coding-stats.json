@@ -2,28 +2,42 @@
   "week": [
     {
       "name": "c++",
-      "percent": 65.1,
+      "percent": 55.1,
       "ms": 5787174,
       "seconds": 5787,
       "formatted": "1h36m27s"
     },
     {
       "name": "markdown",
-      "percent": 18.7,
+      "percent": 15.8,
       "ms": 1662976,
       "seconds": 1663,
       "formatted": "0h27m43s"
     },
     {
       "name": "python",
-      "percent": 13,
+      "percent": 11,
       "ms": 1156632,
       "seconds": 1157,
       "formatted": "0h19m17s"
     },
     {
+      "name": "other",
+      "percent": 9.5,
+      "ms": 998538,
+      "seconds": 999,
+      "formatted": "0h16m39s"
+    },
+    {
+      "name": "swift",
+      "percent": 5.9,
+      "ms": 617221,
+      "seconds": 617,
+      "formatted": "0h10m17s"
+    },
+    {
       "name": "makefile",
-      "percent": 3.2,
+      "percent": 2.7,
       "ms": 282695,
       "seconds": 283,
       "formatted": "0h04m43s"
@@ -40,16 +54,16 @@
     {
       "name": "c",
       "percent": 11.9,
-      "ms": 80889039,
-      "seconds": 80889,
-      "formatted": "22h28m09s"
+      "ms": 81170558,
+      "seconds": 81171,
+      "formatted": "22h32m51s"
     },
     {
       "name": "javascript",
-      "percent": 9.8,
-      "ms": 66459725,
-      "seconds": 66460,
-      "formatted": "18h27m40s"
+      "percent": 9.7,
+      "ms": 66156020,
+      "seconds": 66156,
+      "formatted": "18h22m36s"
     },
     {
       "name": "markdown",
@@ -68,9 +82,9 @@
     {
       "name": "plaintext",
       "percent": 4.6,
-      "ms": 31001196,
-      "seconds": 31001,
-      "formatted": "8h36m41s"
+      "ms": 31124416,
+      "seconds": 31124,
+      "formatted": "8h38m44s"
     },
     {
       "name": "astro",
@@ -109,10 +123,10 @@
     },
     {
       "name": "other",
-      "percent": 2.4,
-      "ms": 16262628,
-      "seconds": 16263,
-      "formatted": "4h31m03s"
+      "percent": 2.5,
+      "ms": 17160132,
+      "seconds": 17160,
+      "formatted": "4h46m00s"
     },
     {
       "name": "html",
@@ -137,10 +151,10 @@
     },
     {
       "name": "swift",
-      "percent": 1.2,
-      "ms": 8435759,
-      "seconds": 8436,
-      "formatted": "2h20m36s"
+      "percent": 1.3,
+      "ms": 9052980,
+      "seconds": 9053,
+      "formatted": "2h30m53s"
     },
     {
       "name": "tsx",
@@ -193,7 +207,7 @@
     },
     {
       "name": "ignore",
-      "percent": 0.5,
+      "percent": 0.4,
       "ms": 3071008,
       "seconds": 3071,
       "formatted": "0h51m11s"
@@ -285,20 +299,21 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-10-22T21:11:55.222Z",
+    "generatedAt": "2026-10-23T03:23:01.484Z",
     "week": {
-      "totalMs": 8889477,
-      "totalSeconds": 8889,
-      "totalFormatted": "2h28m09s",
+      "totalMs": 10505236,
+      "totalSeconds": 10505,
+      "totalFormatted": "2h55m05s",
       "days": {
         "2026-10-16": 1157,
-        "2026-10-18": 7733
+        "2026-10-18": 7733,
+        "2026-10-22": 1616
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 2,
-      "countedHeartbeats": 48,
+      "sessionCount": 4,
+      "countedHeartbeats": 59,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
@@ -306,9 +321,9 @@
       "rangeEnd": "2026-10-23T06:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 681115396,
-      "totalSeconds": 681115,
-      "totalFormatted": "189h11m55s",
+      "totalMs": 682731155,
+      "totalSeconds": 682731,
+      "totalFormatted": "189h38m51s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -428,13 +443,14 @@
         "2026-10-14": 8555,
         "2026-10-15": 120,
         "2026-10-16": 1157,
-        "2026-10-18": 7733
+        "2026-10-18": 7733,
+        "2026-10-22": 1616
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 470,
-      "countedHeartbeats": 3582,
+      "sessionCount": 472,
+      "countedHeartbeats": 3597,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 1,
       "inexactIntervalHeartbeats": 1,
