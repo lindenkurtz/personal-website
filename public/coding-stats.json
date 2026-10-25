@@ -1,46 +1,25 @@
 {
   "week": [
     {
-      "name": "c++",
-      "percent": 38.4,
-      "ms": 5787174,
-      "seconds": 5787,
-      "formatted": "1h36m27s"
-    },
-    {
       "name": "python",
-      "percent": 37.5,
+      "percent": 77.2,
       "ms": 5649591,
       "seconds": 5650,
       "formatted": "1h34m10s"
     },
     {
-      "name": "markdown",
-      "percent": 11,
-      "ms": 1662976,
-      "seconds": 1663,
-      "formatted": "0h27m43s"
-    },
-    {
       "name": "other",
-      "percent": 7,
+      "percent": 14.4,
       "ms": 1053853,
       "seconds": 1054,
       "formatted": "0h17m34s"
     },
     {
       "name": "swift",
-      "percent": 4.1,
+      "percent": 8.4,
       "ms": 617221,
       "seconds": 617,
       "formatted": "0h10m17s"
-    },
-    {
-      "name": "makefile",
-      "percent": 1.9,
-      "ms": 282695,
-      "seconds": 283,
-      "formatted": "0h04m43s"
     }
   ],
   "alltime": [
@@ -299,26 +278,25 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-10-25T03:12:01.605Z",
+    "generatedAt": "2026-10-25T10:43:19.496Z",
     "week": {
-      "totalMs": 15053510,
-      "totalSeconds": 15054,
-      "totalFormatted": "4h10m54s",
+      "totalMs": 7320665,
+      "totalSeconds": 7321,
+      "totalFormatted": "2h02m01s",
       "days": {
-        "2026-10-18": 7733,
         "2026-10-22": 1616,
         "2026-10-24": 5705
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 7,
-      "countedHeartbeats": 91,
+      "sessionCount": 6,
+      "countedHeartbeats": 52,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-10-18T06:00:00.000Z",
-      "rangeEnd": "2026-10-25T06:00:00.000Z"
+      "rangeStart": "2026-10-19T06:00:00.000Z",
+      "rangeEnd": "2026-10-26T06:00:00.000Z"
     },
     "alltime": {
       "totalMs": 688436061,
