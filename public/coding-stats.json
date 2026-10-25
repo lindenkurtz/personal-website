@@ -2,21 +2,21 @@
   "week": [
     {
       "name": "python",
-      "percent": 77.2,
+      "percent": 75.7,
       "ms": 5649591,
       "seconds": 5650,
       "formatted": "1h34m10s"
     },
     {
       "name": "other",
-      "percent": 14.4,
-      "ms": 1053853,
-      "seconds": 1054,
-      "formatted": "0h17m34s"
+      "percent": 16,
+      "ms": 1196442,
+      "seconds": 1196,
+      "formatted": "0h19m56s"
     },
     {
       "name": "swift",
-      "percent": 8.4,
+      "percent": 8.3,
       "ms": 617221,
       "seconds": 617,
       "formatted": "0h10m17s"
@@ -96,9 +96,9 @@
     {
       "name": "other",
       "percent": 2.5,
-      "ms": 17215447,
-      "seconds": 17215,
-      "formatted": "4h46m55s"
+      "ms": 17358036,
+      "seconds": 17358,
+      "formatted": "4h49m18s"
     },
     {
       "name": "csharp",
@@ -278,20 +278,21 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-10-25T15:33:07.190Z",
+    "generatedAt": "2026-10-25T20:22:33.786Z",
     "week": {
-      "totalMs": 7320665,
-      "totalSeconds": 7321,
-      "totalFormatted": "2h02m01s",
+      "totalMs": 7463254,
+      "totalSeconds": 7463,
+      "totalFormatted": "2h04m23s",
       "days": {
         "2026-10-22": 1616,
-        "2026-10-24": 5705
+        "2026-10-24": 5705,
+        "2026-10-25": 143
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 6,
-      "countedHeartbeats": 52,
+      "sessionCount": 7,
+      "countedHeartbeats": 54,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
@@ -299,9 +300,9 @@
       "rangeEnd": "2026-10-26T06:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 688436061,
-      "totalSeconds": 688436,
-      "totalFormatted": "191h13m56s",
+      "totalMs": 688578650,
+      "totalSeconds": 688579,
+      "totalFormatted": "191h16m19s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -423,13 +424,14 @@
         "2026-10-16": 1157,
         "2026-10-18": 7733,
         "2026-10-22": 1616,
-        "2026-10-24": 5705
+        "2026-10-24": 5705,
+        "2026-10-25": 143
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 476,
-      "countedHeartbeats": 3638,
+      "sessionCount": 477,
+      "countedHeartbeats": 3640,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 1,
       "inexactIntervalHeartbeats": 1,
