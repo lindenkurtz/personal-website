@@ -2,56 +2,56 @@
   "week": [
     {
       "name": "python",
-      "percent": 57.4,
-      "ms": 13129273,
-      "seconds": 13129,
-      "formatted": "3h38m49s"
+      "percent": 59.4,
+      "ms": 16954399,
+      "seconds": 16954,
+      "formatted": "4h42m34s"
     },
     {
       "name": "markdown",
-      "percent": 20,
-      "ms": 4575089,
-      "seconds": 4575,
-      "formatted": "1h16m15s"
+      "percent": 21.1,
+      "ms": 6026379,
+      "seconds": 6026,
+      "formatted": "1h40m26s"
     },
     {
       "name": "other",
-      "percent": 10.8,
-      "ms": 2468934,
-      "seconds": 2469,
-      "formatted": "0h41m09s"
+      "percent": 9.9,
+      "ms": 2838362,
+      "seconds": 2838,
+      "formatted": "0h47m18s"
     },
     {
       "name": "shell",
-      "percent": 4.1,
+      "percent": 3.3,
       "ms": 942624,
       "seconds": 943,
       "formatted": "0h15m43s"
     },
     {
       "name": "c++",
-      "percent": 3.4,
+      "percent": 2.7,
       "ms": 771779,
       "seconds": 772,
       "formatted": "0h12m52s"
     },
     {
       "name": "csv",
-      "percent": 3.1,
+      "percent": 2.5,
       "ms": 706087,
       "seconds": 706,
       "formatted": "0h11m46s"
     },
     {
       "name": "plaintext",
-      "percent": 0.9,
+      "percent": 0.7,
       "ms": 203237,
       "seconds": 203,
       "formatted": "0h03m23s"
     },
     {
       "name": "yaml",
-      "percent": 0.4,
+      "percent": 0.3,
       "ms": 93226,
       "seconds": 93,
       "formatted": "0h01m33s"
@@ -60,21 +60,21 @@
   "alltime": [
     {
       "name": "python",
-      "percent": 28.5,
-      "ms": 203469194,
-      "seconds": 203469,
-      "formatted": "56h31m09s"
+      "percent": 28.9,
+      "ms": 207294320,
+      "seconds": 207294,
+      "formatted": "57h34m54s"
     },
     {
       "name": "c",
-      "percent": 11.4,
+      "percent": 11.3,
       "ms": 81170558,
       "seconds": 81171,
       "formatted": "22h32m51s"
     },
     {
       "name": "javascript",
-      "percent": 9.3,
+      "percent": 9.2,
       "ms": 66156020,
       "seconds": 66156,
       "formatted": "18h22m36s"
@@ -131,9 +131,9 @@
     {
       "name": "other",
       "percent": 2.8,
-      "ms": 19826970,
-      "seconds": 19827,
-      "formatted": "5h30m27s"
+      "ms": 20196398,
+      "seconds": 20196,
+      "formatted": "5h36m36s"
     },
     {
       "name": "csharp",
@@ -158,7 +158,7 @@
     },
     {
       "name": "typescript",
-      "percent": 2,
+      "percent": 1.9,
       "ms": 13951351,
       "seconds": 13951,
       "formatted": "3h52m31s"
@@ -186,7 +186,7 @@
     },
     {
       "name": "shell",
-      "percent": 0.9,
+      "percent": 0.8,
       "ms": 6081385,
       "seconds": 6081,
       "formatted": "1h41m21s"
@@ -313,32 +313,33 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-11-02T04:25:45.710Z",
+    "generatedAt": "2026-11-02T14:45:22.132Z",
     "week": {
-      "totalMs": 22890249,
-      "totalSeconds": 22890,
-      "totalFormatted": "6h21m30s",
+      "totalMs": 28536093,
+      "totalSeconds": 28536,
+      "totalFormatted": "7h55m36s",
       "days": {
         "2026-10-27": 14269,
         "2026-10-28": 6147,
         "2026-10-29": 1172,
-        "2026-10-30": 1302
+        "2026-10-30": 1302,
+        "2026-11-01": 5646
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 18,
-      "countedHeartbeats": 151,
+      "sessionCount": 26,
+      "countedHeartbeats": 173,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-10-26T06:00:00.000Z",
-      "rangeEnd": "2026-11-01T06:00:00.000Z"
+      "rangeStart": "2026-10-27T06:00:00.000Z",
+      "rangeEnd": "2026-11-03T07:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 712920189,
-      "totalSeconds": 712920,
-      "totalFormatted": "198h02m00s",
+      "totalMs": 717114743,
+      "totalSeconds": 717115,
+      "totalFormatted": "199h11m55s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -466,13 +467,13 @@
         "2026-10-28": 6147,
         "2026-10-29": 1172,
         "2026-10-30": 1302,
-        "2026-11-01": 1451
+        "2026-11-01": 5646
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 500,
-      "countedHeartbeats": 3798,
+      "sessionCount": 503,
+      "countedHeartbeats": 3813,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 1,
       "inexactIntervalHeartbeats": 1,
