@@ -2,63 +2,42 @@
   "week": [
     {
       "name": "python",
-      "percent": 57.6,
-      "ms": 18530638,
-      "seconds": 18531,
-      "formatted": "5h08m51s"
+      "percent": 52.4,
+      "ms": 9375047,
+      "seconds": 9375,
+      "formatted": "2h36m15s"
     },
     {
       "name": "markdown",
-      "percent": 24.2,
-      "ms": 7786167,
-      "seconds": 7786,
-      "formatted": "2h09m46s"
+      "percent": 30.9,
+      "ms": 5523075,
+      "seconds": 5523,
+      "formatted": "1h32m03s"
     },
     {
       "name": "other",
-      "percent": 8.8,
-      "ms": 2838362,
-      "seconds": 2838,
-      "formatted": "0h47m18s"
-    },
-    {
-      "name": "shell",
-      "percent": 2.9,
-      "ms": 942624,
-      "seconds": 943,
-      "formatted": "0h15m43s"
+      "percent": 10.3,
+      "ms": 1840127,
+      "seconds": 1840,
+      "formatted": "0h30m40s"
     },
     {
       "name": "c++",
-      "percent": 2.4,
+      "percent": 4.3,
       "ms": 771779,
       "seconds": 772,
       "formatted": "0h12m52s"
     },
     {
-      "name": "csv",
-      "percent": 2.2,
-      "ms": 706087,
-      "seconds": 706,
-      "formatted": "0h11m46s"
-    },
-    {
       "name": "html",
-      "percent": 0.9,
+      "percent": 1.6,
       "ms": 280495,
       "seconds": 280,
       "formatted": "0h04m40s"
     },
     {
-      "name": "plaintext",
-      "percent": 0.6,
-      "ms": 203237,
-      "seconds": 203,
-      "formatted": "0h03m23s"
-    },
-    {
       "name": "yaml",
-      "percent": 0.3,
+      "percent": 0.5,
       "ms": 93226,
       "seconds": 93,
       "formatted": "0h01m33s"
@@ -320,13 +299,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-11-03T00:29:59.548Z",
+    "generatedAt": "2026-11-03T13:37:50.774Z",
     "week": {
-      "totalMs": 32152615,
-      "totalSeconds": 32153,
-      "totalFormatted": "8h55m53s",
+      "totalMs": 17883749,
+      "totalSeconds": 17884,
+      "totalFormatted": "4h58m04s",
       "days": {
-        "2026-10-27": 14269,
         "2026-10-28": 6147,
         "2026-10-29": 1172,
         "2026-10-30": 1302,
@@ -336,13 +314,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 31,
-      "countedHeartbeats": 197,
+      "sessionCount": 21,
+      "countedHeartbeats": 110,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-10-27T06:00:00.000Z",
-      "rangeEnd": "2026-11-03T07:00:00.000Z"
+      "rangeStart": "2026-10-28T06:00:00.000Z",
+      "rangeEnd": "2026-11-04T07:00:00.000Z"
     },
     "alltime": {
       "totalMs": 720731265,
