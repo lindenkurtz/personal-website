@@ -2,21 +2,14 @@
   "week": [
     {
       "name": "python",
-      "percent": 97,
-      "ms": 31837393,
-      "seconds": 31837,
-      "formatted": "8h50m37s"
-    },
-    {
-      "name": "markdown",
-      "percent": 2.5,
-      "ms": 809426,
-      "seconds": 809,
-      "formatted": "0h13m29s"
+      "percent": 99.3,
+      "ms": 24691880,
+      "seconds": 24692,
+      "formatted": "6h51m32s"
     },
     {
       "name": "r",
-      "percent": 0.4,
+      "percent": 0.5,
       "ms": 120000,
       "seconds": 120,
       "formatted": "0h02m00s"
@@ -292,13 +285,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-11-14T04:55:33.528Z",
+    "generatedAt": "2026-11-14T12:57:50.923Z",
     "week": {
-      "totalMs": 32819379,
-      "totalSeconds": 32819,
-      "totalFormatted": "9h06m59s",
+      "totalMs": 24864440,
+      "totalSeconds": 24864,
+      "totalFormatted": "6h54m24s",
       "days": {
-        "2026-11-07": 7955,
         "2026-11-09": 120,
         "2026-11-10": 5175,
         "2026-11-11": 5749,
@@ -307,13 +299,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 15,
-      "countedHeartbeats": 179,
+      "sessionCount": 10,
+      "countedHeartbeats": 145,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-11-07T07:00:00.000Z",
-      "rangeEnd": "2026-11-14T07:00:00.000Z"
+      "rangeStart": "2026-11-08T07:00:00.000Z",
+      "rangeEnd": "2026-11-15T07:00:00.000Z"
     },
     "alltime": {
       "totalMs": 763792411,
