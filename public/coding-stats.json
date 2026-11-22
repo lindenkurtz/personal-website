@@ -2,56 +2,56 @@
   "week": [
     {
       "name": "python",
-      "percent": 82.7,
-      "ms": 35386918,
-      "seconds": 35387,
-      "formatted": "9h49m47s"
+      "percent": 80.9,
+      "ms": 31349198,
+      "seconds": 31349,
+      "formatted": "8h42m29s"
     },
     {
       "name": "markdown",
-      "percent": 5.3,
+      "percent": 5.9,
       "ms": 2286000,
       "seconds": 2286,
       "formatted": "0h38m06s"
     },
     {
       "name": "javascript",
-      "percent": 5.2,
+      "percent": 5.7,
       "ms": 2220040,
       "seconds": 2220,
       "formatted": "0h37m00s"
     },
     {
       "name": "json",
-      "percent": 2.7,
+      "percent": 3,
       "ms": 1152726,
       "seconds": 1153,
       "formatted": "0h19m13s"
     },
     {
       "name": "other",
-      "percent": 2.5,
+      "percent": 2.7,
       "ms": 1054067,
       "seconds": 1054,
       "formatted": "0h17m34s"
     },
     {
       "name": "dotenv",
-      "percent": 0.6,
+      "percent": 0.7,
       "ms": 272397,
       "seconds": 272,
       "formatted": "0h04m32s"
     },
     {
       "name": "csv",
-      "percent": 0.6,
+      "percent": 0.7,
       "ms": 259617,
       "seconds": 260,
       "formatted": "0h04m20s"
     },
     {
       "name": "ignore",
-      "percent": 0.3,
+      "percent": 0.4,
       "ms": 147715,
       "seconds": 148,
       "formatted": "0h02m28s"
@@ -327,13 +327,12 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-11-22T05:03:38.163Z",
+    "generatedAt": "2026-11-22T14:01:53.694Z",
     "week": {
-      "totalMs": 42785981,
-      "totalSeconds": 42786,
-      "totalFormatted": "11h53m06s",
+      "totalMs": 38748261,
+      "totalSeconds": 38748,
+      "totalFormatted": "10h45m48s",
       "days": {
-        "2026-11-15": 4038,
         "2026-11-16": 20185,
         "2026-11-17": 120,
         "2026-11-18": 440,
@@ -343,13 +342,13 @@
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 26,
-      "countedHeartbeats": 243,
+      "sessionCount": 23,
+      "countedHeartbeats": 218,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 1,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-11-15T07:00:00.000Z",
-      "rangeEnd": "2026-11-22T07:00:00.000Z"
+      "rangeStart": "2026-11-16T07:00:00.000Z",
+      "rangeEnd": "2026-11-23T07:00:00.000Z"
     },
     "alltime": {
       "totalMs": 819043405,
