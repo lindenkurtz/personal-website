@@ -1,67 +1,39 @@
 {
   "week": [
     {
-      "name": "python",
-      "percent": 30,
-      "ms": 2780643,
-      "seconds": 2781,
-      "formatted": "0h46m21s"
-    },
-    {
-      "name": "javascript",
-      "percent": 25.2,
-      "ms": 2341701,
-      "seconds": 2342,
-      "formatted": "0h39m02s"
-    },
-    {
       "name": "markdown",
-      "percent": 23.2,
-      "ms": 2149048,
-      "seconds": 2149,
-      "formatted": "0h35m49s"
+      "percent": 36.7,
+      "ms": 328846,
+      "seconds": 329,
+      "formatted": "0h05m29s"
     },
     {
       "name": "other",
-      "percent": 12.5,
-      "ms": 1160723,
-      "seconds": 1161,
-      "formatted": "0h19m21s"
+      "percent": 27.2,
+      "ms": 243490,
+      "seconds": 243,
+      "formatted": "0h04m03s"
     },
     {
-      "name": "json",
-      "percent": 4,
-      "ms": 369466,
-      "seconds": 369,
-      "formatted": "0h06m09s"
-    },
-    {
-      "name": "dotenv",
-      "percent": 2.9,
-      "ms": 272397,
-      "seconds": 272,
-      "formatted": "0h04m32s"
+      "name": "javascript",
+      "percent": 13.6,
+      "ms": 121661,
+      "seconds": 122,
+      "formatted": "0h02m02s"
     },
     {
       "name": "css",
-      "percent": 1.3,
+      "percent": 13.5,
       "ms": 121056,
       "seconds": 121,
       "formatted": "0h02m01s"
     },
     {
       "name": "html",
-      "percent": 0.9,
+      "percent": 9,
       "ms": 80153,
       "seconds": 80,
       "formatted": "0h01m20s"
-    },
-    {
-      "name": "swift",
-      "percent": 0.1,
-      "ms": 6501,
-      "seconds": 7,
-      "formatted": "0h00m07s"
     }
   ],
   "alltime": [
@@ -327,25 +299,24 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-11-27T01:29:04.852Z",
+    "generatedAt": "2026-11-27T16:07:41.953Z",
     "week": {
-      "totalMs": 9281688,
-      "totalSeconds": 9282,
-      "totalFormatted": "2h34m42s",
+      "totalMs": 895206,
+      "totalSeconds": 895,
+      "totalFormatted": "0h14m55s",
       "days": {
-        "2026-11-20": 8386,
         "2026-11-22": 895
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 7,
-      "countedHeartbeats": 57,
+      "sessionCount": 3,
+      "countedHeartbeats": 10,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-11-20T07:00:00.000Z",
-      "rangeEnd": "2026-11-27T07:00:00.000Z"
+      "rangeStart": "2026-11-21T07:00:00.000Z",
+      "rangeEnd": "2026-11-28T07:00:00.000Z"
     },
     "alltime": {
       "totalMs": 819938611,
