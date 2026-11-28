@@ -2,42 +2,49 @@
   "week": [
     {
       "name": "python",
-      "percent": 61.2,
-      "ms": 9258001,
-      "seconds": 9258,
-      "formatted": "2h34m18s"
-    },
-    {
-      "name": "other",
-      "percent": 21.8,
-      "ms": 3302513,
-      "seconds": 3303,
-      "formatted": "0h55m03s"
+      "percent": 69.9,
+      "ms": 18340242,
+      "seconds": 18340,
+      "formatted": "5h05m40s"
     },
     {
       "name": "markdown",
-      "percent": 14.9,
-      "ms": 2253859,
-      "seconds": 2254,
-      "formatted": "0h37m34s"
+      "percent": 14.3,
+      "ms": 3758678,
+      "seconds": 3759,
+      "formatted": "1h02m39s"
+    },
+    {
+      "name": "other",
+      "percent": 12.8,
+      "ms": 3359339,
+      "seconds": 3359,
+      "formatted": "0h55m59s"
+    },
+    {
+      "name": "csv",
+      "percent": 1.7,
+      "ms": 458277,
+      "seconds": 458,
+      "formatted": "0h07m38s"
     },
     {
       "name": "javascript",
-      "percent": 0.8,
+      "percent": 0.5,
       "ms": 121661,
       "seconds": 122,
       "formatted": "0h02m02s"
     },
     {
       "name": "css",
-      "percent": 0.8,
+      "percent": 0.5,
       "ms": 121056,
       "seconds": 121,
       "formatted": "0h02m01s"
     },
     {
       "name": "html",
-      "percent": 0.5,
+      "percent": 0.3,
       "ms": 80153,
       "seconds": 80,
       "formatted": "0h01m20s"
@@ -46,28 +53,28 @@
   "alltime": [
     {
       "name": "python",
-      "percent": 35.4,
-      "ms": 295714638,
-      "seconds": 295715,
-      "formatted": "82h08m35s"
+      "percent": 36.1,
+      "ms": 304796879,
+      "seconds": 304797,
+      "formatted": "84h39m57s"
     },
     {
       "name": "c",
-      "percent": 9.7,
+      "percent": 9.6,
       "ms": 81170558,
       "seconds": 81171,
       "formatted": "22h32m51s"
     },
     {
       "name": "markdown",
-      "percent": 8.4,
-      "ms": 70383422,
-      "seconds": 70383,
-      "formatted": "19h33m03s"
+      "percent": 8.5,
+      "ms": 71888241,
+      "seconds": 71888,
+      "formatted": "19h58m08s"
     },
     {
       "name": "javascript",
-      "percent": 8.2,
+      "percent": 8.1,
       "ms": 68497721,
       "seconds": 68498,
       "formatted": "19h01m38s"
@@ -81,7 +88,7 @@
     },
     {
       "name": "c++",
-      "percent": 3.8,
+      "percent": 3.7,
       "ms": 31325622,
       "seconds": 31326,
       "formatted": "8h42m06s"
@@ -102,10 +109,10 @@
     },
     {
       "name": "other",
-      "percent": 3,
-      "ms": 24846480,
-      "seconds": 24846,
-      "formatted": "6h54m06s"
+      "percent": 2.9,
+      "ms": 24903306,
+      "seconds": 24903,
+      "formatted": "6h55m03s"
     },
     {
       "name": "jsx",
@@ -116,14 +123,14 @@
     },
     {
       "name": "latex",
-      "percent": 2.5,
+      "percent": 2.4,
       "ms": 20640213,
       "seconds": 20640,
       "formatted": "5h44m00s"
     },
     {
       "name": "csharp",
-      "percent": 2.1,
+      "percent": 2,
       "ms": 17206770,
       "seconds": 17207,
       "formatted": "4h46m47s"
@@ -137,7 +144,7 @@
     },
     {
       "name": "html",
-      "percent": 2,
+      "percent": 1.9,
       "ms": 16288676,
       "seconds": 16289,
       "formatted": "4h31m29s"
@@ -171,18 +178,18 @@
       "formatted": "2h00m38s"
     },
     {
+      "name": "csv",
+      "percent": 0.8,
+      "ms": 6773136,
+      "seconds": 6773,
+      "formatted": "1h52m53s"
+    },
+    {
       "name": "shell",
       "percent": 0.8,
       "ms": 6653311,
       "seconds": 6653,
       "formatted": "1h50m53s"
-    },
-    {
-      "name": "csv",
-      "percent": 0.8,
-      "ms": 6314859,
-      "seconds": 6315,
-      "formatted": "1h45m15s"
     },
     {
       "name": "dotenv",
@@ -221,7 +228,7 @@
     },
     {
       "name": "sql",
-      "percent": 0.3,
+      "percent": 0.2,
       "ms": 2101196,
       "seconds": 2101,
       "formatted": "0h35m01s"
@@ -306,30 +313,30 @@
   ],
   "meta": {
     "algorithmVersion": "1.0.0",
-    "generatedAt": "2026-11-28T01:04:48.103Z",
+    "generatedAt": "2026-11-28T15:01:36.179Z",
     "week": {
-      "totalMs": 15137243,
-      "totalSeconds": 15137,
-      "totalFormatted": "4h12m17s",
+      "totalMs": 26239406,
+      "totalSeconds": 26239,
+      "totalFormatted": "7h17m19s",
       "days": {
         "2026-11-22": 895,
-        "2026-11-27": 14242
+        "2026-11-27": 25344
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 7,
-      "countedHeartbeats": 82,
+      "sessionCount": 10,
+      "countedHeartbeats": 155,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 0,
       "inexactIntervalHeartbeats": 0,
-      "rangeStart": "2026-11-21T07:00:00.000Z",
-      "rangeEnd": "2026-11-28T07:00:00.000Z"
+      "rangeStart": "2026-11-22T07:00:00.000Z",
+      "rangeEnd": "2026-11-29T07:00:00.000Z"
     },
     "alltime": {
-      "totalMs": 834180648,
-      "totalSeconds": 834181,
-      "totalFormatted": "231h43m01s",
+      "totalMs": 845282811,
+      "totalSeconds": 845283,
+      "totalFormatted": "234h48m03s",
       "days": {
         "2026-04-03": 2037,
         "2026-04-04": 12422,
@@ -475,13 +482,13 @@
         "2026-11-19": 9616,
         "2026-11-20": 8386,
         "2026-11-22": 895,
-        "2026-11-27": 14242
+        "2026-11-27": 25344
       },
       "algorithmVersion": "1.0.0",
       "idleTimeoutSeconds": 900,
       "timeZone": "America/Denver",
-      "sessionCount": 568,
-      "countedHeartbeats": 4463,
+      "sessionCount": 571,
+      "countedHeartbeats": 4536,
       "contextHeartbeats": 0,
       "unstampedHeartbeats": 2,
       "inexactIntervalHeartbeats": 1,
